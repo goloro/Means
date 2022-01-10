@@ -1,0 +1,223 @@
+.form-registro{
+    width: 350px;
+    height: 550px;
+    background: whitesmoke;
+    margin: auto;
+    margin-top: 100px;
+    /* box-shadow: 1px 1px 10px; Difuminado */
+    border:3px solid rgb(68, 0, 255) ;
+    border-image: linear-gradient(blue);
+    padding: 20px 30px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+
+#imgLogo{
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navRegistro{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.navRegistroInversores{
+    width: 100%;
+    height: 7%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: blue;
+    border-radius:inherit;
+   
+}
+
+#inicioSesion{
+    border: none;
+}
+
+#registro{
+    background-color:  rgb(68, 0, 255) ;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    }
+#registroInversores{
+    background-color: blue ;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: -6%;
+   width: 100%;
+   height: 100%;
+
+
+}
+
+#txtReg{
+        text-align: right;
+}
+
+.buttons{
+    width:50%;
+    height: 40px;
+    background: white;
+    border:2px solid rgb(68, 0, 255) ;
+    border-image: linear-gradient(red);
+    color: black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+.controls{
+    width: 100%;
+    padding: 0%;
+    border-radius: 10px;
+}
+
+.input-icono {
+    background-image: url('Logo/Logo_Usu.jpg');
+    background-repeat: no-repeat;
+    /* background-position: 4px center; */
+    background-size: 51px;
+    display: flex;
+    align-items: center;
+    width: 290px;
+    padding-left: 45px;
+    height: 35px;
+    border:2px solid rgb(68, 0, 255) ;
+    border-radius: 10px;
+  }
+  .input-icono input {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    text-align: center;
+    padding: 0%;
+    border:2px solid rgb(68, 0, 255) ;
+    border-radius: 10px;
+  }
+
+  .input-icono2 {
+    background-image: url('Logo/Logo_Tel.jpg');
+    background-repeat: no-repeat;
+    background-size: 51px;
+    display: flex;
+    align-items: center;
+    width: 290px;
+    padding-left: 45px;
+    height: 35px;
+    border:2px solid rgb(68, 0, 255) ;
+    border-radius: 10px;
+  }
+  .input-icono2 input {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    text-align: center;
+    padding: 0%;
+    border:2px solid rgb(68, 0, 255) ;
+    border-radius: 10px;
+  }
+
+
+  .input-icono3 {
+    background-image: url('Logo/Logo_Contraseña3.jpg');
+    background-repeat: no-repeat;
+    background-size: 51px;
+    display: flex;
+    align-items: center;
+    width: 290px;
+    padding-left: 45px;
+    height: 35px;
+    border:2px solid rgb(68, 0, 255) ;
+    border-radius: 10px;
+  }
+  .input-icono3 input {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    text-align: center;
+    padding: 0%;
+    border:2px solid rgb(68, 0, 255) ;
+    border-radius: 10px;
+  }
+
+  .input-icono4 {
+    background-image: url('Logo/Logo_Correo.jpg');
+    background-repeat: no-repeat;
+    background-size: 51px;
+    display: flex;
+    align-items: center;
+    width: 290px;
+    padding-left: 45px;
+    height: 35px;
+    border:2px solid rgb(68, 0, 255) ;
+    border-radius: 10px;
+  }
+  .input-icono4 input {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    text-align: center;
+    padding: 0%;
+    border:2px solid rgb(68, 0, 255) ;
+    border-radius: 10px;
+  }
+
+
+  .txtInfo{
+    width: 150px;
+    height: 210px;
+    margin: auto;
+    margin-left: 160%;
+    margin-top: -90%;
+    padding: 20px 30px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 50px;
+    border-radius: 10px;
+    text-align: center;
+    background-image: linear-gradient( #8A26EC, #254EEC );
+    
+  }
+
+  #btnMsInv{
+      width: 140px;
+      color: black;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10px;
+      border-radius: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      border: none;
+
+  }
+
+  #txtinf{
+    background: rgba(0, 0, 255, 0);
+    color: white;
+  }
+  #h2inf{
+    background: rgba(0, 0, 255, 0);
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  }
