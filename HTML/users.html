@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Means - Login</title>
+
+        <link rel="shorcut icon" href="Logo/MeansHexagonoSinFondo.png">
+        
+        <link rel="stylesheet" type="text/css" href="/CSS/users.css">
+    </head>
+    <body>
+
+        <div class="formulario" id="formularioLogin">
+            <div class="formularioContent">
+                <div class="navBar">
+                    <button id="inicioSesion">Inicio Sesión</button>
+                    <button id="registro" >Registro</button>
+                </div>
+                <img src="/Imagenes/Logos/MeansHexagonoSinFondo.png" alt="Logo" id="imgLogo">
+
+                <!-- Formulario Login -->
+                <form class="form-login">
+                    <div class="form-campo" id="campoEmail">
+                        <input type="email" placeholder="Correo electronico" autocomplete required>
+                    </div>
+                    <div class="form-campo"  id="campoPassword">
+                        <input type="password" placeholder="Contraseña" autocomplete required>
+                    </div>
+                    <p id="txtHOC">¿Has olvidado tu contraseña?</p>
+                    <button class="buttons" onclick="login()">Iniciar Sesión</button>
+                </form>
+
+                <!-- Formulario Registro -->
+                <form class="form-registro">
+                    <div class="form-campo" id="campoName">
+                        <input type="text" placeholder="Nombre" autocomplete required>
+                    </div>
+                    <div class="form-campo" id="campoEmail">
+                        <input type="email" placeholder="Correo electronico" autocomplete required>
+                    </div>
+                    <div class="form-campo" id="campoPhone">
+                        <input type="txt" placeholder="Teléfono" autocomplete required>
+                    </div>
+                    <div class="form-campo"  id="campoPassword">
+                        <input type="password" placeholder="Contraseña" autocomplete required>
+                    </div>
+                    <p id="txtHOC">¿Has olvidado tu contraseña?</p>
+                    <button class="buttons" onclick="login()">Registrar</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Info Inversores -->
+        <div class="infoInversores">
+            <h2 id="tituloInv">Means Inversores</h2>
+            <p id="txtInv">¿Quieres convertirte en un inversor de Means? Sigue los pasos de aquí abajo!</p>
+            <button id="btnInv">Means Inversores</button>
+        </div>
+        
+    </body>
+</html>

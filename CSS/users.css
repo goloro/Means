@@ -1,0 +1,137 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ALTERNAR PESTAÑAS */
+.form-registro{
+  display: none;
+}
+
+/* FORMULARIO */
+.formulario {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+.formularioContent {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  border:3px solid rgb(68, 0, 255) ;
+  border-image: linear-gradient(blue);
+  border-radius: 10px;
+}
+.navBar {
+  display: flex;
+  margin: 0 auto 0 auto;
+  width: 100%;
+}
+.navBar button {
+  width: 50%;
+  height: 7vh;
+  border: none;
+  font-size: 20px;
+}
+#inicioSesion {background-color: transparent;}
+#registro {
+  margin: 0 0 auto auto;
+  border-bottom-left-radius: 40px;
+  border-top-right-radius: 6px;
+  background-color: #1641EA;
+  color: white;
+}
+#imgLogo{
+  width: 40%;
+  display: block;
+  margin: 5% auto 0 auto;
+}
+.form-login{
+  margin: 0 0 0 0;
+  padding: 20px 30px;
+  border-image: linear-gradient(blue);
+  border-radius: 10px;
+  color: rgb(0, 0, 0);
+}
+.form-campo {
+  margin: 5% auto 5% auto;
+  display: flex;
+  width: 80%;
+  height: 7vh;
+  border:2px solid rgb(68, 0, 255) ;
+  border-radius: 10px;
+  background-image: url("/Imagenes/Pics/recuadroForm.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.form-campo input {
+  margin: auto 0 auto auto;
+  width: 80%;
+  height: 100%;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  background-color: none;
+}
+.form-campo input:focus {
+  outline: none;
+}
+#txtHOC {
+  text-align: right;
+  margin: -4% 10% 5% auto;
+  font-size: 12px;
+}
+.buttons{
+  display: block;
+  width:50%;
+  height: 6vh;
+  margin: 0 auto 0 auto;
+  background: transparent;
+  border-radius: 10px;
+  border: 2px solid rgb(68, 0, 255) ;
+  /* border-image: linear-gradient(red, blue); */
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}
+
+/* INFO INVERSORES */
+.infoInversores{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 30vh;
+  right: 0;
+  width: 15%;
+  height: 40vh;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-image: linear-gradient(#254EEC, #8A26EC);
+  text-align: center;
+}
+#tituloInv{
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 10% 0 0 0;
+}
+#txtInv{
+  width: 90%;
+  margin: auto;
+  background: rgba(0, 0, 255, 0);
+  color: white;
+}
+#btnInv{
+  width: 60%;
+  height: 5vh;
+  color: black;
+  margin: auto auto 10% auto;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  background-color: white;
+}
