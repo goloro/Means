@@ -118,8 +118,8 @@
 }
 #txtInv{
   width: 90%;
+  margin: 5% auto 12% auto;
   color: white;
-  margin: auto;
   font-family: 'Baloo 2', cursive;
 }
 #btnInv{
