@@ -88,7 +88,7 @@
   display: block;
   width:50%;
   height: 6vh;
-  margin: 0 auto 7% auto;
+  margin: 0 auto 5% auto;
   background: transparent;
   border-radius: 10px;
   border: 2px solid rgb(68, 0, 255) ;
@@ -120,6 +120,7 @@
   width: 90%;
   color: white;
   margin: auto;
+  font-family: 'Baloo 2', cursive;
 }
 #btnInv{
   width: 60%;
