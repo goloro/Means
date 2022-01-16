@@ -99,20 +99,20 @@
 
 /* INFO INVERSORES */
 .infoInversores{
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   position: absolute;
   top: 30vh;
   right: 0;
-  width: 15%;
+  width: 19%;
   height: 40vh;
   border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px; */
-  /* background-image: linear-gradient( #8A26EC, #254EEC ); */
-  /* text-align: center;
-  background-image: url("/Imagenes/Pics/recuadroMSInv.png");
+  border-bottom-left-radius: 10px; 
+  background-image: linear-gradient( #8A26EC, #254EEC );
+  text-align: center;
+  background-image: url("../Imagenes/Pics/TarjetaInversoresSinLetras.jpg");
   background-repeat: no-repeat;
-  background-size: cover; */
+  background-size: cover;
 
   position: absolute;
   display: flex;
@@ -121,13 +121,14 @@
   right: 0;
   width: 15%;
   height: 40vh;
-
+/*  
   background: linear-gradient(179.66deg,#254EEC 0.49%, #8A26EC 118.41%);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   text-align: center;
-  transform: matrix(1.10, 0.17, 0.20, 1, 10, 0);
+  transform: matrix(1.10, 0.17, 0.20, 1, 10, 0); */
   /* border-radius: 27px; */
+  
   
 }
 #tituloInv{
@@ -144,6 +145,13 @@
   margin: auto;
   background: rgba(0, 0, 255, 0);
   color: white;
+font-family: Baloo Bhai 2;
+font-style: normal;
+font-size: 15px;
+line-height: 20px;
+color: #FFFFFF;
+
+
 }
 #btnInv{
   width: 60%;
