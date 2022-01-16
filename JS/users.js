@@ -1,3 +1,8 @@
+const gridLogin = document.querySelector(".form-login");
+const gridRegistro = document.querySelector(".form-registro");
+const btnInicioSesion = document.querySelector("#inicioSesion");
+const btnRegistro = document.querySelector("#registro");
+
 function inicioSesion(){
     //querySelector() Devuelve el primer elemento del documento
     const gridLogin = document.querySelector(".form-login");
@@ -35,8 +40,8 @@ function registro(){
     
     btnInicioSesion.style.backgroundColor= "#1641EA";
     btnInicioSesion.style.color="white";
-    btnInicioSesion.style.borderBottomRightRadius = "6px";
-    btnInicioSesion.style.borderTopRightRadius = "40px";
+    btnInicioSesion.style.borderTopLeftRadius = "6px";
+    btnInicioSesion.style.borderBottomRightRadius = "40px";
 
     btnRegistro.style.backgroundColor = "transparent";
     btnRegistro.style.color= "black";
