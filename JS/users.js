@@ -5,7 +5,7 @@ function inicioSesion(){
     const btnInicioSesion = document.querySelector("#inicioSesion");
     const btnRegistro = document.querySelector("#registro");
 
-    //Doy estilo a cada uno de los grid del login para superponer el grid del registro 
+    //Superponer login
     gridRegistro.style.display = "none";
     gridLogin.style.display = "block";
 
@@ -21,11 +21,10 @@ function inicioSesion(){
 }
 
 function registro(){
-    //querySelector() Devuelve el primer elemento del documento
     const gridLogin = document.querySelector(".form-login");
     const gridRegistro = document.querySelector(".form-registro");
 
-    //Doy estilo a cada uno de los grid del login para superponer el grid del registro 
+    //Superponer Registro 
     gridLogin.style.display = "none";
     gridRegistro.style.display = "block";
 
