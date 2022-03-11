@@ -66,8 +66,6 @@
     border-radius: 10px;
 }
 
-
-
 body {
     background-repeat: no-repeat;
     background-size: cover;
@@ -112,7 +110,7 @@ margin-left: 4%;
     font-size: 25px;
 }
 .subParrafo{
-    font-size: 25px;
+    font-size: 23px;
     color: rgba(128, 128, 128, 0.774);
     text-align: center;
     margin-top: 3%;
@@ -170,10 +168,10 @@ td
 }
 #parrafoInsignia
 {
+    display: flex;
     font-family: 'Baloo 2';
     font-size: 25px;
     text-align: left;
-
     padding: 100px;
 
 }
@@ -182,8 +180,6 @@ td
 {
     display:flex;
     flex-direction: column;
-    
-    
     height: 100vh;
     margin: 0;
     padding: 100px;
@@ -193,16 +189,56 @@ td
 #insigniaTexto
 {
     display: flex;
-    flex-direction: column;
     width: 90%;
     height: 100vh;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0 9% 0 auto;
+    
     
 }
 
 .imagenPerfil
 {
     width: 600px;
+}
+#footer{
+        margin-top: 1%;
+        text-align: center;
+        color: white;
+        background-image: linear-gradient(#254EEC , #8A26EC);
+        display: block;
+        padding: 3%;
+}
+
+#redesfooter{
+    display: flex;
+    padding: 1%;
+    background-color: white;
+    margin: auto 5% auto auto;
+    max-width: 20%;
+    border-radius: 10px;
+}
+#meansLogo{
+    width: 20%;
+    margin-right: 70%;
+}
+#emailfooter{
+    margin-top: -6%;
+    font-family: 'Baloo 2';
+    font-size: 110%;
+}
+
+#redesFooter {
+    display: flex;
+    padding: 1%;
+    margin: -3% 5% auto auto;
+    max-width: 20%;
+    border-radius: 10px;
+}
+
+#redesFooter img {
+    width: 13%;
+    margin: auto;
+}
+#logoFace{
+    width: 20%;
 }
