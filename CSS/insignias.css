@@ -1,10 +1,50 @@
 
-
+*
+{
+    background-color: rgb(240, 240, 240);
+}
 #insigniaH{
     text-align: center;
+    padding: 50px;
+    font-size: 50px;
 }
 
 td
 {
     text-align: center;
+    font-size: 26px;
+    
 }
+#parrafoInsignia
+{
+    font-size: 22px;
+    width: 400px;
+    line-height: 45px;
+    text-align: left;
+    padding: 80px;
+}
+
+#insigniaImg
+{
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    
+    height: 100vh;
+    margin: 0;
+    padding: 100px;
+    box-sizing: border-box;
+}
+
+#insigniaTexto
+{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
