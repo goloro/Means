@@ -4,6 +4,70 @@
     box-sizing: border-box;
 }
 
+.portada {
+    display: block;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(#254EEC , #8A26EC);
+}
+.navBarPortada {
+    display: flex;
+    margin: 2% 0 0 0;
+}
+#redesNavPortada {
+    display: flex;
+    padding: 1%;
+    background-color: white;
+    margin: auto auto auto 5%;
+    max-width: 20%;
+    border-radius: 10px;
+}
+#redesNavPortada img {
+    width: 13%;
+    margin: auto;
+}
+#btnNavPortada {
+    display: flex;
+    margin: auto 5% auto auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    color: white;
+    width: 30%;
+}
+#btnNavPortada a {
+    margin: auto;
+    cursor: pointer;
+}
+
+.logoPortada {
+    display: flex;
+    flex-direction: column;
+}
+.logoPortada img {
+    margin: 0 auto 0 auto;
+    width: 40%;
+}
+.logoPortada h1 {
+    margin: 0 auto 0 auto;
+    color: white;
+    font-family: 'Overlock', cursive;
+}
+
+.perfilesPortada {
+    display: flex;
+    width: 80%;
+    margin: 2% auto 0 auto;
+}
+.tarjetaPerfil {
+    width: 30%;
+    height: 40vh;
+    background-color: white;
+    margin: auto;
+    border-radius: 10px;
+}
+
+
+
 body {
     background-repeat: no-repeat;
     background-size: cover;
