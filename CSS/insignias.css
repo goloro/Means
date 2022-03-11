@@ -1,7 +1,12 @@
-
 *
 {
+    font-family: 'Baloo Bhai 2', cursive;
+}
+#insignias
+{
+
     background-color: rgb(240, 240, 240);
+    
 }
 #insigniaH{
     text-align: center;
@@ -17,7 +22,7 @@ td
 }
 #parrafoInsignia
 {
-    font-size: 22px;
+    font-size: 28px;
     width: 400px;
     line-height: 45px;
     text-align: left;
@@ -28,7 +33,7 @@ td
 {
     display:flex;
     flex-direction: column;
-    width: 50%;
+    width: 1000px;
     
     height: 100vh;
     margin: 0;
@@ -40,7 +45,7 @@ td
 {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 70%;
     height: 100vh;
     margin: 0;
     padding: 0;
