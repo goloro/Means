@@ -176,13 +176,15 @@ td
 
 }
 
+
 #insigniaImg
 {
     display:flex;
     flex-direction: column;
-    height: 100vh;
+    height: 700px;
     margin: 0;
     padding: 100px;
+    margin-top: 100px;
     box-sizing: border-box;
 }
 
@@ -190,9 +192,9 @@ td
 {
     display: flex;
     width: 90%;
-    height: 100vh;
+    height: 700px;
     margin: 0 9% 0 auto;
-    
+    margin-top: 100px;
     
 }
 
