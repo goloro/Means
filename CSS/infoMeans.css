@@ -29,7 +29,6 @@
 #btnNavPortada {
     display: flex;
     margin: auto 5% auto auto;
-    color: white;
     width: 30%;
 }
 #btnNavPortada a {
@@ -37,6 +36,8 @@
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
     font-size: 1.4rem;
+    text-decoration: none;
+    color: white;
 }
 
 .logoPortada {
@@ -69,6 +70,7 @@
 .tarjetaPerfil img {
     margin: auto;
     width: 90%;
+    filter: drop-shadow(2px 2px 5px rgb(114, 113, 113));
 }
 
 body {
@@ -186,48 +188,28 @@ td
     font-size: 25px;
 }
 
-.imagenPerfil
-{
-    width: 600px;
-}
-#footer{
-    text-align: center;
-    color: white;
+.footer {
+    display: flex;
+    width: 100%;
+    height: 12vh;
     background-image: linear-gradient(#254EEC , #8A26EC);
-    display: block;
-    padding: 3%;
 }
-
-#redesfooter{
-    display: flex;
-    padding: 1%;
-    background-color: white;
-    margin: auto 5% auto auto;
-    max-width: 20%;
-    border-radius: 10px;
-}
-#meansLogo{
-    width: 20%;
-    margin-right: 70%;
-}
-#emailfooter{
-    margin-top: -6%;
-    font-family: 'Baloo 2';
-    font-size: 110%;
-}
-
-#redesFooter {
-    display: flex;
-    padding: 1%;
-    margin: -3% 5% auto auto;
-    max-width: 20%;
-    border-radius: 10px;
-}
-
-#redesFooter img {
-    width: 13%;
+#meansLogo {
+    height: 90%;
     margin: auto;
 }
-#logoFace{
-    width: 20%;
+#emailfooter{
+    font-family: 'Baloo 2';
+    font-size: 1.2rem;
+    color: white;
+    margin: auto;
+}
+#redesfooter{
+    display: flex;
+    margin: auto;
+    max-width: 20%;
+}
+#redesfooter img {
+    width: 13%;
+    margin: auto;
 }
