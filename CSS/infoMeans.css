@@ -29,14 +29,14 @@
 #btnNavPortada {
     display: flex;
     margin: auto 5% auto auto;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.4rem;
     color: white;
     width: 30%;
 }
 #btnNavPortada a {
     margin: auto;
     cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
 }
 
 .logoPortada {
@@ -59,11 +59,16 @@
     margin: 2% auto 2% auto;
 }
 .tarjetaPerfil {
+    display: flex;
     width: 30%;
     height: 40vh;
     background-color: rgb(255, 255, 255);
     margin: auto;
     border-radius: 10px;
+}
+.tarjetaPerfil img {
+    margin: auto;
+    width: 90%;
 }
 
 body {
@@ -76,41 +81,41 @@ body {
 }
 
 .divBlanco{
-    margin-top: 8%;
+    margin: 8% 0 8% 0;
 }
 
 .divGris{
     display: flex;
-    margin-top: 8%;
+    padding: 8% 0 8% 0;
     background-color: #F0F0F0;
 }
 
 #imgPort1 {
-width: 40%;
-margin-left: 4%;
+    width: 40%;
+    margin-left: 4%;
 }
 #imgPort2{
     width: 30%;
     height: 90%;
     margin: auto;
     border-radius: 5%;
-    
 }
 #imgPort3{
     width: 40%;
+    margin: auto;
 }
 
 .subtitulosP{
     font-family: 'Baloo 2';
     font-size: 45px;
-
+    text-align: center;
 }
 .parrafosP{
     font-family: 'Baloo 2';
     font-size: 25px;
 }
 .subParrafo{
-    font-size: 23px;
+    font-size: 1.2rem;
     color: rgba(128, 128, 128, 0.774);
     text-align: center;
     margin-top: 3%;
@@ -119,8 +124,10 @@ margin-left: 4%;
     display: flex;
 }
 .subDiv2Txt{
+    display: flex;
+    flex-direction: column;
     width: 35%;
-    margin: 0 9% 0 auto;
+    margin: auto 9% auto auto;
 }
 
 .subDiv1Derc{
@@ -129,73 +136,54 @@ margin-left: 4%;
 }
 .subDiv2TxtDerc{
     width: 35%;
-    margin: 8% auto 0 8%;
+    margin: auto auto auto 8%;
 }
 #logoInversor{
     width: 20%;
-    margin: 0 9% 0 40%;
-}
-*
-{
-    font-family: 'Baloo Bhai 2', cursive;
-}
-#insignias
-{
-   
-   
-    background-color: #F0F0F0;
-    
-}
-.insigniasTabla
-{
-    margin: auto;
-   width: 1000px;
-    
-    
-}
-#insigniaH{
-    text-align: center;
-    padding: 50px;
-    font-family: 'Baloo 2';
-    font-size: 45px;
+    margin: 0 auto 0 auto;
 }
 
+.subDivIns {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.insigniasTabla {
+    margin: 4% auto 0 auto;
+    width: 80%;
+    font-family: 'Baloo Bhai 2', cursive;
+}
 td
 {
     text-align: center;
     font-size: 26px;
-    
 }
-#parrafoInsignia
-{
+#insigniasLogos td img {
     display: flex;
+    margin: 0 0 auto 0;
+}
+#insigniasEst {
+    /* display: flex;
+    margin: 0 auto 0 auto; */
+    width: 100%;
+}
+
+.insigniasInfo {
+    display: flex;
+    width: 80%;
+    margin: 6% auto 0 auto;
+}
+#insigniasImg {
+    width: 70%;
+    margin: auto 0 auto 0;
+}
+#insigniasImg img{
+    width: 90%;
+}
+#insigniasTxt {
+    width: 30%;
     font-family: 'Baloo 2';
     font-size: 25px;
-    text-align: left;
-    padding: 100px;
-
-}
-
-
-#insigniaImg
-{
-    display:flex;
-    flex-direction: column;
-    height: 700px;
-    margin: 0;
-    padding: 100px;
-    margin-top: 100px;
-    box-sizing: border-box;
-}
-
-#insigniaTexto
-{
-    display: flex;
-    width: 90%;
-    height: 700px;
-    margin: 0 9% 0 auto;
-    margin-top: 100px;
-    
 }
 
 .imagenPerfil
@@ -203,12 +191,11 @@ td
     width: 600px;
 }
 #footer{
-        margin-top: 1%;
-        text-align: center;
-        color: white;
-        background-image: linear-gradient(#254EEC , #8A26EC);
-        display: block;
-        padding: 3%;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(#254EEC , #8A26EC);
+    display: block;
+    padding: 3%;
 }
 
 #redesfooter{
