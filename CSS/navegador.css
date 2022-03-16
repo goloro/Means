@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+nav {
+    display: flex;
+    background-color: white;
+    height: 8vh;
+    width: 100%;
+}
+#logoNav {
+    height: 90%;
+    margin: auto;
+}
+.filtrosNav {
+    margin: 0 auto 0 auto;
+    display: flex;
+    width: 70%;
+}
+.divFiltros {
+    border-radius: 5px;
+    height: 65%;
+    width: 40%;
+    margin: auto;
+    background-color: #a49e9e85;
+}
+.buttonsNav {
+    margin: 0 auto 0 auto;
+    display: flex;
+    width: 20%;
+}
+.buttonsNav img {
+    margin: auto;
+    height: 60%;
+}
