@@ -24,11 +24,42 @@ nav {
     width: 70%;
 }
 .divFiltros {
+    display: flex;
     border-radius: 5px;
     height: 65%;
     width: 40%;
     margin: auto;
     background-color: #a49e9e85;
+}
+.divFiltros img {
+    width: 10%;
+    height: 60%;
+    margin: auto;
+}
+.divFiltrosDiv {
+    width: 90%;
+    height: 100%;
+}
+#buscador {
+    font-size: 1.1rem;
+    background-color: transparent;
+    border: none;
+}
+#buscador:focus {outline: none;}
+.divFiltrosDiv {display: flex;}
+.moneyFilter {
+    display: flex;
+    width: 45%;
+    margin: auto;
+}
+.moneyFilter p {
+    font-family: 'Rubik', sans-serif;
+    margin: auto;
+    width: 20%;
+}
+.moneyFilter input {
+    width: 40%;
+    margin: 0 0 0 auto;
 }
 .buttonsNav {
     margin: 0 auto 0 auto;
@@ -38,4 +69,35 @@ nav {
 .buttonsNav img {
     margin: auto;
     height: 60%;
+}
+.user {margin: auto; cursor: pointer; height: 60%;}
+#user {margin: auto; height: 100%;}
+.menu {
+    margin-top: 2%;
+    display: none;
+    position: absolute;
+    min-width: 170px;
+    background-color: white;
+    right: 2%;
+    border-radius: 5px;
+    z-index: 3;
+}
+.menu a {
+    font-family: 'Rubik', sans-serif;
+    color: black;
+    padding: 14px 18px;
+    text-decoration: none;
+    display: block;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.menu a:hover {
+    background-color: #a49e9e81;
+}
+.menu a img {
+    margin: 0 10% 0 0%;
+    vertical-align: middle;
+}
+.show {
+    display: block;
 }
