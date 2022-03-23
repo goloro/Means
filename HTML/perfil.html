@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../CSS/perfil.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/CSS/navegador.css'>
+    <script src='../JS/perfil.js'></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <img id="logoNav" src="/Imagenes/Logos/MeansHexagonoSinFondo.png">
+        <div class="filtrosNav">
+            <div class="divFiltros" id="filtroBuscador">
+                <img src="https://api.iconify.design/eva/search-fill.svg?color=%23555">
+                <input class="divFiltrosDiv" id="buscador" type="text" placeholder="Search...">
+            </div>
+            <div class="divFiltros" id="filtroMoney">
+                <img src="https://api.iconify.design/fa/dollar.svg?color=%23555">
+                <div class="divFiltrosDiv" id="divFiltrosDiv">
+                    <div class="moneyFilter">
+                        <p id="moneyRange">MAX</p>
+                        <p id="maxMoney"></p>
+                        <input class="maxMoney" type="range" min="500" max="10000">
+                    </div>
+                    <div class="moneyFilter">
+                        <p id="moneyRange">MIN</p>
+                        <p id="minMoney"></p>
+                        <input class="minMoney" type="range" min="500" max="10000">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttonsNav">
+            <img src="https://api.iconify.design/akar-icons/star.svg?color=%23555">
+            <img src="https://api.iconify.design/bx/message.svg?color=%23555">
+            <div class="user">
+                <img id="user" src="https://api.iconify.design/carbon/user-avatar-filled.svg?color=%23555">
+                <div id="idMenu" class="menu">
+                    <a id="Login"><img id="loginImg" src="https://api.iconify.design/fluent/eye-12-regular.svg?color=%23222" width="18" height="18">Perfil</a>
+                    <a id="SignUp"><img src="https://api.iconify.design/majesticons/logout-line.svg?color=%23222" width="18" height="18">Cerrar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    
+    <div id = "divPpal">
+        <div id = "contenido">
+            <div id = imagenPerfil>
+
+            </div>
+            <img id ="iconoEditar" src = "https://img1.freepng.es/20180920/eqx/kisspng-computer-icons-editing-portable-network-graphics-i-edit-profile-svg-png-icon-free-download-194863-5ba3457963b929.9651381015374268094085.jpg" width="30px" height="30px" onclick="pantallaEmergente()">
+            <div id = "iconoPerfil">
+                
+                    
+
+            </div>
+            <div id = "derechaIconoPerfil">
+                <h1><strong>MEANS TEAM</strong></h1>
+                <h3>Insignias:</h3>
+                <img src = "../Imagenes/Logos/MeansWhiteOro.png" width="50px" height="50px">
+            </div>
+            <div id = "lineaDivisoria">
+
+            </div>
+            <div id = "botones">
+                <h1 id = "post">Post</h1>
+                <h1>Reseñas</h1>
+            </div>
+            <div id = "cajas">
+                <div id = "divPost">
+
+                </div>
+                <div id = "datosPerfil">
+                    <h1><strong>Datos del Perfil</strong></h1><br>
+                    <div id = "telefono">
+                        <h2><strong>Teléfono</strong></h2>
+                        <h4>676382669</h4>
+                    </div>
+                    <div id = "email">
+                        <h2><strong>Email</strong></h2>
+                        <h4>meansGroup@gmail.com</h4>
+                    </div>
+                    <div id = "miBoton">
+                        <input type="submit" value="Crear un chat" onclick="pagar()">
+                    </div>
+                        
+                    
+                </div>
+
+            </div>
+            
+            
+
+        </div>
+            
+
+   </div>
+   <div id = "pantallaEmergente">
+       <div id = "pantalla">
+           <div id="colores">
+               <div id="selectorColores">
+                    <div class="color1">
+                        <input type = "color" id = "miColor1" onchange="cambioColor()">
+                        <h3 id = "color1"></h3>
+                    </div><br><br>
+                    <div class="color2">
+                        
+                        <input type = "color" id = "miColor2" onchange="cambioColor()">
+                        <h3 id = "color2"></h3>
+                    </div>
+                        
+                        
+                        
+                </div>
+               <div id="fondo">
+
+               </div>
+
+            </div>
+           
+            <div id = "botonGuardar">
+                <input type="submit" value="Guardar" onclick="guardarCambios()">
+            </div>
+
+        </div>
+
+        
+
+
+ </div>
+   <footer class="footer">
+    <img src="/Imagenes/Logos/MeansNombreLogoWhite.png" id="meansLogo">
+    <p id="emailfooter">Email: meanssteam@gmail.com</p>
+    <div id="redesfooter">
+        <img src="../Imagenes/Logos/FacebookLogo2.png" id="logoFace">
+        <img src="../Imagenes/Logos/TwitterLogo.png">
+        <img src="../Imagenes/Logos/InstagramLogo.png">
+        <img src="../Imagenes/Logos/DiscordLogo.png">
+    </div>
+</footer>
+   <script src="../JS/navegador.js"></script>
+</body>
+</html>

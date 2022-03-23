@@ -1,0 +1,292 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo 2';
+}
+
+#divPpal
+{
+    background-color: rgb(247, 247, 247);
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+#contenido
+{
+    
+    margin: 80px 120px 100px 120px;
+    
+    
+    background-color: rgb(247, 247, 247);
+    width: 87%;
+    height:100%;
+}
+#imagenPerfil
+{
+    display: flex;
+    width: 100%;
+    height: 350px;
+    background-image: linear-gradient(#254EEC , #8A26EC);
+}
+#iconoPerfil
+{
+    display: flex;
+    position: relative;
+    height:200px;
+    width:200px;
+    background-image: linear-gradient(#254EEC , #8A26EC);
+    border-radius:100%;
+    margin-left: 170px;
+    top: -100px;
+}
+#derechaIconoPerfil
+{
+    display: flex;
+    margin-left: 450px;
+    position: relative;
+    top : -175px;
+}
+#derechaIconoPerfil h1
+{
+    margin-right: 700px;
+}
+#lineaDivisoria
+{
+    display: flex;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(71, 71, 71);
+    position: relative;
+    top: -120px;
+}
+
+#botones
+{
+    display: flex;
+    position: relative;
+    top:-80px;
+    margin-left: 140px;
+}
+#botones h1
+{
+    margin-right: 50px;
+}
+#post
+{
+    color: #7E16EB;
+}
+#cajas
+{
+    display: flex;
+}
+#divPost
+{
+    background-color: white;
+    display: flex;
+    position: relative;
+    width:  70%;
+    height: 2000px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px rgb(141, 141, 141);
+    margin-bottom: 50px;
+    margin-right: 30px;
+}
+#datosPerfil
+{ 
+    background-color: white;
+    display: inline-block;
+    position: relative;
+    width: 20%;
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px rgb(141, 141, 141);
+    margin-left: 80px;
+}
+#datosPerfil h1
+{
+    padding: 10px;
+    margin-left: 15%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    
+}
+#datosPerfil h2
+{
+    width: 100%;
+    margin-left: 5px;
+    display: inline-block;
+    position: relative;
+}
+#telefono
+{
+    display: flex;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+#email
+{
+    display: flex;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+  #miBoton input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    
+    background: linear-gradient(to bottom, blue, rgb(140, 0, 255));
+    color: #fff;
+    font-size: 24px;
+    border-radius: 20px;
+    width: 200px;
+    margin: 20px;
+    position: relative;
+    left: 40px;
+    margin-top: 40px;
+
+  }
+  #miBoton input[type="submit"]:hover {
+    cursor: pointer;
+    background: linear-gradient(to bottom, rgb(0, 0, 177), rgb(86, 0, 156));
+    color:white;
+  }
+
+#pantallaEmergente
+{
+    
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,.3);
+    visibility: hidden;
+    
+}
+#iconoEditar
+{
+    position: relative;
+    
+    left: 98%;
+}
+
+#pantalla
+{
+    background-color: white;
+    width: 1200px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px rgb(141, 141, 141);
+    height: 700px;
+    
+}
+
+#colores
+{
+    display: flex;
+ 
+}
+#selectorColores
+{
+    display: inline-block;
+    margin-top: 30px;
+    padding: 90px;
+
+}
+#botonGuardar input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    
+    background: linear-gradient(to bottom, blue, rgb(140, 0, 255));
+    color: #fff;
+    font-size: 24px;
+    border-radius: 20px;
+    width: 200px;
+    margin: 20px;
+    
+    left: 40%;
+    top: 250px;
+    position: relative;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  #botonGuardar input[type="submit"]:hover {
+    cursor: pointer;
+    background: linear-gradient(to bottom, rgb(0, 0, 177), rgb(86, 0, 156));
+    color:white;
+  }
+.color1
+{
+    display: flex;
+    background-color: rgb(201, 201, 201);
+    width: 200px;
+
+}
+.color1 h3
+{
+    margin-left: 20%;
+}
+.color2
+{
+    display: flex;
+    width: 200px;
+    background-color: rgb(201, 201, 201);
+}
+.color2 h3
+{
+   margin-left: 20%;
+}
+
+
+#fondo
+{
+    width: 500px;
+    height: 150px;
+    background-color: black;
+    padding: 90px;
+    position: relative;
+    top: 80px;
+    left: 200px;
+    display: flex;
+}
+
+
+
+
+
+  .footer {
+    display: flex;
+    width: 100%;
+    height: 12vh;
+    background-image: linear-gradient(#254EEC , #8A26EC);
+}
+#meansLogo {
+    height: 90%;
+    margin: auto;
+}
+#emailfooter{
+    font-family: 'Baloo 2';
+    font-size: 1.2rem;
+    color: white;
+    margin: auto;
+}
+#redesfooter{
+    display: flex;
+    margin: auto;
+    max-width: 20%;
+}
+#redesfooter img {
+    width: 13%;
+    margin: auto;
+}
