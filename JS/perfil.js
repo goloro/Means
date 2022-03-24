@@ -28,6 +28,7 @@ var imagenesLogo = document.getElementsByClassName("icono");
 for(var i = 0;i<imagenesLogo.length;i++)
 {
     imagenesLogo[i].addEventListener("click", cambiarIcono);
+    imagenesLogo[i].style.cursor = "pointer";
 }
 var iconoPerfil
 var url;
@@ -35,7 +36,10 @@ function cambiarIcono(event)
 {
     var icono = event.target;
      url= icono.src;
+     
+     
      iconoPerfil = document.getElementById("miIconoPerfil");
+     
     
 
 
@@ -59,4 +63,24 @@ function cerrarPestaña()
 {
     var pantallaEmergente = document.getElementById("pantallaEmergente");
     pantallaEmergente.style.visibility  = "hidden";
+}
+var categorias = document.getElementsByClassName("categoria");
+var arrayCat = [];
+for(var i = 0;i < categorias.length;i++)
+{
+ arrayCat[i] = categorias[i];
+ arrayCat[i].addEventListener("click", cambiarCat);
+ arrayCat[i].style.cursor = "pointer";
+}
+function cambiarCat(event)
+{
+    var cambio = event.target;
+    cambio.style.color = "#7E16EB";
+    for(var i = 0;i < arrayCat.length;i++)
+    {
+        if(arrayCat[i] != cambio)
+        {
+            arrayCat[i].style.color ="black";
+        }
+    }
 }

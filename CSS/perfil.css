@@ -39,7 +39,13 @@
    
     border-radius:100%;
     margin-left: 170px;
-    top: -100px;
+    top: -9em;
+}
+.insignia
+{
+    position: relative;
+    top : -10px;
+    margin-left: 10px;
 }
 #derechaIconoPerfil
 {
@@ -59,7 +65,7 @@
     height: 2px;
     background-color: rgb(71, 71, 71);
     position: relative;
-    top: -120px;
+    top: -8em;
 }
 
 #botones
@@ -176,12 +182,13 @@
     display: flex;
     margin-left: 96%;
     border-radius: 100%;
+    cursor: pointer;
     
 }
 #iconoEditar
 {
     position: relative;
-    
+    cursor: pointer;
     left: 98%;
 }
 
@@ -247,6 +254,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
 
   }
   #botonGuardar input[type="submit"]:hover {
@@ -284,9 +292,9 @@
     background-color: black;
     padding: 90px;
     position: relative;
-    top: 80px;
-    left: 200px;
     display: flex;
+    margin-left: 20%;
+    margin-top: 6%;
 }
 
 
