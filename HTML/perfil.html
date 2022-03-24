@@ -7,7 +7,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../CSS/perfil.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='/CSS/navegador.css'>
-    <script src='../JS/perfil.js'></script>
+   
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -51,12 +51,13 @@
     <div id = "divPpal">
         <div id = "contenido">
             <div id = imagenPerfil>
+                
 
             </div>
             <img id ="iconoEditar" src = "https://img1.freepng.es/20180920/eqx/kisspng-computer-icons-editing-portable-network-graphics-i-edit-profile-svg-png-icon-free-download-194863-5ba3457963b929.9651381015374268094085.jpg" width="30px" height="30px" onclick="pantallaEmergente()">
             <div id = "iconoPerfil">
                 
-                    
+                <img id = "miIconoPerfil" src = "../Imagenes/Pics/hombre.png" width="170px" height="170px">
 
             </div>
             <div id = "derechaIconoPerfil">
@@ -102,6 +103,7 @@
    </div>
    <div id = "pantallaEmergente">
        <div id = "pantalla">
+           <img id = "cruz" src = "../Imagenes/Pics/cruz.png" width="40px" height="40px" onclick="cerrarPestaña()">
            <div id="colores">
                <div id="selectorColores">
                     <div class="color1">
@@ -120,8 +122,26 @@
                <div id="fondo">
 
                </div>
+               
 
             </div>
+            <table id = "tablaIconos">
+                <tr>
+                    <th><img class = "icono" src = "../Imagenes/Pics/hombre.png" width="170px" height="170px" ></th>
+                    <th><img class = "icono" src = "../Imagenes/Pics/mujer (1).png"  width="170px" height="170px"></th>
+                    <th><img class = "icono" src = "../Imagenes/Pics/mujer.png"  width="170px" height="170px"></th>
+
+                </tr>
+                <tr>
+                 <th><img class = "icono" src = "../Imagenes/Pics/nina.png" width="170px" height="170px"></th>
+                 <th><img class = "icono" src = "../Imagenes/Pics/usuario.png"  width="170px" height="170px"></th>
+                 <th><img class = "icono" src = "../Imagenes/Pics/perfil.png"  width="170px" height="170px"></th>
+                </tr>
+                
+
+
+
+            </table> 
            
             <div id = "botonGuardar">
                 <input type="submit" value="Guardar" onclick="guardarCambios()">
@@ -144,5 +164,6 @@
     </div>
 </footer>
    <script src="../JS/navegador.js"></script>
+   <script src='../JS/perfil.js'></script>
 </body>
 </html>

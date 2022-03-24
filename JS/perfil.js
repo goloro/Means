@@ -14,6 +14,32 @@ function cambioColor()
 
     fondo.style.background = 'linear-gradient(' + color1 + ', ' + color2 + ')';
 }
+
+function pantallaEmergente()
+{
+    
+    var pantallaEmergente = document.getElementById("pantallaEmergente");
+    pantallaEmergente.style.visibility  = "visible";
+    
+}
+
+var imagenesLogo = document.getElementsByClassName("icono");
+
+for(var i = 0;i<imagenesLogo.length;i++)
+{
+    imagenesLogo[i].addEventListener("click", cambiarIcono);
+}
+var iconoPerfil
+var url;
+function cambiarIcono(event)
+{
+    var icono = event.target;
+     url= icono.src;
+     iconoPerfil = document.getElementById("miIconoPerfil");
+    
+
+
+}
 function guardarCambios()
 {
     var pantallaEmergente = document.getElementById("pantallaEmergente");
@@ -25,13 +51,12 @@ function guardarCambios()
     
     imagenPerfil.style.background = 'linear-gradient(' + color1 + ', ' + color2 + ')';
     pantallaEmergente.style.visibility  = "hidden";
-    
+    iconoPerfil.src = url;
 
 }
-function pantallaEmergente()
+
+function cerrarPestaña()
 {
-    
     var pantallaEmergente = document.getElementById("pantallaEmergente");
-    pantallaEmergente.style.visibility  = "visible";
-    
+    pantallaEmergente.style.visibility  = "hidden";
 }
