@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear publicación</title>
+    <link rel="shorcut icon" href="../Imagenes/Logos/MeansHexagonoSinFondo.png">
+    <link rel='stylesheet' type='text/css' media='screen' href='/CSS/navegador.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='/CSS/crearPublicacion.css'>
+
+</head>
+<body>
+    <!-- NAVEGADOR -->
+    <nav>
+        <img id="logoNav" src="/Imagenes/Logos/MeansHexagonoSinFondo.png">
+        <div class="filtrosNav">
+            <div class="divFiltros" id="filtroBuscador">
+                <img src="https://api.iconify.design/eva/search-fill.svg?color=%23555">
+                <input class="divFiltrosDiv" id="buscador" type="text" placeholder="Search...">
+            </div>
+            <div class="divFiltros" id="filtroMoney">
+                <img src="https://api.iconify.design/fa/dollar.svg?color=%23555">
+                <div class="divFiltrosDiv" id="divFiltrosDiv">
+                    <div class="moneyFilter">
+                        <p id="moneyRange">MAX</p>
+                        <p id="maxMoney"></p>
+                        <input class="maxMoney" type="range" min="500" max="10000">
+                    </div>
+                    <div class="moneyFilter">
+                        <p id="moneyRange">MIN</p>
+                        <p id="minMoney"></p>
+                        <input class="minMoney" type="range" min="500" max="10000">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttonsNav">
+            <img src="https://api.iconify.design/akar-icons/star.svg?color=%23555">
+            <img src="https://api.iconify.design/bx/message.svg?color=%23555">
+            <div class="user">
+                <img id="user" src="https://api.iconify.design/carbon/user-avatar-filled.svg?color=%23555">
+                <div id="idMenu" class="menu">
+                    <a id="Login"><img id="loginImg" src="https://api.iconify.design/fluent/eye-12-regular.svg?color=%23222" width="18" height="18">Perfil</a>
+                    <a id="SignUp"><img src="https://api.iconify.design/majesticons/logout-line.svg?color=%23222" width="18" height="18">Cerrar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--CREAR PUBLICACION-->
+
+    <div class="crearPubl">
+        <div id="divcreaPost">
+            <img src="../Imagenes/Logos/MeansHexagonoSinFondo.png" width="110px" id="imgLogo">
+                <div id="contenido1">
+                    <h1>Crear Post</h1>
+                    <br><br>
+                    <hr>
+                </div>
+        </div>
+        <div class="divBloques">
+            <div id="div1">
+                <label>Nombre 
+                <input>
+                </label><br>
+
+                <label>Descripción breve
+                    <textarea></textarea>
+                </label><br>
+
+                <label>Descripción extensa
+                    <textarea></textarea>
+                </label>
+            </div>
+            <div id="div2">
+                <label>Personas
+                    <button>Si</button>
+                    <button>No</button><br>
+                    <textarea placeholder="Tipo y Nº"></textarea>
+                </label><br>
+
+                <label>Dinero
+                    <button>Si</button>
+                    <button>No</button><br>
+                    <input placeholder="Cantidad">
+                </label><br>
+
+                <label>Fecha Inicio
+                    <input type="date">
+                </label><br>
+
+                <label>Fecha Fin
+                    <input type="date">
+                </label><br>
+            </div>
+            <div class="imgPost">
+                <h2>Imagen del Post</h2>
+
+                <div class="imgCat">
+                    <img src="../Imagenes/Pics/ImgCatConvenciones.png" width="200px">
+                    <img src="../Imagenes/Pics/ImgCatTecnologia.jpg" width="210px">
+                    <img src="../Imagenes/Pics/ImgCatDeportivos.png" width="200px">
+                    <img src="../Imagenes/Pics/ImgCatEmpresa.png" width="200px" >
+                    <img src="../Imagenes/Pics/ImgCatGastronomia.jpg" width="200px">
+                    <img src="../Imagenes/Pics/ImgCatMusica.png" width="200px">
+                    <img src="../Imagenes/Pics/ImgCatSolidario.png" width="200px">
+                    <img src="../Imagenes/Pics/ImgCatTecnologia.jpg" width="200px"> 
+                </div>
+            </div>
+            <button id="btnPublicar2">Publicar Post</button>
+        </div>
+    </div>
+ 
+
+
+    <!-- SCRIPT -->
+    <script src="../JS/navegador.js"></script>
+    
+</body>
+</html>
