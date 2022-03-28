@@ -7,3 +7,18 @@ document.getElementById("divFiltrosDiv").addEventListener("input", e => {
 document.getElementById("user").addEventListener("click", function() {
     document.getElementById("idMenu").classList.toggle("show")
 })
+
+let Login = document.querySelector("#Login");
+
+Login.addEventListener('click', e=>{
+
+    window.open("../HTML/perfil.html", "_self")
+})
+
+let SignUp = document.querySelector("#SignUp");
+
+SignUp.addEventListener('click', e=>{
+    window.open("../HTML/portada.html", "_self");
+    //****************************************/
+    //CUANDO TENGAMOS LOCAL, ELIMINAR LA SESIÓN AQUI
+})

@@ -1,3 +1,5 @@
+
+
 .crearPubl{
     margin-top: 2%;
     margin-left: 2%;
@@ -35,12 +37,12 @@ h1{
 #div1{
     background-color: red;
     display: inline-block;
-    width: 40%;
+    width: 45%;
 }
 #div2{
     background-color: rgb(0, 221, 255);
     display: inline-block;
-    width: 40%;
+    width: 45%;
 
 }
 
@@ -73,3 +75,8 @@ margin-bottom: 3%;
     height: 5vh;
     text-align: center;
 }
+
+button{
+        cursor: pointer;
+}
+

@@ -1,6 +1,10 @@
 html{
     background-color: gray;
 }
+
+button{
+        cursor: pointer;
+}
 .divFlotante{
     background-color: white;
     width: 620px;
