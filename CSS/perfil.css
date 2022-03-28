@@ -45,7 +45,13 @@
 {
     position: relative;
     top : -10px;
-    margin-left: 10px;
+    left: 20px;
+}
+#pInsignia
+{
+    left:   210px;
+    position: relative;
+    display: flex;
 }
 #derechaIconoPerfil
 {
@@ -56,7 +62,7 @@
 }
 #derechaIconoPerfil h1
 {
-    margin-right: 700px;
+    margin-right: 40%
 }
 #lineaDivisoria
 {
@@ -104,18 +110,20 @@
     background-color: white;
     display: inline-block;
     position: relative;
-    width: 20%;
+    width: 26%;
     height: 300px;
     border-radius: 20px;
     box-shadow: 2px 2px 2px 2px rgb(141, 141, 141);
-    margin-left: 80px;
+    margin-left: 5%;
 }
 #datosPerfil h1
 {
     padding: 10px;
-    margin-left: 15%;
+    
+    
     width: 100%;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
     display: flex;
     
 }
@@ -198,7 +206,7 @@
     width: 1200px;
     border-radius: 20px;
     box-shadow: 2px 2px 2px 2px rgb(141, 141, 141);
-    height: 850px;
+    height: 90%
     
 }
 
