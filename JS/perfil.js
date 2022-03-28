@@ -1,3 +1,8 @@
+function ppal()
+{
+    window.open("../html/portada.html")
+}
+
 function cambioColor()
 {
     var color1 = document.getElementById("miColor1").value

@@ -12,6 +12,14 @@
     width: 100%;
     margin: 0;
 }
+#logoNav:hover
+{
+    cursor: pointer;
+}
+#meansLogo:hover
+{
+    cursor: pointer;
+}
 
 #contenido
 {
@@ -266,9 +274,6 @@
 }
 
 
-
-
-
 #botonGuardar input[type="submit"] {
     border: none;
     outline: none;
@@ -331,10 +336,6 @@
     margin-left: 20%;
     margin-top: 6%;
 }
-
-
-
-
 
   .footer {
     display: flex;
