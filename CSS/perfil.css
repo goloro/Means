@@ -362,3 +362,28 @@
     width: 13%;
     margin: auto;
 }
+
+
+
+.cardPost { display: flex; width: 90%; height: 13%; margin: 5% auto 5% auto; }
+.postImage { width: 30%; height: 100%; }
+.postImage img { width: 100%; height: 100%; }
+.postBody { display: flex; width: 70%; height: 100%; }
+.postBodyLeft { display: flex; flex-direction: column; width: 80%; height: 100%; }
+#titlePost { font-family: 'Roboto', sans-serif; font-size: 28px; width: 100%; text-align: center; margin: auto; }
+#textPost { font-family: 'Red Hat Text', sans-serif; font-size: 18px; width: 90%; margin: auto; text-align: center; }
+#moreInfoPost { 
+    font-family: 'Roboto';
+    font-size: 20px;
+    width: 35%;
+    padding: 1.5%;
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(#254EEC , #8A26EC);
+    color: white;
+    margin: auto;
+    cursor: pointer;
+}
+.postBodyRight { display: flex; width: 20%; height: 100%; }
+.postBodyRightTop { display: flex; height: 20%; width: 90%; border-radius: 10px;}
+.postBodyRightTop img { height: 70%; }
