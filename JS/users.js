@@ -1,14 +1,41 @@
-const gridLogin = document.querySelector(".form-login");
-const gridRegistro = document.querySelector(".form-registro");
-const btnInicioSesion = document.querySelector("#inicioSesion");
-const btnRegistro = document.querySelector("#registro");
+// IMPORTS
+import { RequestHandlerClass } from '../JS/requestHandler.js'
 
-function inicioSesion(){
+// CONSTS
+const RequestHandler = new RequestHandlerClass()
+
+const gridLogin = document.querySelector(".form-login")
+const gridRegistro = document.querySelector(".form-registro")
+const btnInicioSesionForm = document.querySelector("#inicioSesionForm")
+const btnRegistroForm = document.querySelector("#registroForm")
+
+
+// EVENT LISTENERS
+document.getElementById("btnLogin").addEventListener("click", e => {
+    e.preventDefault()
+    login()
+})
+document.getElementById("btnRegistro").addEventListener("click", e => {
+    e.preventDefault()
+    registro()
+})
+
+// FUNCTIONS
+async function login() {
+    const email = document.getElementById("campoEmailL").value
+    const password = document.getElementById("campoPasswordL").value
+
+    const existUser = await RequestHandler.getDefault("http://localhost:8085/users/" + email + "/" + password)
+
+    if (existUser) {alert("Users exists")}
+}
+
+function inicioSesionForm(){
     //querySelector() Devuelve el primer elemento del documento
     const gridLogin = document.querySelector(".form-login");
     const gridRegistro = document.querySelector(".form-registro");
-    const btnInicioSesion = document.querySelector("#inicioSesion");
-    const btnRegistro = document.querySelector("#registro");
+    const btnInicioSesionForm = document.querySelector("#inicioSesion");
+    const btnRegistroForm = document.querySelector("#registro");
 
     //Superponer login
     gridRegistro.style.display = "none";
@@ -25,7 +52,7 @@ function inicioSesion(){
     
 }
 
-function registro(){
+function registroForm(){
     const gridLogin = document.querySelector(".form-login");
     const gridRegistro = document.querySelector(".form-registro");
 
@@ -35,8 +62,8 @@ function registro(){
 
      //ini= background: azul, color: white
     //regis= backgro: transpa, color: black
-    const btnInicioSesion = document.querySelector("#inicioSesion");
-    const btnRegistro = document.querySelector("#registro");
+    const btnInicioSesionForm = document.querySelector("#inicioSesion");
+    const btnRegistroForm = document.querySelector("#registro");
     
     btnInicioSesion.style.backgroundColor= "#1641EA";
     btnInicioSesion.style.color="white";

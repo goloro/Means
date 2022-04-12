@@ -15,8 +15,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" type="text/css" href="../CSS/users.css">
-        
-        <script src="../JS/users.js"></script>
     </head>
     <body>
 
@@ -25,44 +23,44 @@
         <div class="formulario" id="formularioLogin">
             <div class="formularioContent">
                 <div class="navBar">
-                    <button onclick="inicioSesion()" id="inicioSesion">Inicio Sesión</button>
-                    <button  onclick="registro()" id="registro" >Registro</button>
+                    <button onclick="inicioSesionForm()" id="inicioSesionForm">Inicio Sesión</button>
+                    <button  onclick="registroForm()" id="registroForm" >Registro</button>
                 </div>
                 <img src="../Imagenes/Logos/MeansHexagonoSinFondo.png" alt="Logo" id="imgLogo">
 
                 <!-- Formulario Login -->
                 <form class="form-login" id="form-login">
-                    <div class="form-campo" id="campoEmail">
+                    <div class="form-campo">
                         <img src="https://api.iconify.design/fluent/mail-16-filled.svg?color=%23f8f8f8">
-                        <input type="email" placeholder="Correo electronico" autocomplete required>
+                        <input id="campoEmailL" type="email" placeholder="Correo electronico" autocomplete required>
                     </div>
-                    <div class="form-campo"  id="campoPassword">
+                    <div class="form-campo">
                         <img src="https://api.iconify.design/bxs/lock-alt.svg?color=%23f8f8f8">
-                        <input type="password" placeholder="Contraseña" autocomplete required>
+                        <input id="campoPasswordL" type="password" placeholder="Contraseña" autocomplete required>
                     </div>
                     <p id="txtHOC">¿Has olvidado tu contraseña?</p>
-                    <button class="buttons" onclick="login()">Iniciar Sesión</button>
+                    <button class="buttons" id="btnLogin">Iniciar Sesión</button>
                 </form>
 
                 <!-- Formulario Registro -->
                 <form class="form-registro" id="form-registro">
-                    <div class="form-campo" id="campoName">
+                    <div class="form-campo" id="campoNameR">
                         <img src="https://api.iconify.design/wpf/name.svg?color=%23f8f8f8">
                         <input type="text" placeholder="Nombre" autocomplete required>
                     </div>
-                    <div class="form-campo" id="campoEmail">
+                    <div class="form-campo" id="campoEmailR">
                         <img src="https://api.iconify.design/fluent/mail-16-filled.svg?color=%23f8f8f8">
                         <input type="email" placeholder="Correo electronico" autocomplete required>
                     </div>
-                    <div class="form-campo" id="campoPhone">
+                    <div class="form-campo" id="campoPhoneR">
                         <img src="https://api.iconify.design/ant-design/phone-filled.svg?color=%23f8f8f8">
                         <input type="txt" placeholder="Teléfono" autocomplete required>
                     </div>
-                    <div class="form-campo"  id="campoPassword">
+                    <div class="form-campo"  id="campoPasswordR">
                         <img src="https://api.iconify.design/bxs/lock-alt.svg?color=%23f8f8f8">
                         <input type="password" placeholder="Contraseña" autocomplete required>
                     </div>
-                    <button class="buttons" onclick="login()">Registrar</button>
+                    <button class="buttons" id="btnRegistro">Registrar</button>
                 </form>
             </div>
         </div>
@@ -75,7 +73,7 @@
         </div>
 
         <!-- SCRIPT -->
-        <script src="../JS/users.js"></script>
+        <script src="../JS/users.js" type="module"></script>
         
     </body>
 </html>
