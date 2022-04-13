@@ -41,8 +41,8 @@
   border: none;
   font-size: 20px;
 }
-#inicioSesion {background-color: transparent; cursor: pointer;}
-#registro {
+#inicioSesionForm {background-color: transparent; cursor: pointer;}
+#registroForm {
   margin: 0 0 auto auto;
   border-bottom-left-radius: 40px;
   border-top-right-radius: 6px;

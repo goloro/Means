@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Means - Home</title>
+
+        <link rel="shorcut icon" href="../Imagenes/Logos/MeansHexagonoSinFondo.png">
+        
+        <link rel='stylesheet' type='text/css' media='screen' href='/CSS/navegador.css'>
+
+        <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <!-- NAVEGADOR -->
+        <nav>
+            <img id="logoNav" src="/Imagenes/Logos/MeansHexagonoSinFondo.png">
+            <div class="filtrosNav">
+                <div class="divFiltros" id="filtroBuscador">
+                    <img src="https://api.iconify.design/eva/search-fill.svg?color=%23555">
+                    <input class="divFiltrosDiv" id="buscador" type="text" placeholder="Search...">
+                </div>
+                <div class="divFiltros" id="filtroMoney">
+                    <img src="https://api.iconify.design/fa/dollar.svg?color=%23555">
+                    <div class="divFiltrosDiv" id="divFiltrosDiv">
+                        <div class="moneyFilter">
+                            <p id="moneyRange">MAX</p>
+                            <p id="maxMoney"></p>
+                            <input class="maxMoney" type="range" min="500" max="10000">
+                        </div>
+                        <div class="moneyFilter">
+                            <p id="moneyRange">MIN</p>
+                            <p id="minMoney"></p>
+                            <input class="minMoney" type="range" min="500" max="10000">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="buttonsNav">
+                <img src="https://api.iconify.design/akar-icons/star.svg?color=%23555">
+                <img src="https://api.iconify.design/bx/message.svg?color=%23555">
+                <div class="user">
+                    <img id="user" src="https://api.iconify.design/carbon/user-avatar-filled.svg?color=%23555">
+                    <div id="idMenu" class="menu">
+                        <a id="Login"><img id="loginImg" src="https://api.iconify.design/fluent/eye-12-regular.svg?color=%23222" width="18" height="18">Perfil</a>
+                        <a id="SignUp"><img src="https://api.iconify.design/majesticons/logout-line.svg?color=%23222" width="18" height="18">Cerrar Sesión</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- SCRIPT -->
+        <!-- <script src="../JS/users.js" type="module"></script> -->
+        
+    </body>
+</html>
