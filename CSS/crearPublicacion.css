@@ -9,16 +9,16 @@
 }
 #imgLogo{
    
-    margin-left: 35%;
+    margin-left: 30%;
     text-align:justify;
 }
 h1{
-    margin-top: -3%;
+    margin-top: -5%;
     font-family: 'Baloo 2';
-    font-size: 45px;
+    font-size: 281.25%;
 }
 #contenido1{
-    width: 100%;
+    width: 90%;
     height: 100%;
     text-align: center;
     margin-top: -2%;
@@ -28,19 +28,19 @@ h1{
 
 .divBloques{
     margin-top: 2%;
-    margin-left: 2%;
+    margin-left: 25%;
     margin-right: 2%;
     margin-bottom: 2%;
    
 }
 
 #div1{
-    background-color: red;
+    /* background-color: rgb(255, 81, 0); */
     display: inline-block;
     width: 45%;
 }
 #div2{
-    background-color: rgb(0, 221, 255);
+    /* background-color: rgb(0, 221, 255); */
     display: inline-block;
     width: 45%;
 
@@ -78,5 +78,11 @@ margin-bottom: 3%;
 
 button{
         cursor: pointer;
+}
+
+label{
+    font-family: 'Baloo 2';
+    font-size: 20px;
+    font-weight: bold;
 }
 
