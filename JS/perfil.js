@@ -35,15 +35,35 @@ for(var i = 0;i<imagenesLogo.length;i++)
     imagenesLogo[i].addEventListener("click", cambiarIcono);
     imagenesLogo[i].style.cursor = "pointer";
 }
-var iconoPerfil
+var iconoPerfil = document.getElementById("miIconoPerfil")
 var url;
+var iconos = document.getElementsByClassName("icono")
+var arrayIconos = [];
+
+for ( var i = 0; i < iconos.length;i++)
+{
+    arrayIconos[i] = iconos[i];
+  
+}
+
 function cambiarIcono(event)
 {
     var icono = event.target;
      url= icono.src;
+     icono.style.borderStyle = "solid";
+     icono.style.borderWidth = "5px";
+     icono.style.borderColor = " #7E16EB";
+     for(var i = 0;i < arrayIconos.length;i++)
+     {
+         if(arrayIconos[i] != icono)
+         {
+            arrayIconos[i].style.borderColor = "white";
+
+
+         }
+     }
      
-     
-     iconoPerfil = document.getElementById("miIconoPerfil");
+    
      
     
 
