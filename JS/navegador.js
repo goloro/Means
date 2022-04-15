@@ -1,3 +1,5 @@
+// IMPORTS
+
 // Filtros navegador
 document.getElementById("divFiltrosDiv").addEventListener("input", e => {
     document.getElementById(e.target.className).innerHTML = e.target.value
@@ -18,6 +20,8 @@ Login.addEventListener('click', e=>{
 let SignUp = document.querySelector("#SignUp");
 
 SignUp.addEventListener('click', e=>{
+    const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
+    if (localUser) localStorage.removeItem("Means_userLogued")
     window.open("../HTML/portada.html", "_self");
     //****************************************/
     //CUANDO TENGAMOS LOCAL, ELIMINAR LA SESIÓN AQUI

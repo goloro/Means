@@ -1,3 +1,33 @@
+// IMPORTS
+
+// CONSTS
+const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
+
+const insigniasDiv = document.getElementById("insignias")
+
+const nameUser = document.getElementById("nameUser")
+const emailUser = document.getElementById("emailUser")
+const phoneUser = document.getElementById("phoneUser")
+
+// FUNCTIONS
+if (localUser) loadUser()
+
+function loadUser() {
+    // Name
+    nameUser.innerHTML = localUser.name
+
+    // Data
+    emailUser.innerHTML = localUser.email
+    phoneUser.innerHTML = localUser.phone
+
+    // Insignias
+    localUser.insignias.forEach(e => {addInsignia(e)});
+}
+
+function addInsignia(url) {
+    insigniasDiv.innerHTML += `<img src=${url}>`
+}
+
 function ppal()
 {
     window.open("../html/portada.html")

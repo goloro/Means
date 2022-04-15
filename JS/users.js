@@ -28,7 +28,7 @@ btnRegistroForm.addEventListener("click", e => {
 })
 
 // FUNCTIONS
-const localUser = localStorage.getItem('Means_userLogued')
+let localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
 if (localUser) window.open("/HTML/app.html", "_self")
 
 const localOption = localStorage.getItem('Means_userOption')
@@ -46,6 +46,7 @@ async function login() {
 
     if (existUser) {
         localStorage.setItem('Means_userLogued', JSON.stringify(existUser))
+        localUser = existUser
         window.open("/HTML/app.html", "_self")
     }
 }
@@ -101,3 +102,5 @@ function registroForm(){
     btnRegistroForm.style.color= "black";
 
 }
+
+// EXPORTS
