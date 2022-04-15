@@ -50,19 +50,14 @@
     </nav>
 
     
-    <div id = "divPpal">
-        <div id = "contenido">
-            <div id = imagenPerfil>
-                
-
+    <div id="contenedorPerfil">
+        <div id="topPerfil">
+            <div id="imagenBackPerfil">
+                <img id="editarPerfilImages" src = "https://api.iconify.design/bx/edit.svg?color=%23111" width="30px" height="30px" onclick="pantallaEmergente()">
             </div>
-            <img id ="iconoEditar" src = "https://img1.freepng.es/20180920/eqx/kisspng-computer-icons-editing-portable-network-graphics-i-edit-profile-svg-png-icon-free-download-194863-5ba3457963b929.9651381015374268094085.jpg" width="30px" height="30px" onclick="pantallaEmergente()">
-            <div id = "iconoPerfil">
-                
-                <img id = "miIconoPerfil" src = "https://cdn-icons-png.flaticon.com/512/1361/1361728.png" width="100%" height="100%">
 
-            </div>
-            <div id = "derechaIconoPerfil">
+            <div class="informationPerfil">
+                <img id="iconoPerfil" src="../Imagenes/Pics/hombre.png">
                 <h1><strong id="nameUser">MEANS TEAM</strong></h1>
                 <div class="insigniasDiv">
                     <h3>Insignias:</h3>
@@ -71,77 +66,41 @@
                     </div>
                 </div>
             </div>
-            <div id = "lineaDivisoria">
+        </div>
 
-            </div>
-            <div id = "botones">
-                <h1 class = "categoria" id = "post">Post</h1>
-                <h1 class = "categoria">Reseñas</h1>
-                <h1 class = "categoria">Favoritos</h1>
-                <h1 class = "categoria">Editar Perfil</h1>
-            </div>
-            <div id = "barraSelector">
+        <hr id="lineaDivisoria">
 
+        <div class="bottomPerfil">
+            <div class="bottomNav">
+                <h2 class="buttonBNav">Posts</h2>
+                <h2 class="buttonBNav">Reseñas</h2>
+                <h2 class="buttonBNav">Favoritos</h2>
+                <h2 class="buttonBNav">Editar Perfil</h2>
             </div>
-            <div id = "cajas">
-                <div id = "divPost">
-                    <div class="cardPost">
-                        <div class="postImage">
-                            <img src="https://www.eventsforce.com/wp-content/uploads/2018/01/onboarding.jpg">
-                        </div>
-                        <div class="postBody">
-                            <div class="postBodyLeft">
-                                <p id="titlePost">Nombre del Post</p>
-                                <p id="textPost">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also thee</p>
-                                <button id="moreInfoPost">Más Información</button>
-                            </div>
-                            <div class="postBodyRight">
-                                <div class="postBodyRightTop">
-                                    <div>
-                                        <img src="https://api.iconify.design/uil/favorite.svg?color=%23ffd600">
-                                        <img src="https://api.iconify.design/bi/chat-square-dots-fill.svg?color=%23514f4f">
-                                    </div>
-                                </div>
-                                <div class="postBodyRightBot">
-                                    <div>
-                                        <div class="postBodyRightBotDiv">
-                                            <img>
-                                            <p></p>
-                                        </div>
-                                        <div class="postBodyRightBotDiv">
-                                            <img>
-                                            <p></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+            <div class="bottomBoxes">
+                <div id="divPost">
 
                 </div>
-                <div id = "datosPerfil">
-                    <h1>Datos de Perfil</h1>
-                    <div id="email">
-                        <h2 class = "tipo">Email</h2>
-                        <h2 class = "info" id="emailUser">means@gmail.com</h2>
-                    </div>
 
+                <div id="datosPerfil">
+                    <h1 id="datosTitle"><strong>DATOS DEL PERFIL</strong></h1>
                     <div id="telefono">
-                        <h2 class = "tipo">Telefono</h2>
-                        <h2 class = "info" id="phoneUser">8523577238</h2>
+                        <h2><strong>Teléfono</strong></h2>
+                        <h4>676382669</h4>
                     </div>
-                   
-                    
-                    <div id = "miBoton">
+                    <div id="email">
+                        <h2><strong>Email</strong></h2>
+                        <h4>meansGroup@gmail.com</h4>
+                    </div>
+                    <div id="miBoton">
                         <input type="submit" value="Crear un chat" onclick="pagar()">
                     </div>
                 </div>
-
             </div>
-            
         </div>
-        
-   </div>
+    </div>
+
    <div id = "pantallaEmergente">
        <div id = "pantalla">
            <img id = "cruz" src = "../Imagenes/Pics/cruz.png" width="40px" height="40px" onclick="cerrarPestaña()">

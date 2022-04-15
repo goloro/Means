@@ -6,6 +6,8 @@ const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
 const insigniasDiv = document.getElementById("insignias")
 
 const nameUser = document.getElementById("nameUser")
+const iconProfile = document.getElementById("iconoPerfil")
+const backgroundProfile = document.getElementById("imagenPerfil")
 const emailUser = document.getElementById("emailUser")
 const phoneUser = document.getElementById("phoneUser")
 
@@ -14,7 +16,13 @@ if (localUser) loadUser()
 
 function loadUser() {
     // Name
-    nameUser.innerHTML = localUser.name
+    nameUser.innerHTML = localUser.name.toUpperCase()
+
+    // Icon
+    iconProfile.src = localUser.icono ? "../Imagenes/Pics/hombre.png" : "../Imagenes/Pics/hombre.png"
+
+    // Background Profile
+    backgroundProfile.style.backgroundImage = 'linear-gradient(' + localUser.backgroundProfile[0] + ', ' + localUser.backgroundProfile[1] + ')'
 
     // Data
     emailUser.innerHTML = localUser.email
