@@ -23,12 +23,13 @@ let iconSelec
 let selecFlag = false
 let previousIconId
 
-let previousItemView
+let previousItemView = document.getElementById("vNavPost")
+const divInfo = document.getElementById("divInfo")
 
 const problemCard = document.querySelector(".problemCard")
 const msgProblem = document.getElementById("problemMsg")
 
-// Event Listener
+// EVENT LISTENERS
 document.getElementById("editarPerfilImages").addEventListener("click", e => { viewVentanaEmergente() })
 
 document.getElementById("selectorColores").addEventListener("input", e => {
@@ -76,6 +77,8 @@ document.querySelector(".bottomNav").addEventListener("click", e => {
 })
 
 // FUNCTIONS
+viewPosts()
+
 if (localUser) loadUser()
 
 function loadUser() {
@@ -159,37 +162,73 @@ function changeView(item) {
     previousItemView = item
 }
 
-function viewPosts() {
+async function viewPosts() {
+    deleteInfo() 
 
+    const post = await RequestHandler.getDefault("http://localhost:8085/post/user" + localUser.email)
+    console.log(post)
+    if (post) post.forEach(e => { loadPost(e) });
 }
-
 function viewReviews() {
+    deleteInfo()
 
+    // const review = await RequestHandler.getDefault("http://localhost:8085/review/" + localUser.email)
+    // if (review) await loadReviews(review)
 }
-
 function viewFavs() {
+    deleteInfo()
 
+    const post = localUser.favs
+    post.forEach(e => { loadPost(e) });
 }
-
 function viewEdit() {
+    deleteInfo()
+
 
 }
 
-// var categorias = document.getElementsByClassName("categoria");
-// var arrayCat = [];
-// for(var i = 0;i < categorias.length;i++) {
-//  arrayCat[i] = categorias[i];
-//  arrayCat[i].addEventListener("click", cambiarCat);
-//  arrayCat[i].style.cursor = "pointer";
-// }
-// function cambiarCat(event) {
-//     var cambio = event.target;
-//     cambio.style.color = "#7E16EB";
-//     for(var i = 0;i < arrayCat.length;i++)
-//     {
-//         if(arrayCat[i] != cambio)
-//         {
-//             arrayCat[i].style.color ="black";
-//         }
-//     }
-// }
+function deleteInfo() {
+    divInfo.innerHTML = ""
+}
+
+function loadPost(post) {
+    let postCard = `
+    <div class="cardPost">
+        <div class="postImage">
+            <img src="https://www.eventsforce.com/wp-content/uploads/2018/01/onboarding.jpg">
+        </div>
+        <div class="postBody">
+            <div class="postBodyLeft">
+                <p id="titlePost">${ post.name }</p>
+                <p id="textPost">${ post.smallDescription }</p>
+                <button id="moreInfoPost">Más Información</button>
+            </div>
+            <div class="postBodyRight">
+                <div class="postBodyRightTop">
+                    <div>
+                        <img src="https://api.iconify.design/uil/favorite.svg?color=%23ffd600">
+                        <img src="https://api.iconify.design/bi/chat-square-dots-fill.svg?color=%23514f4f">
+                    </div>
+                </div>
+                <div class="postBodyRightBot">
+                    <div>
+                        <div class="postBodyRightBotDiv">
+                            <img>
+                            <p></p>
+                        </div>
+                        <div class="postBodyRightBotDiv">
+                            <img>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>`
+
+    divInfo.innerHTML += postCard
+}
+
+async function loadReviews(review) {
+
+}

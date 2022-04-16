@@ -59,7 +59,7 @@
         margin-bottom: 50px;
         margin-right: 30px;
     }
-    #divReviews, #divFavs, #divEdit {display: none;}
+    #vNavPost { color: #7E16EB }
     #datosPerfil {
         background-color: white;
         display: flex;
