@@ -3,8 +3,10 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Means - Perfil</title>
+
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+
     <link rel='stylesheet' type='text/css' media='screen' href='../CSS/perfil.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='../CSS/navegador.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='../CSS/ventanaFlotante.css'>
@@ -53,7 +55,7 @@
     <div id="contenedorPerfil">
         <div id="topPerfil">
             <div id="imagenBackPerfil">
-                <img id="editarPerfilImages" src = "https://api.iconify.design/bx/edit.svg?color=%23111" width="30px" height="30px" onclick="pantallaEmergente()">
+                <img id="editarPerfilImages" src = "https://api.iconify.design/bx/edit.svg?color=%23111" width="30px" height="30px">
             </div>
 
             <div class="informationPerfil">
@@ -72,14 +74,23 @@
 
         <div class="bottomPerfil">
             <div class="bottomNav">
-                <h2 class="buttonBNav">Posts</h2>
-                <h2 class="buttonBNav">Reseñas</h2>
-                <h2 class="buttonBNav">Favoritos</h2>
-                <h2 class="buttonBNav">Editar Perfil</h2>
+                <h2 class="buttonBNav" id="vNavPost">Posts</h2>
+                <h2 class="buttonBNav" id="vNavReviews">Reseñas</h2>
+                <h2 class="buttonBNav" id="vNavFavs">Favoritos</h2>
+                <h2 class="buttonBNav" id="vNavEdit">Editar Perfil</h2>
             </div>
 
             <div class="bottomBoxes">
-                <div id="divPost">
+                <div class="boxDiv" id="divPost">
+
+                </div>
+                <div class="boxDiv" id="divReviews">
+
+                </div>
+                <div class="boxDiv" id="divFavs">
+
+                </div>
+                <div class="boxDiv" id="divEdit">
 
                 </div>
 
@@ -87,11 +98,11 @@
                     <h1 id="datosTitle"><strong>DATOS DEL PERFIL</strong></h1>
                     <div id="telefono">
                         <h2><strong>Teléfono</strong></h2>
-                        <h4>676382669</h4>
+                        <h2 id="phoneUser" class="campoDatos">676382669</h4>
                     </div>
                     <div id="email">
                         <h2><strong>Email</strong></h2>
-                        <h4>meansGroup@gmail.com</h4>
+                        <h2 id="emailUser" class="campoDatos">meansGroup@gmail.com</h4>
                     </div>
                     <div id="miBoton">
                         <input type="submit" value="Crear un chat" onclick="pagar()">
@@ -103,64 +114,54 @@
 
    <div id = "pantallaEmergente">
        <div id = "pantalla">
-           <img id = "cruz" src = "../Imagenes/Pics/cruz.png" width="40px" height="40px" onclick="cerrarPestaña()">
+           <img id="closeVE" src = "../Imagenes/Pics/cruz.png" width="40px" height="40px">
            <div id="colores">
                <div id="selectorColores">
                     <div class="color1">
-                        <input type = "color" id = "miColor1" onchange="cambioColor()">
-                        <h3 id = "color1"></h3>
+                        <input type="color" id="miColor1" class="inputColor">
                     </div><br><br>
                     <div class="color2">
-                        
-                        <input type = "color" id = "miColor2" onchange="cambioColor()">
-                        <h3 id = "color2"></h3>
+                        <input type="color" id="miColor2" class="inputColor">
                     </div>
                          
                 </div>
-               <div id="fondo">
-
-               </div>
-               
-
+               <div id="fondo"></div>
             </div>
-            <table id = "tablaIconos">
-                <tr>
-                    <th><img class = "icono" src = "../Imagenes/Pics/3474950 - top - 1.jpg" width="100%" height="100%" ></th>
-                    <th><img class = "icono" src = "../Imagenes/Pics/3474950 - bot - 2.jpg"  width="100%" height="100%" ></th>
-                    <th><img class = "icono" src = "../Imagenes/Pics/3474950 - bot - 3.jpg"  width="100%" height="100%" ></th>
 
-                
-                    <th><img class = "icono" src = "../Imagenes/Pics/3474950 - bot - 1.jpg" width="100%" height="100%" ></th>
-                    <th><img class = "icono" src = "../Imagenes/Pics/3474950 - top - 2.jpg"  width="100%" height="100%" ></th>
-                    <th><img class = "icono" src = "../Imagenes/Pics/3474950 - top - 3.jpg"  width="100%" height="100%" ></th>
-                </tr>
-            
-
-
-
-            </table> 
+            <div id="tablaIconos">
+                <img id="img1" class = "icono" src = "../Imagenes/Pics/3474950-top-1.jpg" width="100%" height="100%" >
+                <img id="img2" class = "icono" src = "../Imagenes/Pics/3474950 - bot - 2.jpg" width="100%" height="100%" >
+                <img id="img3" class = "icono" src = "../Imagenes/Pics/3474950 - bot - 3.jpg" width="100%" height="100%" >
+                <img id="img4" class = "icono" src = "../Imagenes/Pics/3474950 - bot - 1.jpg" width="100%" height="100%" >
+                <img id="img5" class = "icono" src = "../Imagenes/Pics/3474950 - top - 2.jpg" width="100%" height="100%" >
+                <img id="img6" class = "icono" src = "../Imagenes/Pics/3474950 - top - 3.jpg" width="100%" height="100%" >
+            </div>
            
             <div id = "botonGuardar">
-                <input type="submit" value="Guardar" onclick="guardarCambios()">
+                <input type="submit" value="Guardar" id="guardarCambios">
             </div>
-
         </div>
-
-        
-
-
- </div>
-   <footer class="footer">
-    <img src="/Imagenes/Logos/MeansNombreLogoWhite.png" id="meansLogo" onclick="ppal()">
-    <p id="emailfooter">Email: meanssteam@gmail.com</p>
-    <div id="redesfooter">
-        <img src="../Imagenes/Logos/FacebookLogo2.png" id="logoFace">
-        <img src="../Imagenes/Logos/TwitterLogo.png">
-        <img src="../Imagenes/Logos/InstagramLogo.png">
-        <img src="../Imagenes/Logos/DiscordLogo.png">
     </div>
-</footer>
-   <script src="../JS/navegador.js"></script>
-   <script src='../JS/perfil.js'></script>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <img src="/Imagenes/Logos/MeansNombreLogoWhite.png" id="meansLogo" onclick="ppal()">
+        <p id="emailfooter">Email: meanssteam@gmail.com</p>
+        <div id="redesfooter">
+            <img src="../Imagenes/Logos/FacebookLogo2.png" id="logoFace">
+            <img src="../Imagenes/Logos/TwitterLogo.png">
+            <img src="../Imagenes/Logos/InstagramLogo.png">
+            <img src="../Imagenes/Logos/DiscordLogo.png">
+        </div>
+    </footer>
+
+    
+    <div class="problemCard">
+        <p id="problemMsg"></p>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="../JS/navegador.js"></script>
+    <script src='../JS/perfil.js' type="module"></script>
 </body>
 </html>

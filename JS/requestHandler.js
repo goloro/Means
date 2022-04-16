@@ -14,6 +14,13 @@ class RequestHandlerClass {
         const dataRes = await res.json()
         return dataRes
     }
+
+    // Put Default
+    async putDefault(url, data) {
+        const res = await fetch(url, {body: JSON.stringify(data)})
+        const dataRes = await res.json()
+        return dataRes
+    }
 }
 
 export {RequestHandlerClass}
