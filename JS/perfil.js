@@ -172,7 +172,7 @@ async function viewReviews() {
     deleteInfo()
 
     const review = await RequestHandler.getDefault("http://localhost:8085/review/user/" + localUser.email)
-    if (review) review.forEach(e => { loadReviews(e) })
+    if (review) await review.forEach(e => { loadReviews(e) })
 }
 function viewFavs() {
     deleteInfo()
@@ -228,13 +228,15 @@ function loadPost(post) {
     divInfo.innerHTML += postCard
 }
 
-function loadReviews(review) {
+async function loadReviews(review) {
+    const userVSender = await RequestHandler.getDefault("http://localhost:8085/users/" + review.user)
+
     let reviewCard = `
     <div class="cardReview">
         <div class="revTop">
             <div class="revUser">
-                <img id="iconUser" src="">
-                <img id="insUser" src="">
+                <img id="iconUser" src="${ userVSender.icono }">
+                <img id="insUser" src="${ userVSender.insignias[0] }">
             </div>
             <div class="revStars">
                 <img src="https://api.iconify.design/uil/favorite.svg?color=%23ffd233">

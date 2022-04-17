@@ -31,16 +31,16 @@
         height: 15%;
         border-radius:100%;
     }
-    .informationPerfil h1 { margin: auto 0 0 5%; height: 9.5vh; text-align: center;}
+    .informationPerfil h2 { margin: auto 0 0.2% 5%; text-align: center; font-size: 1.7rem; }
     .insigniasDiv {
         display: flex;  
-        margin: auto 5% 0.5% auto;
+        margin: auto 5% 0 auto;
         width: 30%;
         height: 10vh;
     }
     .insigniasDiv h3 { text-align: center; margin: auto 0 auto 0; }
     #insignias { width: 100%; height: 100%; display: flex; }
-    #insignias img { margin: auto 0 auto 2%; height: 90%; }
+    #insignias img { margin: auto 0 auto 4%; height: 90%; }
 
 #lineaDivisoria { height: 2px; width: 90%; margin: 2% auto 2% auto; border: none; background-color: rgb(71, 71, 71); }
 
@@ -60,20 +60,22 @@
         margin-right: 30px;
     }
     #vNavPost { color: #7E16EB }
+
     #datosPerfil {
         background-color: white;
         display: flex;
         flex-direction: column;
         position: relative;
         width: 26%;
-        height: 300px;
+        height: 250px;
         border-radius: 20px;
         box-shadow: 2px 2px 2px 2px rgb(141, 141, 141);
         margin: 0 0 0 auto;
         position: sticky;
     }
-    #datosPerfil h1 { margin: 5% 0 0 0; text-align: center; }
-    #datosPerfil h2{ width: 50%; text-align: center; }
+    #datosPerfil h1 { margin: 5% 0 0 0; text-align: center; font-size: 1.5rem; }
+    #datosTit { width: 40%; font-size: 1.1rem; text-align: left; padding: 0 0 0 10%; margin: auto 0 auto 0; }
+    #phoneUser, #emailUser { width: 60%; font-size: 0.8rem; text-align: center; margin: auto 0 auto auto; }
     .campoDatos { font-size: 16px; }
     #email { display: flex; margin: auto; width: 100%; }
     #telefono { display: flex; margin: auto; width: 100%; }
@@ -84,7 +86,7 @@
     height: 40px;
     background: linear-gradient(to bottom, blue, rgb(140, 0, 255));
     color: #fff;
-    font-size: 24px;
+    font-size: 1rem;
     border-radius: 20px;
     width: 50%;
     position: relative;
@@ -105,6 +107,12 @@
     background: linear-gradient(to bottom, rgb(0, 0, 177), rgb(86, 0, 156));
     color:white;
 }
+
+#iconoEditar {
+    position: relative;
+    cursor: pointer;
+    left: 98%;
+}
 #pantallaEmergente {
     position: fixed;
     top: 0;
@@ -119,39 +127,50 @@
 }
 #closeVE {
     display: flex;
-    margin-left: 96%;
+    width: 3.5%;
+    margin: 1% 1% auto auto;
     border-radius: 100%;
     cursor: pointer;
 }
-#iconoEditar {
-    position: relative;
-    cursor: pointer;
-    left: 98%;
-}
 #pantalla {
+    display: flex;
+    flex-direction: column;
     background-color: white;
-    width: 1200px;
+    width: 60%;
     border-radius: 20px;
     box-shadow: 2px 2px 2px 2px rgb(141, 141, 141);
-    height: 700px;
+    height: 80%;
 }
-#colores { display: flex; }
+#colores { 
+    margin: auto;
+    width: 100%;
+    display: flex; 
+    height: 35%;
+}
 #selectorColores {
-    display: inline-block;
-    padding: 50px 50px 50px 100px;
-}
-#fondo {
-    width: 40%;
-    height: 150px;
-    background-color: black;
-    padding: 90px;
-    position: relative;
     display: flex;
-    margin: 1% 0 2% 20%;
+    flex-direction: column;
+    width: 30%;
+    height: 80%;
+    margin: 0 auto 0 10%;
+}
+.colorSelect {
+    background-color: rgb(201, 201, 201);
+    width: 70%;
+    margin: auto;
+}
+.colorSelect input { height: 80%; }
+#fondo {
+    display: flex;
+    width: 45%;
+    height: 80%;
+    background-color: black;
+    margin: 0 10% 0 auto;
 }
 #tablaIconos {
     width: 80%;
-    margin: 0 auto 0 auto;
+    height: 40%;
+    margin: auto;
     display: grid;
     gap: 5%;
     grid-template-columns: 1fr 1fr 1fr;
@@ -166,93 +185,25 @@
 #iconoPerfil {
     border-radius: 100%;
 }
+#botonGuardar {
+    display: flex;
+    height: 8%;
+    width: 20%;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 20px;
+    background: linear-gradient(to bottom, blue, rgb(140, 0, 255));
+}
 #botonGuardar input[type="submit"] {
     border: none;
     outline: none;
-    height: 40px;
-    
-    background: linear-gradient(to bottom, blue, rgb(140, 0, 255));
-    color: #fff;
-    font-size: 24px;
-    border-radius: 20px;
-    width: 200px;
-    margin: 2.5% 20px 20px 20px;
-    
-    left: 40%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#botonGuardar input[type="submit"]:hover {
-    cursor: pointer;
-    background: linear-gradient(to bottom, rgb(0, 0, 177), rgb(86, 0, 156));
-    color:white;
-}
-.color1 {
-    display: flex;
-    background-color: rgb(201, 201, 201);
-    width: 200px;
-    margin-left: 40%;
-}
-.color2 {
-    display: flex;
-    width: 200px;
-    background-color: rgb(201, 201, 201);
-    margin-left: 40%;
-}
-
-
-/* FOOTER */
-.footer {
-    display: flex;
-    width: 100%;
-    height: 12vh;
-    background-image: linear-gradient(#254EEC , #8A26EC);
-}
-#meansLogo {
-    height: 90%;
+    color: white;
     margin: auto;
-}
-#emailfooter{
-    font-family: 'Baloo 2';
+    cursor: pointer;
     font-size: 1.2rem;
-    color: white;
-    margin: auto;
-}
-#redesfooter{
-    display: flex;
-    margin: auto;
-    max-width: 20%;
-}
-#redesfooter img {
-    width: 13%;
-    margin: auto;
+    background: transparent;
 }
 
-/* POST */
-.cardPost { display: flex; width: 90%; height: 13%; margin: 5% auto 5% auto; }
-.postImage { width: 30%; height: 100%; }
-.postImage img { width: 100%; height: 100%; }
-.postBody { display: flex; width: 70%; height: 100%; }
-.postBodyLeft { display: flex; flex-direction: column; width: 80%; height: 100%; }
-#titlePost { font-family: 'Roboto', sans-serif; font-size: 28px; width: 100%; text-align: center; margin: auto; }
-#textPost { font-family: 'Red Hat Text', sans-serif; font-size: 18px; width: 90%; margin: auto; text-align: center; }
-#moreInfoPost { 
-    font-family: 'Roboto';
-    font-size: 20px;
-    width: 35%;
-    padding: 1.5%;
-    border: none;
-    border-radius: 5px;
-    background-image: linear-gradient(#254EEC , #8A26EC);
-    color: white;
-    margin: auto;
-    cursor: pointer;
-}
-.postBodyRight { display: flex; width: 20%; height: 100%; }
-.postBodyRightTop { display: flex; height: 20%; width: 90%; border-radius: 10px;}
-.postBodyRightTop img { height: 70%; }
 
 /* PROBLEM CARD */
 .problemCard {

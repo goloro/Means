@@ -8,8 +8,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <link rel='stylesheet' type='text/css' media='screen' href='../CSS/perfil.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='../CSS/navegador.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='../CSS/ventanaFlotante.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../CSS/general.css'>
    
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
 </head>
@@ -60,7 +59,7 @@
 
             <div class="informationPerfil">
                 <img id="iconoPerfil" src="../Imagenes/Pics/hombre.png">
-                <h1><strong id="nameUser">MEANS TEAM</strong></h1>
+                <h2><strong id="nameUser">MEANS TEAM</strong></h2>
                 <div class="insigniasDiv">
                     <h3>Insignias:</h3>
                     <div id="insignias">
@@ -88,11 +87,11 @@
                 <div id="datosPerfil">
                     <h1 id="datosTitle"><strong>DATOS DEL PERFIL</strong></h1>
                     <div id="telefono">
-                        <h2><strong>Teléfono</strong></h2>
+                        <h2><strong id="datosTit">Teléfono</strong></h2>
                         <h2 id="phoneUser" class="campoDatos">676382669</h4>
                     </div>
                     <div id="email">
-                        <h2><strong>Email</strong></h2>
+                        <h2><strong id="datosTit">Email</strong></h2>
                         <h2 id="emailUser" class="campoDatos">meansGroup@gmail.com</h4>
                     </div>
                     <div id="miBoton">
@@ -105,13 +104,13 @@
 
    <div id = "pantallaEmergente">
        <div id = "pantalla">
-           <img id="closeVE" src = "../Imagenes/Pics/cruz.png" width="40px" height="40px">
+           <img id="closeVE" src = "../Imagenes/Pics/cruz.png">
            <div id="colores">
                <div id="selectorColores">
-                    <div class="color1">
+                    <div class="colorSelect">
                         <input type="color" id="miColor1" class="inputColor">
-                    </div><br><br>
-                    <div class="color2">
+                    </div>
+                    <div class="colorSelect">
                         <input type="color" id="miColor2" class="inputColor">
                     </div>
                          
@@ -120,12 +119,12 @@
             </div>
 
             <div id="tablaIconos">
-                <img id="img1" class = "icono" src = "../Imagenes/Pics/3474950-top-1.jpg" width="100%" height="100%" >
-                <img id="img2" class = "icono" src = "../Imagenes/Pics/3474950 - bot - 2.jpg" width="100%" height="100%" >
-                <img id="img3" class = "icono" src = "../Imagenes/Pics/3474950 - bot - 3.jpg" width="100%" height="100%" >
-                <img id="img4" class = "icono" src = "../Imagenes/Pics/3474950 - bot - 1.jpg" width="100%" height="100%" >
-                <img id="img5" class = "icono" src = "../Imagenes/Pics/3474950 - top - 2.jpg" width="100%" height="100%" >
-                <img id="img6" class = "icono" src = "../Imagenes/Pics/3474950 - top - 3.jpg" width="100%" height="100%" >
+                <img id="img1" class = "icono" src = "../Imagenes/Pics/3474951.jpg" width="100%" height="100%" >
+                <img id="img2" class = "icono" src = "../Imagenes/Pics/3474952.jpg" width="100%" height="100%" >
+                <img id="img3" class = "icono" src = "../Imagenes/Pics/3474953.jpg" width="100%" height="100%" >
+                <img id="img4" class = "icono" src = "../Imagenes/Pics/3474954.jpg" width="100%" height="100%" >
+                <img id="img5" class = "icono" src = "../Imagenes/Pics/3474955.jpg" width="100%" height="100%" >
+                <img id="img6" class = "icono" src = "../Imagenes/Pics/3474956.jpg" width="100%" height="100%" >
             </div>
            
             <div id = "botonGuardar">
@@ -133,19 +132,6 @@
             </div>
         </div>
     </div>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <img src="/Imagenes/Logos/MeansNombreLogoWhite.png" id="meansLogo" onclick="ppal()">
-        <p id="emailfooter">Email: meanssteam@gmail.com</p>
-        <div id="redesfooter">
-            <img src="../Imagenes/Logos/FacebookLogo2.png" id="logoFace">
-            <img src="../Imagenes/Logos/TwitterLogo.png">
-            <img src="../Imagenes/Logos/InstagramLogo.png">
-            <img src="../Imagenes/Logos/DiscordLogo.png">
-        </div>
-    </footer>
-
     
     <div class="problemCard">
         <p id="problemMsg"></p>
