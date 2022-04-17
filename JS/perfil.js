@@ -165,15 +165,14 @@ function changeView(item) {
 async function viewPosts() {
     deleteInfo() 
 
-    const post = await RequestHandler.getDefault("http://localhost:8085/post/user" + localUser.email)
-    console.log(post)
+    const post = await RequestHandler.getDefault("http://localhost:8085/post/user/" + localUser.email)
     if (post) post.forEach(e => { loadPost(e) });
 }
-function viewReviews() {
+async function viewReviews() {
     deleteInfo()
 
-    // const review = await RequestHandler.getDefault("http://localhost:8085/review/" + localUser.email)
-    // if (review) await loadReviews(review)
+    const review = await RequestHandler.getDefault("http://localhost:8085/review/user/" + localUser.email)
+    if (review) review.forEach(e => { loadReviews(e) })
 }
 function viewFavs() {
     deleteInfo()
@@ -229,6 +228,26 @@ function loadPost(post) {
     divInfo.innerHTML += postCard
 }
 
-async function loadReviews(review) {
+function loadReviews(review) {
+    let reviewCard = `
+    <div class="cardReview">
+        <div class="revTop">
+            <div class="revUser">
+                <img id="iconUser" src="">
+                <img id="insUser" src="">
+            </div>
+            <div class="revStars">
+                <img src="https://api.iconify.design/uil/favorite.svg?color=%23ffd233">
+                <img src="https://api.iconify.design/uil/favorite.svg?color=%23ffd233">
+                <img src="https://api.iconify.design/uil/favorite.svg?color=%23ffd233">
+                <img src="https://api.iconify.design/uil/favorite.svg?color=%23ffd233">
+                <img src="https://api.iconify.design/uil/favorite.svg?color=%23ffd233">
+            </div>
+        </div>
+        <div class="revBot">
+            <p id="revTxt">${ review.text }</p>
+        </div>
+    </div>`
 
+    divInfo.innerHTML += reviewCard
 }
