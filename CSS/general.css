@@ -15,15 +15,8 @@ nav {
     height: 8vh;
     width: 100%;
 }
-#logoNav {
-    height: 90%;
-    margin: auto;
-}
-.filtrosNav {
-    margin: 0 auto 0 auto;
-    display: flex;
-    width: 70%;
-}
+#logoNav { height: 90%; margin: auto; }
+.filtrosNav { margin: 0 auto 0 auto; display: flex; width: 70%; }
 .divFiltros {
     display: flex;
     border-radius: 5px;
@@ -32,45 +25,16 @@ nav {
     margin: auto;
     background-color: #a49e9e85;
 }
-.divFiltros img {
-    width: 10%;
-    height: 60%;
-    margin: auto;
-}
-.divFiltrosDiv {
-    width: 90%;
-    height: 100%;
-}
-#buscador {
-    font-size: 1.1rem;
-    background-color: transparent;
-    border: none;
-}
+.divFiltros img { width: 10%; height: 60%; margin: auto; }
+.divFiltrosDiv { width: 90%; height: 100%; }
+#buscador { font-size: 1.1rem; background-color: transparent; border: none; }
 #buscador:focus {outline: none;}
 .divFiltrosDiv {display: flex;}
-.moneyFilter {
-    display: flex;
-    width: 45%;
-    margin: auto;
-}
-.moneyFilter p {
-    font-family: 'Rubik', sans-serif;
-    margin: auto;
-    width: 20%;
-}
-.moneyFilter input {
-    width: 40%;
-    margin: 0 0 0 auto;
-}
-.buttonsNav {
-    margin: 0 auto 0 auto;
-    display: flex;
-    width: 20%;
-}
-.buttonsNav img {
-    margin: auto;
-    height: 60%;
-}
+.moneyFilter { display: flex; width: 45%; margin: auto; }
+.moneyFilter p { font-family: 'Rubik', sans-serif; margin: auto; width: 20%; }
+.moneyFilter input { width: 40%; margin: 0 0 0 auto; }
+.buttonsNav { margin: 0 auto 0 auto; display: flex; width: 20%; }
+.buttonsNav img { margin: auto; height: 60%; }
 .user {margin: auto; cursor: pointer; height: 60%;}
 #user {margin: auto; height: 100%;}
 .menu {
@@ -92,16 +56,9 @@ nav {
     border-radius: 3px;
     cursor: pointer;
 }
-.menu a:hover {
-    background-color: #a49e9e81;
-}
-.menu a img {
-    margin: 0 10% 0 0%;
-    vertical-align: middle;
-}
-.show {
-    display: block;
-}
+.menu a:hover { background-color: #a49e9e81; }
+.menu a img { margin: 0 10% 0 0%; vertical-align: middle; }
+.show { display: block; }
 
 
 /* POST */
@@ -152,11 +109,7 @@ nav {
     .revUser img { margin: auto; cursor: pointer; }
     #iconUser { border-radius: 100%; width: 30%; }
     #insUser { width: 20%; }
-    .revStars {
-        display: flex;
-        height: 80%;
-        margin: auto 2% auto auto;
-    }
+    .revStars { display: flex; height: 80%; margin: auto 2% auto auto; }
     .revStars img { margin: auto 0 auto 0; }
 .revBot { display: flex; width: 100%; height: 70%; margin: auto 0 0 0; }
 #revTxt { width: 100%; text-align: center; margin: auto 0 auto 0; }

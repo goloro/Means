@@ -76,6 +76,17 @@ document.querySelector(".bottomNav").addEventListener("click", e => {
     }
 })
 
+divInfo.addEventListener("click", e => {
+    e.preventDefault()
+    if (e.target.id === "btnEdit") {
+        localUser.phone = document.getElementById("campoPhoneE").value
+        localUser.name = document.getElementById("campoNameE").value
+        localUser.password = document.getElementById("campoPassE").value
+
+        updateUser(localUser)
+    }
+})
+
 // FUNCTIONS
 viewPosts()
 
@@ -151,7 +162,7 @@ function closeProblem() {
 }
 
 async function updateUser(user) {
-    const editUser = await RequestHandler.putDefault("http://localhost:8085/users/edit" + localUser.email, user)
+    const editUser = await RequestHandler.putDefault("http://localhost:8085/users/edit/" + localUser.email, user)
     return editUser
 }
 
@@ -183,7 +194,7 @@ function viewFavs() {
 function viewEdit() {
     deleteInfo()
 
-
+    loadEdit()
 }
 
 function deleteInfo() {
@@ -252,4 +263,47 @@ async function loadReviews(review) {
     </div>`
 
     divInfo.innerHTML += reviewCard
+}
+
+async function loadEdit() {
+    let editCard = `
+    <div class="cardEdit">
+        <form class="form-edit" id="form-edit">
+            <div class="form-campo">
+                <div>
+                    <img src="https://api.iconify.design/fluent/mail-16-filled.svg?color=%23514f4f">
+                    <p class="tituloEdit">EMAIL</p>
+                </div>
+                <p id="editEmail" class="editCampo" >${ localUser.email }</p>
+            </div>
+            <div class="form-campo">
+                <div>
+                    <img src="https://api.iconify.design/ant-design/phone-filled.svg?color=%23514f4f">
+                    <p class="tituloEdit">PHONE</p>
+                </div>
+                <input id="campoPhoneE" class="editCampo" type="text" placeholder="Phone" autocomplete required>
+            </div>
+            <div class="form-campo">
+                <div>
+                    <img src="https://api.iconify.design/wpf/name.svg?color=%23514f4f">
+                    <p class="tituloEdit">NAME</p>
+                </div>
+                <input id="campoNameE" class="editCampo" type="text" placeholder="Name" autocomplete required>
+            </div>
+            <div class="form-campo">
+                <div>
+                    <img src="https://api.iconify.design/bxs/lock-alt.svg?color=%23514f4f">
+                    <p class="tituloEdit">PASSWORD</p>
+                </div>
+                <input id="campoPassE" class="editCampo" type="password" placeholder="Password" autocomplete required>
+            </div>
+            <button class="buttons" id="btnEdit">Edit</button>
+        </form>
+    </div>`
+
+    divInfo.innerHTML += editCard
+
+    document.getElementById("campoPhoneE").value = localUser.phone
+    document.getElementById("campoNameE").value = localUser.name
+    document.getElementById("campoPassE").value = localUser.password
 }
