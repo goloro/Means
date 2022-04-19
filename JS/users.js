@@ -54,7 +54,7 @@ async function login() {
 async function registro() {
     const name = document.getElementById("campoNameR")
     const email = document.getElementById("campoEmailR")
-    const phone = document.getElementById("campoNameR")
+    const phone = document.getElementById("campoPhoneR")
     const password = document.getElementById("campoPasswordR")
 
     const data = {
@@ -71,7 +71,7 @@ async function registro() {
     phone.value = ""
     password.value = ""
 
-    if (registUser == "Usuario registrado con éxito") {
+    if (registUser == true) {
         inicioSesionForm()
     }
 }
