@@ -179,7 +179,7 @@ async function viewPosts() {
     deleteInfo() 
 
     const post = await RequestHandler.getDefault("http://localhost:8085/post/user/" + localUser.email)
-    if (post) post.forEach(e => { loadPost(e) });
+    if (post) await post.forEach(e => { loadPost(e) });
 }
 async function viewReviews() {
     deleteInfo()
@@ -203,7 +203,12 @@ function deleteInfo() {
     divInfo.innerHTML = ""
 }
 
-function loadPost(post) {
+async function loadPost(post) {
+    let totalPeople = 0
+    post.people.forEach(e => { totalPeople += e.count });
+
+    const userPost = await RequestHandler.getDefault("http://localhost:8085/users/" + post.idUser)
+    
     let postCard = `
     <div class="cardPost">
         <div class="postImage">
@@ -223,20 +228,23 @@ function loadPost(post) {
                     </div>
                 </div>
                 <div class="postBodyRightBot">
-                    <div>
-                        <div class="postBodyRightBotDiv">
-                            <img>
-                            <p></p>
-                        </div>
-                        <div class="postBodyRightBotDiv">
-                            <img>
-                            <p></p>
-                        </div>
+                    <div class="postBodyRightBotDiv">
+                        <img src="https://api.iconify.design/healthicons/money-bag.svg?color=%23514f4f">
+                        <p>${ post.money }</p>
+                    </div>
+                    <div class="postBodyRightBotDiv">
+                        <img src="https://api.iconify.design/fluent/people-20-filled.svg?color=%23514f4f" >
+                        <p>${ totalPeople }</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>`
+
+    // <div class="postUser">
+    //     <img id="iconUser" src="${ userPost.icono }">
+    //     <img id="insUser" src="${ userPost.insignias[0] }">
+    // </div>
 
     divInfo.innerHTML += postCard
 }
