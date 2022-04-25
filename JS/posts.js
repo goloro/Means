@@ -19,6 +19,23 @@ const divInfo = document.getElementById("divInfoPost");
 //FUNCTIONS
 viewPosts();
 
+//EVENT LISTENER
+const btnPublicar2 = document.querySelector("#btnPublicar2");
+btnPublicar2.addEventListener("click", e => {
+    e.preventDefault();
+    alert("creado");
+    createPost();
+})
+//PARA COGER LA URL DE LA IMG PARA EL POST
+let img;
+const imgCat = document.querySelector(".imgCat");
+imgCat.addEventListener("click", e => {
+    e.preventDefault();
+    img = e.target;
+    alert("img elegida");
+    alert(img.src)
+})
+
 //FUNCION GENERICA PARA VER TODOS LOS POST
 async function viewPosts() {
     
@@ -34,6 +51,7 @@ async function viewPosts() {
 
 // Get
 //BUSCAR TODOS LOS POST @GetMapping("/") 
+//SOLO SE MUESTRAN DOS POST????
  async function getAllPost(post) {
      let totalPeople = 0
     post.people.forEach(e => { totalPeople += e.count });
@@ -73,4 +91,37 @@ async function viewPosts() {
     divInfoPost.innerHTML += postCard
 }
 
+//FALTA COGER EL USUARIO DE LA SESION (idUser)
+async function createPost() {
+    const inputNombrePost = document.getElementById("inputNombrePost")
+    const inputDescBr = document.getElementById("inputDescBr")
+    const inputDescEx = document.getElementById("inputDescEx")
+    // const inputPers = document.getElementById("inputPers")
+    const inputDinero = document.getElementById("inputDinero")
+    const inputFechaIni = document.getElementById("inputFechaIni")
+    const inputFechaFin = document.getElementById("inputFechaFin")
+
+
+    const data = {
+        name: inputNombrePost.value,
+        smallDescription: inputDescBr.value,
+        largeDescription: inputDescEx.value,
+        // people: inputPers.value,
+        money: inputDinero.value,
+        image: img.src,
+        startDate: inputFechaIni.value,
+        finishDate: inputFechaFin.value
+    }
+
+    const crearPost = await RequestHandler.postDefault("http://localhost:8085/post/create", data)
+
+        inputNombrePost.value="",
+        inputDescBr.value="",
+        inputDescEx.value="",
+        inputPers.value="",
+        inputDinero.value="",
+        inputFechaIni.value="",
+        inputFechaFin.value=""
+
+}
 
