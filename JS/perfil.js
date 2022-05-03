@@ -212,11 +212,17 @@ async function loadPost(post) {
     let postCard = `
     <div class="cardPost">
         <div class="postImage">
-            <img src="https://www.eventsforce.com/wp-content/uploads/2018/01/onboarding.jpg">
+            <img src="${ post.image }">
         </div>
         <div class="postBody">
             <div class="postBodyLeft">
-                <p id="titlePost">${ post.name }</p>
+                <div id="postBodyLeftTop">
+                    <div class="postUser">
+                        <img id="iconUser" src="${ userPost.icono }">
+                        <img id="insUser" src="${ userPost.insignias[0] }">
+                    </div>
+                    <p id="titlePost">${ post.name }</p>
+                </div>
                 <p id="textPost">${ post.smallDescription }</p>
                 <button id="moreInfoPost">Más Información</button>
             </div>
@@ -241,10 +247,7 @@ async function loadPost(post) {
         </div>
     </div>`
 
-    // <div class="postUser">
-    //     <img id="iconUser" src="${ userPost.icono }">
-    //     <img id="insUser" src="${ userPost.insignias[0] }">
-    // </div>
+    
 
     divInfo.innerHTML += postCard
 }

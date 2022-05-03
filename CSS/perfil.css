@@ -51,13 +51,15 @@
     .boxDiv {
         background-color: white;
         display: flex;
+        flex-direction: column;
         position: relative;
-        width:  70%;
+        width: 70%;
         min-height: 500px;
         border-radius: 20px;
         box-shadow: 2px 2px 2px 2px rgb(141, 141, 141);
         margin-bottom: 50px;
         margin-right: 30px;
+        padding-bottom: 5%;
     }
     #vNavPost { color: #7E16EB }
 
