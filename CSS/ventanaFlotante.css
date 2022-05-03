@@ -1,6 +1,6 @@
-html{
+/* html{
     background-color: gray;
-}
+} */
 
 button{
         cursor: pointer;
@@ -17,6 +17,7 @@ button{
     border-color: black;
 
 }
+
 /*Para el div de mas informacion, necesita ser un poco mas latgo*/
 .divFlotante2{
     background-color: white;
@@ -28,6 +29,7 @@ button{
     border-radius: 5%;
     align-items: center;
     border-color: black;
+    margin-top: -40%;
 
 }
 
@@ -40,7 +42,7 @@ button{
     margin-right: auto;
 }
 #imgLogo{
-    margin-top: -80%;
+    margin-top: -90%;
     margin-left: 30px;
     text-align:justify;
 }
@@ -72,9 +74,9 @@ button{
 hr{
     background-color: black;
     height: 1px;
-    width: 140%;
-    margin-left: -35%;
-    margin-top: -4%;
+    /* width: 140%;
+    margin-left: -35%; */
+    margin-top: 4%;
 
 }
 h1{

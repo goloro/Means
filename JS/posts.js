@@ -6,6 +6,7 @@ const RequestHandler = new RequestHandlerClass();
 
 //div
 const divInfo = document.getElementById("divInfoPost");
+const divMasInfoPost = document.getElementById("divMasInfoPost");
 
 //METODOS
 
@@ -18,6 +19,7 @@ const divInfo = document.getElementById("divInfoPost");
 
 //FUNCTIONS
 viewPosts();
+
 
 //EVENT LISTENER
 const btnPublicar2 = document.querySelector("#btnPublicar2");
@@ -38,7 +40,7 @@ imgCat.addEventListener("click", e => {
 
 //FUNCION GENERICA PARA VER TODOS LOS POST
 async function viewPosts() {
-    
+    deleteInfo()
     const post = await RequestHandler.getDefault("http://localhost:8085/post/")
     if (post) await post.forEach(e => { getAllPost(e) });
 }
@@ -55,7 +57,7 @@ async function viewPosts() {
  async function getAllPost(post) {
      let totalPeople = 0
     post.people.forEach(e => { totalPeople += e.count });
-    const Allpost = await RequestHandler.getDefault("http://localhost:8085/post/")
+    // const Allpost = await RequestHandler.getDefault("http://localhost:8085/post/")
     let postCard = `
     <div class="cardPost">
         <div class="postImage">
@@ -89,7 +91,21 @@ async function viewPosts() {
     </div>`
 
     divInfoPost.innerHTML += postCard
+
+    document.getElementById("moreInfoPost").addEventListener("click", e=>{
+        e.preventDefault();
+        //LLAMAR A LA FUNCION PARA MOSTRAR MAS INFORMACION
+        // viewMasInfoPosts();
+        masInfoPost();
+        alert("hola");
+
+        
+    })
 }
+
+
+
+
 
 //FALTA COGER EL USUARIO DE LA SESION (idUser)
 async function createPost() {
@@ -125,3 +141,54 @@ async function createPost() {
 
 }
 
+function deleteInfo() {
+    divInfo.innerHTML = "";
+    divMasInfoPost.innerHTML="";
+}
+
+// async function viewMasInfoPosts() {
+//     deleteInfo()
+//     const Infopost = await RequestHandler.getDefault("http://localhost:8085/post/")
+//     if (Infopost) await Infopost.forEach(e => { masInfoPost(e) });
+// }
+
+//VENTANA FLOTANTE CON MAS INFORMACIÓN
+async function masInfoPost(Infopost) {
+    let infoPost = `
+    <div class="divFlotante2">
+    <div id="divResenia">
+        <img src="../Imagenes/Logos/MeansHexagonoSinFondo.png" width="110px" id="imgLogo">
+        <div id="contenido1">
+            <h1>Más información</h1><hr>
+            <div id="contenido2">
+                <h2>Fecha inicio:</h2><br>
+                <br><h2>Fecha fin:</h2>
+            </div>
+            <div id="personal">
+                <img src="../Imagenes/Logos/logoUsuarios.png" width="60px">
+                <h4>PERSONAL NECESARIO</h4>
+
+            </div>
+            <div id="detalles">
+                <h4>DETALLES DEL EVENTO</h4>
+                <p></p>
+
+            </div>
+            <button id="btnPublicar2">Contactar</button>
+            <button id="closeFlotante">Cerrar</button>
+    </div>
+</div>`
+
+divMasInfoPost.innerHTML += infoPost
+divInfo.style.opacity="10%";
+
+//CERRAR LA VENTANA FLOTANTE
+document.getElementById("closeFlotante").addEventListener("click", e=>{
+    e.preventDefault();
+    
+    divInfo.style.opacity="100%";
+    divMasInfoPost.style.opacity="0%";
+    
+})
+
+}
