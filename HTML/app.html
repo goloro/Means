@@ -9,10 +9,12 @@
         <link rel="shorcut icon" href="../Imagenes/Logos/MeansHexagonoSinFondo.png">
         
         <link rel='stylesheet' type='text/css' media='screen' href='/CSS/navegador.css'>
-        <!-- <link rel='stylesheet' type='text/css' media='screen' href='/CSS/perfil.css'> -->
+        <link rel='stylesheet' type='text/css' media='screen' href='/CSS/app.css'>
         <link rel='stylesheet' type='text/css' media='screen' href='/CSS/general.css'>
         <link rel= "stylesheet" href = "../CSS/ventanaFlotante.css">
+
         <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
     </head>
     <body>
 
@@ -52,8 +54,27 @@
                 </div>
             </div>
         </nav>
-        <div id="divInfoPost">
 
+        <div class="divContent">
+            <div id="divPost">
+
+            </div>
+            <div class="divCards">
+                <div class="subDivCards" id="createPost">
+                    <div id="topCreate">
+                        <a href="../HTML/perfil.html" id="createLinkImg"><img id="createImg"></a>
+                    </div>
+                    <div id="botCreate">
+                        <p>Crea una publicación</p>
+                        <a href="../HTML/crearPublicacion.html"><img src="https://api.iconify.design/ant-design/plus-square-filled.svg?color=%23514f4f"></a>
+                    </div>
+                </div>
+                <div class="subDivCards" id="hazteInv">
+                    <img  id="tituloInv" src="../Imagenes/Logos/logoInv.png" alt="Logo Inversors">
+                    <p id="txtInv">¿Quieres convertirte en un inversor de Means? Sigue los pasos de aquí abajo!</p>
+                    <button id="btnInv">Hazte Inversor</button>
+                </div>
+            </div>
         </div>
         
         <div id="divMasInfoPost">
@@ -64,6 +85,7 @@
         <!-- SCRIPT -->
         <script src="../JS/navegador.js" type="module"></script>
         <script src="../JS/posts.js" type="module"></script>
+        <script src="../JS/app.js" type="module"></script>
                 
     </body>
 </html>

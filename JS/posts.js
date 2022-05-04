@@ -5,7 +5,7 @@ import { RequestHandlerClass } from '../JS/requestHandler.js'
 const RequestHandler = new RequestHandlerClass();
 
 //div
-const divInfo = document.getElementById("divInfoPost");
+const div = document.getElementById("divPost");
 const divMasInfoPost = document.getElementById("divMasInfoPost");
 
 //METODOS
@@ -55,9 +55,11 @@ async function viewPosts() {
 //BUSCAR TODOS LOS POST @GetMapping("/") 
 //SOLO SE MUESTRAN DOS POST????
  async function getAllPost(post) {
-     let totalPeople = 0
-    post.people.forEach(e => { totalPeople += e.count });
-    // const Allpost = await RequestHandler.getDefault("http://localhost:8085/post/")
+    //  let totalPeople = 0
+    // post.people.forEach(e => { totalPeople += e.count });
+    
+    const userPost = await RequestHandler.getDefault("http://localhost:8085/users/" + post.idUser)
+
     let postCard = `
     <div class="cardPost">
         <div class="postImage">
@@ -65,7 +67,13 @@ async function viewPosts() {
         </div>
         <div class="postBody">
             <div class="postBodyLeft">
-                <p id="titlePost">${ post.name }</p>
+                <div id="postBodyLeftTop">
+                    <div class="postUser">
+                        <img id="iconUser" src="${ userPost.icono }">
+                        <img id="insUser" src="${ userPost.insignias[0] }">
+                    </div>
+                    <p id="titlePost">${ post.name }</p>
+                </div> 
                 <p id="textPost">${ post.smallDescription }</p>
                 <button id="moreInfoPost">Más Información</button>
             </div>
@@ -83,23 +91,18 @@ async function viewPosts() {
                     </div>
                     <div class="postBodyRightBotDiv">
                         <img src="https://api.iconify.design/fluent/people-20-filled.svg?color=%23514f4f" >
-                        <p>${ totalPeople }</p>
+                        <p>${ 0 }</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>`
 
-    divInfoPost.innerHTML += postCard
+    divPost.innerHTML += postCard
 
     document.getElementById("moreInfoPost").addEventListener("click", e=>{
         e.preventDefault();
-        //LLAMAR A LA FUNCION PARA MOSTRAR MAS INFORMACION
-        // viewMasInfoPosts();
         masInfoPost();
-        alert("hola");
-
-        
     })
 }
 
@@ -142,7 +145,7 @@ async function createPost() {
 }
 
 function deleteInfo() {
-    divInfo.innerHTML = "";
+    div.innerHTML = "";
     divMasInfoPost.innerHTML="";
 }
 
@@ -180,13 +183,13 @@ async function masInfoPost(Infopost) {
 </div>`
 
 divMasInfoPost.innerHTML += infoPost
-divInfo.style.opacity="10%";
+div.style.opacity="10%";
 
 //CERRAR LA VENTANA FLOTANTE
 document.getElementById("closeFlotante").addEventListener("click", e=>{
     e.preventDefault();
     
-    divInfo.style.opacity="100%";
+    div.style.opacity="100%";
     divMasInfoPost.style.opacity="0%";
     
 })
