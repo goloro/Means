@@ -25,7 +25,6 @@ viewPosts();
 const btnPublicar2 = document.querySelector("#btnPublicar2");
 btnPublicar2.addEventListener("click", e => {
     e.preventDefault();
-    alert("creado");
     createPost();
 })
 //PARA COGER LA URL DE LA IMG PARA EL POST
