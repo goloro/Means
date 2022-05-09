@@ -76,10 +76,10 @@
         position: sticky;
     }
     #datosPerfil h1 { margin: 5% 0 0 0; text-align: center; font-size: 1.5rem; }
-    #datosTit { width: 40%; font-size: 1.1rem; text-align: left; padding: 0 0 0 10%; margin: auto 0 auto 0; }
-    #phoneUser, #emailUser { width: 60%; font-size: 0.8rem; text-align: center; margin: auto 0 auto auto; }
+    #datosTit { width: 40%; font-size: 1.3rem; text-align: left; padding: 0 0 0 50%; margin: auto 0 auto 0; }
+    #phoneUser, #emailUser { width: 60%; font-size: 0.9rem; text-align: center; margin: auto 0 auto auto; }
     .campoDatos { font-size: 16px; }
-    #email { display: flex; margin: auto; width: 100%; }
+    #email { display: flex; margin: auto; width: 90%; }
     #telefono { display: flex; margin: auto; width: 100%; }
 
 #miBoton input[type="submit"] {
