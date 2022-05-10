@@ -4,58 +4,40 @@ import { RequestHandlerClass } from '../JS/requestHandler.js'
 // CONSTS
 const RequestHandler = new RequestHandlerClass();
 
-//div
 const div = document.getElementById("divPost");
 const divMasInfoPost = document.getElementById("divMasInfoPost");
 
-//METODOS
-
-//BUSCAR TODOS LOS POST @GetMapping("/") HECHO
-//BUSCAR POST POR IDPOST @GetMapping("/{idPost}")
-// BUSCAR POR ID USUARIO @GetMapping("/user/{idUser}") HECHO EN PERFIL.JS
-//CREAR POST @PostMapping("/create")
-//EDITAR POST @PutMapping("/edit/{idPost}")
-//BORRAR POST @DeleteMapping("/delete/{idPost}")
+//EVENT LISTENER
+// const btnPublicar2 = document.querySelector("#btnPublicar2");
+// btnPublicar2.addEventListener("click", e => {
+//     e.preventDefault();
+//     createPost();
+// })
+// let img;
+// const imgCat = document.querySelector(".imgCat");
+// imgCat.addEventListener("click", e => {
+//     e.preventDefault();
+//     img = e.target;
+//     alert("img elegida");
+//     alert(img.src)
+// })
 
 //FUNCTIONS
-viewPosts();
-
-
-//EVENT LISTENER
-const btnPublicar2 = document.querySelector("#btnPublicar2");
-btnPublicar2.addEventListener("click", e => {
-    e.preventDefault();
-    createPost();
-})
-//PARA COGER LA URL DE LA IMG PARA EL POST
-let img;
-const imgCat = document.querySelector(".imgCat");
-imgCat.addEventListener("click", e => {
-    e.preventDefault();
-    img = e.target;
-    alert("img elegida");
-    alert(img.src)
-})
-
-//FUNCION GENERICA PARA VER TODOS LOS POST
-async function viewPosts() {
-    deleteInfo()
-    const post = await RequestHandler.getDefault("http://localhost:8085/post/")
-    if (post) await post.forEach(e => { getAllPost(e) });
+export default async function getPosts(callOption, postsContainer, ids) {
+    // callOption [0] -> POSTS HOME
+    // callOption [1] -> POSTS PROFILE
+    let posts
+    switch (callOption) {   
+        case 0: posts = await RequestHandler.getDefault("http://localhost:8085/post/")
+        case 1: posts = await RequestHandler.getDefault("http://localhost:8085/users/" + ids.idUser)
+        case 2: posts = await RequestHandler.getDefault("http://localhost:8085/" + ids.idPost)
+    }
+    if (posts) await posts.forEach(e => { postCall(e), postsContainer });
 }
 
-//— Primera llamada —
-//Devuelve los resultados y un true en caso de que la longitud del array de posts encontrados sea mayor al límite (20).
-
-//— Siguientes llamadas —
-//Se hacen en caso de que en la primera devuelva un true y se envía como parámetro true indicando que tiene que skipear 20 resultados al total de encontrados
-
-// Get
-//BUSCAR TODOS LOS POST @GetMapping("/") 
-//SOLO SE MUESTRAN DOS POST????
- async function getAllPost(post) {
-    //  let totalPeople = 0
-    // post.people.forEach(e => { totalPeople += e.count });
+async function postCall(post, postContainer) {
+    let totalPeople = 0
+    post.people.forEach(e => { totalPeople += e.count });
     
     const userPost = await RequestHandler.getDefault("http://localhost:8085/users/" + post.idUser)
 
@@ -97,65 +79,21 @@ async function viewPosts() {
         </div>
     </div>`
 
-    divPost.innerHTML += postCard
+    postContainer.innerHTML += postCard
 
     document.getElementById("moreInfoPost").addEventListener("click", e=>{
         e.preventDefault();
-        masInfoPost();
+        // masInfoPost();
     })
 }
 
-
-
-
-
-//FALTA COGER EL USUARIO DE LA SESION (idUser)
-async function createPost() {
-    const inputNombrePost = document.getElementById("inputNombrePost")
-    const inputDescBr = document.getElementById("inputDescBr")
-    const inputDescEx = document.getElementById("inputDescEx")
-    // const inputPers = document.getElementById("inputPers")
-    const inputDinero = document.getElementById("inputDinero")
-    const inputFechaIni = document.getElementById("inputFechaIni")
-    const inputFechaFin = document.getElementById("inputFechaFin")
-
-
-    const data = {
-        name: inputNombrePost.value,
-        smallDescription: inputDescBr.value,
-        largeDescription: inputDescEx.value,
-        // people: inputPers.value,
-        money: inputDinero.value,
-        image: img.src,
-        startDate: inputFechaIni.value,
-        finishDate: inputFechaFin.value
-    }
-
-    const crearPost = await RequestHandler.postDefault("http://localhost:8085/post/create", data)
-
-        inputNombrePost.value="",
-        inputDescBr.value="",
-        inputDescEx.value="",
-        inputPers.value="",
-        inputDinero.value="",
-        inputFechaIni.value="",
-        inputFechaFin.value=""
-
+export default async function createPost(data) {
+    return await RequestHandler.postDefault("http://localhost:8085/post/create", data)
 }
 
-function deleteInfo() {
-    div.innerHTML = "";
-    divMasInfoPost.innerHTML="";
-}
+async function masInfoPost(idPost) {
+    const post = getPosts(2, undefined, {idPost: idPost})
 
-// async function viewMasInfoPosts() {
-//     deleteInfo()
-//     const Infopost = await RequestHandler.getDefault("http://localhost:8085/post/")
-//     if (Infopost) await Infopost.forEach(e => { masInfoPost(e) });
-// }
-
-//VENTANA FLOTANTE CON MAS INFORMACIÓN
-async function masInfoPost(Infopost) {
     let infoPost = `
     <div class="divFlotante2">
     <div id="divResenia">
@@ -181,16 +119,15 @@ async function masInfoPost(Infopost) {
     </div>
 </div>`
 
-divMasInfoPost.innerHTML += infoPost
-div.style.opacity="10%";
+    divMasInfoPost.innerHTML += infoPost
+    div.style.opacity="10%";
 
-//CERRAR LA VENTANA FLOTANTE
-document.getElementById("closeFlotante").addEventListener("click", e=>{
-    e.preventDefault();
-    
-    div.style.opacity="100%";
-    divMasInfoPost.style.opacity="0%";
-    
-})
+    //CERRAR LA VENTANA FLOTANTE
+    document.getElementById("closeFlotante").addEventListener("click", e=>{
+        e.preventDefault();
+        
+        div.style.opacity="100%";
+        divMasInfoPost.style.opacity="0%";
+    })
 
 }
