@@ -16,7 +16,7 @@
 }
 #redesNavPortada {
     display: flex;
-    padding: 1%;
+    padding: 0.5%;
     background-color: white;
     margin: auto auto auto 5%;
     max-width: 20%;
@@ -215,7 +215,23 @@ td
     color: white;
     margin: auto;
 }
+
+#redesNavPortada {
+    display: flex;
+    padding: 1%;
+    background-color: white;
+    margin: auto auto auto 5%;
+    max-width: 20%;
+    border-radius: 10px;
+}
+#redesNavPortada img {
+    width: 13%;
+    margin: auto;
+}
 #redesfooter{
+    background-color: white;
+    border-radius: 10px;
+    padding: 0.4%;
     display: flex;
     margin: auto;
     max-width: 20%;
@@ -371,4 +387,3 @@ opacity: 0%;
 #pOculto1:hover{
     opacity: 100%;
 }
-
