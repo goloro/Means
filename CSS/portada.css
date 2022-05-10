@@ -286,6 +286,43 @@ td
         }
     #insigniasTxt
     {
-        width: 77%;margin-top: 8%;margin-left: 12%;}
-    
+        width: 77%;margin-top: 8%;margin-left: 12%;
+    }
+    .navBarPortada
+    {
+        display: inline-block;
+    }
+    #redesNavPortada
+    {
+        margin:auto;
+    }
+    #btnNavPortada
+    {
+        margin: auto;
+    }
+    .logoPortada h1 {
+        text-align: center;
+        margin-bottom: 5%;
+        font-size: 2.2em;
+        width: 80%;
+    }
+    .perfilesPortada
+    {
+        display: inline-block;
+        width: 100%;
+    }
+    .tarjetaPerfil
+    {
+        height: 18vh;
+        margin-bottom: 3%;
+        width: 50%;
+    }
+    .tarjetaPerfil img {
+        width: 70%;
+    }
+    .logoPortada img 
+    {
+        width: 80%;
+    }
+
 }
