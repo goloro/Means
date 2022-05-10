@@ -43,6 +43,7 @@
 .logoPortada {
     display: flex;
     flex-direction: column;
+    margin-top: 60px
 }
 .logoPortada img {
     margin: 0 auto 0 auto;
@@ -295,10 +296,22 @@ td
     #redesNavPortada
     {
         margin:auto;
+        max-width: 100%;
+        width: 50%;
+        position: relative;
+        top : 4.5em;
+        
+    
     }
     #btnNavPortada
     {
         margin: auto;
+        position: relative;
+        top: -3em;
+    }
+    #btnNavPortada
+    {
+        width: 100%;
     }
     .logoPortada h1 {
         text-align: center;
