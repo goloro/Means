@@ -173,21 +173,29 @@ td
 
 .insigniasInfo {
     display: flex;
-    width: 80%;
-    margin: 6% auto 0 auto;
+    width: 100%;
+    margin-top : 10%;
+    
 }
 #insigniasImg {
     width: 40%;
     margin: auto 0 auto 0;
-margin-right: 25%;}
-#insigniasImg img{
-    width: 190%;
-height: 100%;/* margin-left: 40%; *//* margin-right: 40%; */}
+    margin-right: 25%;
+}
+#insigniasImg img
+{
+    width: 155%;
+    height: 100%;
+    margin-left: 15%;
+}
+
 #insigniasTxt {
     width: 50%;
     margin-left: 150px;
     font-family: 'Baloo 2';
-    font-size: 23px;
+    font-size: 25px;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .footer {
@@ -269,17 +277,56 @@ height: 100%;/* margin-left: 40%; *//* margin-right: 40%; */}
     #parrafoInsignia
     {
         width: 100%;
-    text-align: center;
-    font-size: 0.9em;}
+        text-align: center;
+        font-size: 0.9em;
+}
     #insigniasImg
      {
          width: 50%;
-     margin-left: 23%;margin-right: 23%;}
+         margin-left: 4%;
+         
+        }
     #insigniasTxt
     {
-        width : 100%
+        width: 77%;margin-top: 8%;margin-left: 12%;
     }
-    
+    .navBarPortada
+    {
+        display: inline-block;
+    }
+    #redesNavPortada
+    {
+        margin:auto;
+    }
+    #btnNavPortada
+    {
+        margin: auto;
+    }
+    .logoPortada h1 {
+        text-align: center;
+        margin-bottom: 5%;
+        font-size: 2.2em;
+        width: 80%;
+    }
+    .perfilesPortada
+    {
+        display: inline-block;
+        width: 100%;
+    }
+    .tarjetaPerfil
+    {
+        height: 18vh;
+        margin-bottom: 3%;
+        width: 50%;
+    }
+    .tarjetaPerfil img {
+        width: 70%;
+    }
+    .logoPortada img 
+    {
+        width: 80%;
+    }
+
 }
 
 .tarjetaPerfil:hover img{
