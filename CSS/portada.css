@@ -181,12 +181,13 @@ td
     margin: auto 0 auto 0;
 margin-right: 25%;}
 #insigniasImg img{
-    width: 100%;
+    width: 190%;
 height: 100%;/* margin-left: 40%; *//* margin-right: 40%; */}
 #insigniasTxt {
-    width: 60%;
+    width: 50%;
+    margin-left: 150px;
     font-family: 'Baloo 2';
-    font-size: 25px;
+    font-size: 23px;
 }
 
 .footer {
@@ -310,3 +311,4 @@ opacity: 0%;
 #pOculto1:hover{
     opacity: 100%;
 }
+
