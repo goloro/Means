@@ -9,6 +9,8 @@
     <link rel='stylesheet' type='text/css' media='screen' href='/CSS/navegador.css'>
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link rel='stylesheet' type='text/css' media='screen' href='/CSS/crearPublicacion.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/CSS/crearPublicacion_responsive.css'>
+
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
 
 </head>
@@ -52,72 +54,83 @@
     </nav>
 
     <!--CREAR PUBLICACION-->
-
-    <div class="crearPubl">
-        <div id="divcreaPost">
-            <img src="../Imagenes/Logos/MeansHexagonoSinFondo.png" width="110px" id="imgLogo">
-                <div id="contenido1">
-                    <h1>Crear Post</h1>
-                    <br><br>
-                    <!-- <hr> -->
-                </div>
-        </div>
-        <div class="divBloques">
-            <div id="div1">
-                <br>
-                <label>Nombre 
-                <input id="inputNombrePost" type="text">
-                </label><br><br>
-
-                <label>Descripción breve<br>
-                    <textarea id="inputDescBr" rows="4" cols="30" placeholder="Escriba una descripción breve"></textarea>
-                </label><br><br>
-
-                <label>Descripción extensa<br>
-                    <textarea id="inputDescEx" rows="8" cols="30" placeholder="Escriba una descripción mas extensa"></textarea>
-                </label>
-            </div>
-            <div id="div2">
-                <label>Personas
-                    <button>Si</button>
-                    <button>No</button><br>
-                    <textarea id="inputPers" placeholder="Tipo y Nº" rows="6" cols="30"></textarea>
-                </label><br><br>
-
-                <label>Dinero
-                    <button>Si</button>
-                    <button>No</button><br>
-                    <input id="inputDinero" type="number" placeholder="Cantidad">
-                </label><br><br>
-
-                <label>Fecha Inicio<br>
-                    <input id="inputFechaIni" type="date">
-                </label><br><br>
-
-                <label>Fecha Fin<br>
-                    <input id="inputFechaFin" type="date">
-                </label><br>
-            </div><br><br><br>
+    <div class="createPost">
+        <div class="titleCP">
+            <h1>Crear Post</h1>
         </div>
 
-            <div class="imgPost">
-                <h2 id = "tImagenPost">Imagen del Post</h2>
-
-                <div class="imgCat">
-                    <img id="imgEv1" src="../Imagenes/Pics/Categorias/ImgCatConvenciones.png" width="200px">
-                    <img id="imgEv2" src="../Imagenes/Pics/Categorias/ImgCatCultural.png" width="210px">
-                    <img id="imgEv3" src="../Imagenes/Pics/Categorias/ImgCatDeportivos.png" width="200px">
-                    <img id="imgEv4" src="../Imagenes/Pics/Categorias/ImgCatTecnologia.jpg" width="200px" >
-                    <img id="imgEv5" src="../Imagenes/Pics/Categorias/ImgCatGastronomia.jpg" width="200px">
-                    <img id="imgEv6" src="../Imagenes/Pics/Categorias/ImgCatMusica.png" width="200px">
-                    <img id="imgEv7" src="../Imagenes/Pics/Categorias/ImgCatSolidario.png" width="200px">
-                    <img id="imgEv8" src="../Imagenes/Pics/Categorias/ImgCatEmpresa.png" width="200px"> 
+        <div class="formCP">
+            <div class="subForm" id="formLeft">
+                <div id="nameField" class="formCPField">
+                    <div>
+                        <p class="formCPFieldTitle">Nombre</p><input class="formCPFieldInput" id="inputNombrePost" type="text" placeholder="Introduce el nombre del post">
+                    </div>
+                </div>
+                <div id="shortDescriptionField" class="formCPField">
+                    <div>
+                        <p class="formCPFieldTitle">Descripción breve</p><textarea class="formCPFieldInput" id="inputDescBr" rows="4" maxlength="150" placeholder="Escriba una descripción breve"></textarea>
+                    </div>
+                </div>
+                <div id="largeDescriptionField" class="formCPField">
+                    <div>
+                        <p class="formCPFieldTitle">Descripción extensa</p><textarea class="formCPFieldInput" id="inputDescBr" rows="10" maxlength="500" placeholder="Escriba una descripción extensa"></textarea>
+                    </div>
                 </div>
             </div>
-            <button id="btnPublicar2" type="button">Publicar Post</button>
+            <div class="subForm" id="formRight">
+                <div id="peopleField" class="formCPField">
+                    <div>
+                        <div class="fieldBtns"><p class="formCPFieldTitle">Personas</p><div class="subFieldBtns"><button id="peopleYes">Si</button><button id="peopleNo">No</button></div></div>
+                        <div id="peopleTable">
+                            <div id="headerPeopleTable">
+                                <p class="leftItemPeopleTable">Tipo</p>
+                                <p class="rigthItemPeopleTable">Nº</p>
+                            </div>
+                            <div id="divPeopleLines">
+                                <div id="1">
+                                    <input id="tipo1" class="leftItemPeopleTable" type="text">
+                                    <input id="number1" class="rigthItemPeopleTable" type="number">
+                                </div>
+                            </div>
+                            <img id="addPeopleLine" src="https://api.iconify.design/ant-design/plus-square-filled.svg?color=%23699bf7">
+                        </div>
+                    </div>
+                </div>
+                <div id="moneyField" class="formCPField">
+                    <div>
+                        <div class="fieldBtns"><p class="formCPFieldTitle">Dinero</p><div class="subFieldBtns"><button id="moneyYes">Si</button><button id="moneyNo">No</button></div></div><input class="formCPFieldInput" id="moneyInput" type="text" placeholder="Introduce la cantidad a solicitar">
+                    </div>
+                </div>
+                <div id="startDateField" class="formCPField">
+                    <div>
+                        <p class="formCPFieldTitle">Fecha Inicio</p><input class="formCPFieldInput" id="inputNombrePost" type="date">
+                    </div>
+                </div>
+                <div id="finishDateField" class="formCPField">
+                    <div>
+                        <p class="formCPFieldTitle">Fecha Fin</p><input class="formCPFieldInput" id="inputNombrePost" type="date">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="imgPost">
+            <p class="formCPFieldTitle" id="imagenTitle">Imagen del Post</p>
+
+            <div class="imgCatCP">
+                <img id="imgEv1" src="../Imagenes/Pics/Categorias/ImgCatConvenciones.png" width="200px">
+                <img id="imgEv2" src="../Imagenes/Pics/Categorias/ImgCatCultural.png" width="210px">
+                <img id="imgEv3" src="../Imagenes/Pics/Categorias/ImgCatDeportivos.png" width="200px">
+                <img id="imgEv4" src="../Imagenes/Pics/Categorias/ImgCatTecnologia.jpg" width="200px" >
+                <img id="imgEv5" src="../Imagenes/Pics/Categorias/ImgCatGastronomia.jpg" width="200px">
+                <img id="imgEv6" src="../Imagenes/Pics/Categorias/ImgCatMusica.png" width="200px">
+                <img id="imgEv7" src="../Imagenes/Pics/Categorias/ImgCatSolidario.png" width="200px">
+                <img id="imgEv8" src="../Imagenes/Pics/Categorias/ImgCatEmpresa.png" width="200px"> 
+            </div>
+        </div>
+
+        <button id="btnPublicar2" type="button">Crear Post</button>
     </div>
- 
-
 
     <!-- SCRIPT -->
     <script src="../JS/navegador.js"></script>
