@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear publicación</title>
+
     <link rel="shorcut icon" href="../Imagenes/Logos/MeansHexagonoSinFondo.png">
+
     <link rel='stylesheet' type='text/css' media='screen' href='/CSS/navegador.css'>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link rel='stylesheet' type='text/css' media='screen' href='/CSS/crearPublicacion.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='/CSS/crearPublicacion_responsive.css'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='/CSS/Responsive/crearPublicacion_responsive.css'> -->
 
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -63,17 +65,17 @@
             <div class="subForm" id="formLeft">
                 <div id="nameField" class="formCPField">
                     <div>
-                        <p class="formCPFieldTitle">Nombre</p><input class="formCPFieldInput" id="inputNombrePost" type="text" placeholder="Introduce el nombre del post">
+                        <p class="formCPFieldTitle">Nombre</p><input class="formCPFieldInput" id="namePost" type="text" placeholder="Introduce el nombre del post">
                     </div>
                 </div>
                 <div id="shortDescriptionField" class="formCPField">
                     <div>
-                        <p class="formCPFieldTitle">Descripción breve</p><textarea class="formCPFieldInput" id="inputDescBr" rows="4" maxlength="150" placeholder="Escriba una descripción breve"></textarea>
+                        <p class="formCPFieldTitle">Descripción breve</p><textarea class="formCPFieldInput" id="descShortPost" rows="4" maxlength="150" placeholder="Escriba una descripción breve"></textarea>
                     </div>
                 </div>
                 <div id="largeDescriptionField" class="formCPField">
                     <div>
-                        <p class="formCPFieldTitle">Descripción extensa</p><textarea class="formCPFieldInput" id="inputDescBr" rows="10" maxlength="500" placeholder="Escriba una descripción extensa"></textarea>
+                        <p class="formCPFieldTitle">Descripción extensa</p><textarea class="formCPFieldInput" id="descLargePost" rows="10" maxlength="500" placeholder="Escriba una descripción extensa"></textarea>
                     </div>
                 </div>
             </div>
@@ -98,17 +100,17 @@
                 </div>
                 <div id="moneyField" class="formCPField">
                     <div>
-                        <div class="fieldBtns"><p class="formCPFieldTitle">Dinero</p><div class="subFieldBtns"><button id="moneyYes">Si</button><button id="moneyNo">No</button></div></div><input class="formCPFieldInput" id="moneyInput" type="text" placeholder="Introduce la cantidad a solicitar">
+                        <div class="fieldBtns"><p class="formCPFieldTitle">Dinero</p><div class="subFieldBtns" id="moneyButtons"><button id="moneyYes">Si</button><button id="moneyNo">No</button></div></div><input class="formCPFieldInput" id="moneyPost" type="number" placeholder="Introduce la cantidad a solicitar">
                     </div>
                 </div>
                 <div id="startDateField" class="formCPField">
                     <div>
-                        <p class="formCPFieldTitle">Fecha Inicio</p><input class="formCPFieldInput" id="inputNombrePost" type="date">
+                        <p class="formCPFieldTitle">Fecha Inicio</p><input class="formCPFieldInput" id="startDatePost" type="date">
                     </div>
                 </div>
                 <div id="finishDateField" class="formCPField">
                     <div>
-                        <p class="formCPFieldTitle">Fecha Fin</p><input class="formCPFieldInput" id="inputNombrePost" type="date">
+                        <p class="formCPFieldTitle">Fecha Fin</p><input class="formCPFieldInput" id="finishDatePost" type="date">
                     </div>
                 </div>
             </div>
@@ -129,12 +131,12 @@
             </div>
         </div>
 
-        <button id="btnPublicar2" type="button">Crear Post</button>
+        <button id="btnCP">Crear Post</button>
     </div>
 
     <!-- SCRIPT -->
     <script src="../JS/navegador.js"></script>
-    <script src="../JS/posts.js" type="module"></script>
+    <script src="../JS/createPost.js" type="module"></script>
     
 </body>
 </html>

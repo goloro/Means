@@ -38,15 +38,15 @@ body {
     }
     #peopleYes, #moneyYes { background-color: rgb(156, 222, 138); color: white; border: none; }
     #peopleNo, #moneyNo { background-color: rgb(245, 41, 41); color: white; border: none; }
-    #peopleTable { width: 100%; background-color: #E8E7E7; border-radius: 5px; display: none; }
+    #peopleTable { width: 100%; background-color: #E8E7E7; border-radius: 5px; display: none; flex-direction: column; }
         #headerPeopleTable, #divPeopleLines { display: flex; width: 100%; margin-top: 1%; }
         #divPeopleLines { flex-direction: column; }
         #divPeopleLines div { width: 100%; display: flex; }
         #divPeopleLines input { border: none; border-radius: 5px; margin: 1% auto 1% auto; padding: 0.5% 2% 0.5% 2%; font-size: 0.8rem; }
         .leftItemPeopleTable { width: 75%; font-size: 0.9rem; margin-left: 4%; }
         .rigthItemPeopleTable { width: 15%; font-size: 0.9rem; margin: 0 4% 0 1%; text-align: center; }
-        #addPeopleLine { margin-left: 4%; cursor: pointer; }
-    #moneyInput { display: none; }
+        #addPeopleLine { margin: 0 0 1% 4%; cursor: pointer; width: 5%; }
+    #moneyPost { display: none; }
 
 .imgPost { width: 90%; margin: auto auto 2% auto; }
     #imagenTitle { width: 100%; text-align: center; }
@@ -59,7 +59,7 @@ body {
     }
     .imgCatCP img { cursor: pointer; margin: auto; }
 
-#btnPublicar2 {
+#btnCP {
     margin: 0 auto 2% auto ;
     background-image: linear-gradient(#254EEC , #8A26EC);
     color: white;
@@ -71,10 +71,4 @@ body {
     cursor: pointer;
 }
 
-#btnPublicar2:hover{ background-image: linear-gradient(#1c3ab1 , #7220c4); }
-
-
-/* #peopleYes { background-color: rgb(88, 216, 52); color: white; border: none; }
-#moneyYes { background-color: rgb(88, 216, 52); color: white; border: none; }
-#peopleNo { background-color: rgb(244, 98, 98); color: white; border: none; }
-#moneyNo { background-color: rgb(244, 98, 98); color: white; border: none; } */
+#btnCP:hover{ background-image: linear-gradient(#1c3ab1 , #7220c4); }

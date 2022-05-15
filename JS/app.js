@@ -1,5 +1,5 @@
 // IMPORTS
-import { getPosts, createPost } from './common/dbCalls/posts.js'
+import { getPosts } from './common/dbCalls/posts.js'
 
 // CONSTS
 const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
