@@ -1,5 +1,5 @@
 // IMPORTS
-import { getPosts, createPost } from '../JS/posts.js'
+import { getPosts, createPost } from './dbCalls/posts.js'
 
 // CONSTS
 const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
@@ -13,7 +13,7 @@ const divPost = document.getElementById("divPost");
 
 
 // FUNCTIONS
-getPosts(0, divPost)
+getPosts(0, divPost, {idUser: localUser.email})
 
 if (localUser) loadUser()
 

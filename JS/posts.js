@@ -1,5 +1,5 @@
 // IMPORTS
-import { RequestHandlerClass } from '../JS/requestHandler.js'
+import { RequestHandlerClass } from './requestHandler.js'
 
 // CONSTS
 const RequestHandler = new RequestHandlerClass();
@@ -23,16 +23,17 @@ const divMasInfoPost = document.getElementById("divMasInfoPost");
 // })
 
 //FUNCTIONS
-export default async function getPosts(callOption, postsContainer, ids) {
+export async function getPosts(callOption, postsContainer, ids) {
     // callOption [0] -> POSTS HOME
     // callOption [1] -> POSTS PROFILE
     let posts
     switch (callOption) {   
         case 0: posts = await RequestHandler.getDefault("http://localhost:8085/post/")
-        case 1: posts = await RequestHandler.getDefault("http://localhost:8085/users/" + ids.idUser)
-        case 2: posts = await RequestHandler.getDefault("http://localhost:8085/" + ids.idPost)
+        case 1: if (ids.idUser) posts = await RequestHandler.getDefault("http://localhost:8085/post/user/" + ids.idUser)
+        case 2: if (ids.idPost) posts = await RequestHandler.getDefault("http://localhost:8085/post/" + ids.idPost)
     }
-    if (posts) await posts.forEach(e => { postCall(e), postsContainer });
+    if (posts && posts.length > 1) await posts.forEach(e => { postCall(e, postsContainer) });
+    if (posts.length > 1) postCall(posts, postsContainer)
 }
 
 async function postCall(post, postContainer) {
@@ -72,7 +73,7 @@ async function postCall(post, postContainer) {
                     </div>
                     <div class="postBodyRightBotDiv">
                         <img src="https://api.iconify.design/fluent/people-20-filled.svg?color=%23514f4f" >
-                        <p>${ 0 }</p>
+                        <p>${ totalPeople }</p>
                     </div>
                 </div>
             </div>
@@ -87,7 +88,7 @@ async function postCall(post, postContainer) {
     })
 }
 
-export default async function createPost(data) {
+export async function createPost(data) {
     return await RequestHandler.postDefault("http://localhost:8085/post/create", data)
 }
 
