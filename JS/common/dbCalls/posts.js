@@ -88,7 +88,7 @@ async function postCall(post, postContainer) {
     })
 }
 
-export async function createPost(data) {
+export async function createPostCall(data) {
     return await RequestHandler.postDefault("http://localhost:8085/post/create", data)
 }
 

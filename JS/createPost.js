@@ -1,5 +1,5 @@
 // IMPORTS
-import { createPost } from './common/dbCalls/posts.js'
+import { createPostCall } from './common/dbCalls/posts.js'
 
 // CONSTS
 const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
@@ -55,11 +55,28 @@ function changeColorNo(btnYes, btnNo) {
     btnNo.style.backgroundColor = "rgb(245, 41, 41)"
 }
 
-function createPostCall() {
+function createPost() {
     const name = document.getElementById("namePost")
     const descShort = document.getElementById("descShortPost")
     const descLarge = document.getElementById("descLargePost")
     const money = document.getElementById("moneyPost")
     const startDate = document.getElementById("startDatePost")
     const finishDate = document.getElementById("finishDatePost")
+
+    createPostCall({
+        idUser: localUser.email,
+        name: name,
+        smallDescription: descShort,
+        largeDescription: descLarge,
+        money: money,
+        startDate: startDate,
+        finishDare: finishDate,
+    })
+
+    name.value = ""
+    descShort.value = ""
+    descLarge.value = ""
+    money.value = ""
+    startDate.value = ""
+    finishDate.value = ""
 }
