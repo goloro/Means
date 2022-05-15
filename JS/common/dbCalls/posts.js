@@ -26,11 +26,22 @@ const divMasInfoPost = document.getElementById("divMasInfoPost");
 export async function getPosts(callOption, postsContainer, ids) {
     // callOption [0] -> POSTS HOME
     // callOption [1] -> POSTS PROFILE
+    // callOption [2] -> SEARCH BY ID POST
+
     let posts
     switch (callOption) {   
-        case 0: posts = await RequestHandler.getDefault("http://localhost:8085/post/")
-        case 1: if (ids.idUser) posts = await RequestHandler.getDefault("http://localhost:8085/post/user/" + ids.idUser)
-        case 2: if (ids.idPost) posts = await RequestHandler.getDefault("http://localhost:8085/post/" + ids.idPost)
+        case 0: {
+            posts = await RequestHandler.getDefault("http://localhost:8085/post/")
+            break
+        }
+        case 1: {
+            if (ids.idUser) posts = await RequestHandler.getDefault("http://localhost:8085/post/user/" + ids.idUser)
+            break
+        }
+        case 2: {
+            if (ids.idPost) posts = await RequestHandler.getDefault("http://localhost:8085/post/" + ids.idPost)
+            break
+        }
     }
     if (posts && posts.length > 1) await posts.forEach(e => { postCall(e, postsContainer) });
     if (posts.length > 1) postCall(posts, postsContainer)
@@ -38,9 +49,9 @@ export async function getPosts(callOption, postsContainer, ids) {
 
 async function postCall(post, postContainer) {
     let totalPeople = 0
-    post.people.forEach(e => { totalPeople += e.count });
+    if (post.people) post.people.forEach(e => { totalPeople += e.count });
     
-    const userPost = await RequestHandler.getDefault("http://localhost:8085/users/" + post.idUser)
+    const userPost = await RequestHandler.getDefault("http://localhost:8085/users/id/" + post.idUser)
 
     let postCard = `
     <div class="cardPost">

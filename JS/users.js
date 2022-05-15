@@ -1,5 +1,5 @@
 // IMPORTS
-import { RequestHandlerClass } from '../JS/requestHandler.js'
+import { RequestHandlerClass } from '../JS/common/dbCalls/requestHandler.js'
 
 // CONSTS
 const RequestHandler = new RequestHandlerClass()

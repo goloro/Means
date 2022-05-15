@@ -1,5 +1,6 @@
 // IMPORTS
-import { RequestHandlerClass } from '../JS/requestHandler.js'
+import { RequestHandlerClass } from '../JS/common/dbCalls/requestHandler.js'
+import { getPosts } from './common/dbCalls/posts.js'
 
 // CONSTS
 const RequestHandler = new RequestHandlerClass()
@@ -178,8 +179,7 @@ function changeView(item) {
 async function viewPosts() {
     deleteInfo() 
 
-    const post = await RequestHandler.getDefault("http://localhost:8085/post/user/" + localUser.email)
-    if (post) await post.forEach(e => { loadPost(e) });
+    getPosts(1, divInfo, { idUser: localUser._id })
 }
 async function viewReviews() {
     deleteInfo()
@@ -201,55 +201,6 @@ function viewEdit() {
 
 function deleteInfo() {
     divInfo.innerHTML = ""
-}
-
-async function loadPost(post) {
-    let totalPeople = 0
-    post.people.forEach(e => { totalPeople += e.count });
-
-    const userPost = await RequestHandler.getDefault("http://localhost:8085/users/" + post.idUser)
-    
-    let postCard = `
-    <div class="cardPost">
-        <div class="postImage">
-            <img src="${ post.image }">
-        </div>
-        <div class="postBody">
-            <div class="postBodyLeft">
-                <div id="postBodyLeftTop">
-                    <div class="postUser">
-                        <img id="iconUser" src="${ userPost.icono }">
-                        <img id="insUser" src="${ userPost.insignias[0] }">
-                    </div>
-                    <p id="titlePost">${ post.name }</p>
-                </div>
-                <p id="textPost">${ post.smallDescription }</p>
-                <button id="moreInfoPost">Más Información</button>
-            </div>
-            <div class="postBodyRight">
-                <div class="postBodyRightTop">
-                    <div>
-                        <img src="https://api.iconify.design/uil/favorite.svg?color=%23ffd600">
-                        <img src="https://api.iconify.design/bi/chat-square-dots-fill.svg?color=%23514f4f">
-                    </div>
-                </div>
-                <div class="postBodyRightBot">
-                    <div class="postBodyRightBotDiv">
-                        <img src="https://api.iconify.design/healthicons/money-bag.svg?color=%23514f4f">
-                        <p>${ post.money }</p>
-                    </div>
-                    <div class="postBodyRightBotDiv">
-                        <img src="https://api.iconify.design/fluent/people-20-filled.svg?color=%23514f4f" >
-                        <p>${ totalPeople }</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>`
-
-    
-
-    divInfo.innerHTML += postCard
 }
 
 async function loadReviews(review) {

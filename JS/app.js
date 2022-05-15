@@ -13,7 +13,7 @@ const divPost = document.getElementById("divPost");
 
 
 // FUNCTIONS
-getPosts(0, divPost, {idUser: localUser.email})
+getPosts(0, divPost, {})
 
 if (localUser) loadUser()
 

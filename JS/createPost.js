@@ -185,6 +185,8 @@ function createPost() {
     money.value = ""
     startDate.value = ""
     finishDate.value = ""
+
+    window.open("/HTML/app.html", "_self")
 }
 
 function createProblem(msg) {
