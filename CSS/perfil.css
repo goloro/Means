@@ -235,23 +235,3 @@
     color: white;
     background: linear-gradient(to bottom, blue, rgb(140, 0, 255));
 }
-
-/* PROBLEM CARD */
-.problemCard {
-    display: flex;
-    position: absolute;
-    width: 20%;
-    height: 20%;
-    background-color: red;
-    top: 10%;
-    left: 5%;
-    border-radius: 20px;
-    visibility: hidden;
-}
-.problemCard p {
-    width: 90%;
-    margin: auto;
-    font-size: xx-large;
-    text-align: center;
-    color: white;
-}
