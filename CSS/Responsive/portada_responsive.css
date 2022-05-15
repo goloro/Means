@@ -1,0 +1,217 @@
+/***RESPONSIVE ***/ 
+@media (max-width: 1000px)
+{
+    .subDiv1, .subDiv1Derc
+    {
+        display: inline-block;
+
+    }
+    #imgPort1
+    {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .subDiv2Txt, .subDiv2TxtDerc
+    {
+        width: 80%;
+    }
+    .subtitulosP
+    {
+        font-size: 8vw;
+    }
+    .parrafosP
+    {
+        font-size: 3vw;
+    margin-top: 1em;text-align: center;}
+    .subParrafo
+    {
+        font-size: 3vw;
+    }
+    #imgPort2
+    {
+        width: 55%;
+        /* height: 39%; */
+        margin-left: 21%;
+        margin-top: 36px;
+        margin-right: 30%;
+    }
+    #imgPort3
+    {
+        width: 75%;
+        height: 58%;
+        margin-left: 12%;
+        margin-top: -16px;
+        margin-right: 12%;
+        position: relative;
+        bottom: -59vw;
+    }
+    .insigniasInfo
+    {
+        display: inline-block;
+    }
+    #parrafoInsignia
+    {
+        width: 100%;
+        text-align: center;
+        font-size: 3.4vw;
+    }
+    #insigniasImg
+     {
+         width: 50%;
+         margin-left: 4%;
+         
+    }
+    #insigniasTxt
+    {
+        width: 77%;
+        margin-top: 8%;
+        margin-left: 12%;
+    }
+    .navBarPortada
+    {
+        display: inline-block;
+    }
+    #redesNavPortada
+    {
+        margin:auto;
+        max-width: 100%;
+        width: 50%;
+        position: relative;
+        top: 13vw;
+        
+    }
+    #btnNavPortada
+    {
+        margin: auto;
+        position: relative;
+        margin-top: -6%;
+    }
+    #btnNavPortada
+    {
+        width: 100%;
+    }
+    .logoPortada h1 {
+        text-align: center;
+        margin-bottom: 5%;
+        font-size: 7vw;
+        width: 80%;
+    }
+    .perfilesPortada
+    {
+        display: inline-block;
+        width: 100%;
+    }
+    .tarjetaPerfil
+    {
+        height: 30vw !important;
+        max-height: 30vw !important;
+        width: 74vw !important;
+        margin-bottom : 40px !important;
+    }
+    .tarjetaPerfil img {
+        width: 36vw;
+    margin-left: 25%;
+    }
+    .logoPortada img 
+    {
+        width: 80%;
+    }
+    #insigniasLogo td 
+    {
+        margin:auto;
+    }
+    
+    #in1, #in2, #in3, #in4,#in5
+    {
+        width: 100%;
+        height: 100%;
+    }
+    #td1
+    {
+        width: 30%;
+        height: 30%;
+    }
+    #td2
+    {
+        width: 25%;
+        height: 25%;
+    }
+    #td3
+    {
+        width: 20%;
+        height: 20%;
+    }
+    #td4
+    {
+        width: 15%;
+        height: 15%;
+    }
+    #td5
+    {
+        width: 10%;
+        height: 10%;
+    }
+    
+    
+    #filaCat td
+    {
+        font-size: 3vw;
+    }
+    #filaEstrellas td
+    {
+        font-size: 2.5vw;
+    }
+    #filaEstrellas img
+    {
+        width: 16px;
+        height: 17px;
+        top: 3px;
+        position: relative;
+    }
+    #meansLogo
+    {
+        width: 30%;
+    }
+    #emailfooter
+    {
+        font-size: 3.5vw;
+        width: 70%;
+        text-align: center;
+    }
+    #redesfooter
+    {
+        max-width: 100%;
+        width: 20%;
+        display: none;
+    }
+    #divTxt1
+    {
+
+        position: relative;
+        top: -39vw;}
+    
+    #imgPort1
+    {
+        position: relative;
+        bottom: -38vw;
+    }
+    #divTxt3
+    {
+        position: relative;
+        top: -58vw;
+    }
+
+    #btnNavPortada a 
+    {
+        
+        font-size: 4.5vw;
+    }
+    .logoPortada 
+    {
+        margin-top: 17vw;
+    }
+
+}
+
+

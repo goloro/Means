@@ -1,0 +1,95 @@
+@media (max-width: 1000px) {
+    nav {
+        display: none;
+    }
+
+    #imagenBackPerfil {
+        max-height: 40vw;
+        width: 100%;
+        margin: 0px;
+    }
+
+    #iconoPerfil {
+        width: 20vw;
+        height: 20vw;
+        margin-left: 8vw;
+        margin-right: 3vw;
+    }
+
+    #nameUser {
+        font-size: 5vw;
+    }
+
+    .insigniasDiv h3 {
+        font-size: 3vw;
+    }
+
+    #datosPerfil {
+        display: none;
+    }
+
+    .boxDiv {
+        width: 100%;
+        background-color: rgb(247, 247, 247);
+        border: none;
+        box-shadow: none;
+    }
+
+    .bottomNav {
+        font-size: 2.8vw;
+        margin-left: 7vw;
+        width: 100%;
+    }
+
+    .informationPerfil {
+        margin-top: -11vw;
+    }
+
+    #lineaDivisoria {
+        height: 1px;
+    }
+
+    .cardPost {
+        width: 91vw;
+        margin-left: -3vw;
+        height: 26vw !important;
+        max-height: 26vw !important;
+    }
+
+    #titlePost {
+        font-size: 3.5vw;
+    }
+
+    #textPost {
+        font-size: 2.5vw;
+        width: 98%;
+    }
+
+    #moreInfoPost {
+        width: 23vw;
+        height: 5vw;
+        font-size: 2.5vw;
+        margin-left: 16.5vw;
+    }
+
+    .postBodyRightBot div p {
+        font-size: 2.5vw;
+    }
+
+    .insigniasDiv h3 {
+
+        font-size: 2.2vw;
+    }
+
+    .insigniasDiv {
+
+        position: relative;
+        right: -7vw;
+    }
+
+    #insignias img {
+
+        width: 3vw;
+        margin-top: 0.6vw;
+    }
+}

@@ -1,0 +1,45 @@
+/***RESPONSIVE***/
+@media (max-width: 1000px) {
+    .divBloques {
+        width: 100%;
+        box-shadow: none;
+        display: inline-block;
+    }
+
+    #div1,
+    #div2 {
+        width: 100%;
+    }
+
+    label {
+
+        font-size: 5vw;
+        display: flex;
+    }
+
+    label input {
+
+        width: 63vw;
+        height: 5vw;
+        position: relative;
+        top: 1.6vw;
+        margin-left: 6vw;
+    }
+
+    #inputDescBr {
+
+        margin: auto;
+        width: 31vw;        
+        margin-left: 16vw;
+        height: 12vw;
+        font-size: 2.1vw;
+    }
+
+    #inputDescEx {
+
+        margin: auto;
+        width: 31vw;
+        height: 25vw;
+        font-size: 2.4vw;
+    }
+}
