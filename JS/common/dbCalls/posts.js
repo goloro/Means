@@ -44,7 +44,7 @@ export async function getPosts(callOption, postsContainer, options) {
             break
         }
         case 3: {
-            posts = await RequestHandler.getDefault("http://localhost:8085/post/home/" + options.quantity)
+            posts = await RequestHandler.getDefault("http://localhost:8085/post/home/" + options.quantity + "?nextPage=" + false)
             break
         }
     }
