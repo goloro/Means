@@ -35,7 +35,7 @@ export async function getPosts(callOption, postsContainer, ids) {
             break
         }
         case 1: {
-            if (ids.idUser) posts = await RequestHandler.getDefault("http://localhost:8085/post/user/" + ids.idUser)
+            if (ids.idUser) posts = await RequestHandler.getDefault("http://localhost:8085/post/user/" + ids.idUser, "getPosts")
             break
         }
         case 2: {
@@ -44,14 +44,14 @@ export async function getPosts(callOption, postsContainer, ids) {
         }
     }
     if (posts && posts.length > 1) await posts.forEach(e => { postCall(e, postsContainer) });
-    if (posts.length > 1) postCall(posts, postsContainer)
+    // if (posts.length == 1) await postCall(posts, postsContainer)
 }
 
 async function postCall(post, postContainer) {
     let totalPeople = 0
     if (post.people) post.people.forEach(e => { totalPeople += e.count });
     
-    const userPost = await RequestHandler.getDefault("http://localhost:8085/users/" + post.idUser)
+    const userPost = await RequestHandler.getDefault("http://localhost:8085/users/" + post.idUser, "getUserPost")
 
     let postCard = `
     <div class="cardPost">
