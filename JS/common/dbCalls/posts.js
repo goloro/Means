@@ -48,20 +48,21 @@ export async function getPosts(callOption, postsContainer, options) {
             break
         }
     }
-    if (posts && posts.length > 1) await posts.forEach(e => { postCall(e, postsContainer) });
-    // if (posts.length == 1) await postCall(posts, postsContainer)
+    if (posts) await posts.forEach(e => { postCall(e, postsContainer) });
 }
 
 async function postCall(post, postContainer) {
     let totalPeople = 0
     if (post.people) post.people.forEach(e => { totalPeople += e.count });
+
+    let totalMoney = post.money ? post.money : 0
     
     const userPost = await RequestHandler.getDefault("http://localhost:8085/users/" + post.idUser, "getUserPost")
 
     let postCard = `
     <div class="cardPost">
         <div class="postImage">
-            <img src="https://www.eventsforce.com/wp-content/uploads/2018/01/onboarding.jpg">
+            <img src="${ post.image }">
         </div>
         <div class="postBody">
             <div class="postBodyLeft">
@@ -85,7 +86,7 @@ async function postCall(post, postContainer) {
                 <div class="postBodyRightBot">
                     <div class="postBodyRightBotDiv">
                         <img src="https://api.iconify.design/healthicons/money-bag.svg?color=%23514f4f">
-                        <p>${ post.money }</p>
+                        <p>${ totalMoney }</p>
                     </div>
                     <div class="postBodyRightBotDiv">
                         <img src="https://api.iconify.design/fluent/people-20-filled.svg?color=%23514f4f" >
@@ -105,8 +106,8 @@ async function postCall(post, postContainer) {
     })
 }
 
-export async function createPostCall(data) {
-    return await RequestHandler.postDefault("http://localhost:8085/post/create", data)
+export async function createPostCall(post) {
+    return await RequestHandler.postDefault("http://localhost:8085/post/create", post)
 }
 
 async function masInfoPost(idPost) {

@@ -144,13 +144,12 @@ function createPost() {
 
     const postDoc = {
         idUser: localUser.email,
-        name: name,
-        smallDescription: descShort,
-        largeDescription: descLarge,
-        startDate: startDate,
-        finishDare: finishDate,
+        name: name.value,
+        smallDescription: descShort.value,
+        largeDescription: descLarge.value,
+        startDate: startDate.value,
+        finishDate: finishDate.value,
         image: selectedIMGCat,
-        // people: people,
         visibilities: 0
     }
 
