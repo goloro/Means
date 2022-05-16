@@ -33,6 +33,7 @@
         background-color: rgb(247, 247, 247);
         border: none;
         box-shadow: none;
+        min-height: auto;
     }
 
     .bottomNav {
