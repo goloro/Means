@@ -13,7 +13,7 @@ const divPost = document.getElementById("divPost");
 
 
 // FUNCTIONS
-getPosts(0, divPost)
+getPosts(3, divPost, {quantity: 10})
 
 if (localUser) loadUser()
 

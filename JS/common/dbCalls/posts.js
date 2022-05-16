@@ -23,10 +23,11 @@ const divMasInfoPost = document.getElementById("divMasInfoPost");
 // })
 
 //FUNCTIONS
-export async function getPosts(callOption, postsContainer, ids) {
+export async function getPosts(callOption, postsContainer, options) {
     // callOption [0] -> POSTS HOME
     // callOption [1] -> POSTS PROFILE
     // callOption [2] -> SEARCH BY ID POST
+    // callOption [3] -> SEARCH HOME POSTS
 
     let posts
     switch (callOption) {   
@@ -35,11 +36,15 @@ export async function getPosts(callOption, postsContainer, ids) {
             break
         }
         case 1: {
-            if (ids.idUser) posts = await RequestHandler.getDefault("http://localhost:8085/post/user/" + ids.idUser, "getPosts")
+            if (ids.idUser) posts = await RequestHandler.getDefault("http://localhost:8085/post/user/" + options.idUser, "getPosts")
             break
         }
         case 2: {
-            if (ids.idPost) posts = await RequestHandler.getDefault("http://localhost:8085/post/" + ids.idPost)
+            if (ids.idPost) posts = await RequestHandler.getDefault("http://localhost:8085/post/" + options.idPost)
+            break
+        }
+        case 3: {
+            posts = await RequestHandler.getDefault("http://localhost:8085/post/home/" + options.quantity)
             break
         }
     }
