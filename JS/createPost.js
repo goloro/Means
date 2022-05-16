@@ -137,6 +137,11 @@ function createPost() {
         return
     }
 
+    if(finishDate.value<startDate.value){
+        createProblem("La fecha de fin del evento tiene que ser después de la fecha de inicio!")
+        return;
+    }
+
     const postDoc = {
         idUser: localUser.email,
         name: name,
@@ -145,6 +150,8 @@ function createPost() {
         startDate: startDate,
         finishDare: finishDate,
         image: selectedIMGCat,
+        // people: people,
+        visibilities: 0
     }
 
     let peopleFlag = false
@@ -185,6 +192,7 @@ function createPost() {
     money.value = ""
     startDate.value = ""
     finishDate.value = ""
+    people.value = ""
 
     window.open("/HTML/app.html", "_self")
 }
