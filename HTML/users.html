@@ -19,6 +19,8 @@
 
         <a href="/HTML/portada.html"><img id="returnHome" src="https://api.iconify.design/ph/key-return-bold.svg?color=%23222"></a>
 
+        <!-- FORMULARIO COMPLETO NORMAL -->
+    <div id="div-form-user">
         <div class="formulario" id="formularioLogin">
             <div class="formularioContent">
                 <div class="navBar">
@@ -63,13 +65,55 @@
                 </form>
             </div>
         </div>
-
         <!-- Info Inversores -->
         <div class="infoInversores">
             <img  id="tituloInv" src="../Imagenes/Logos/logoInv.png" alt="Logo Inversors">
             <p id="txtInv">¿Quieres convertirte en un inversor de Means? Sigue los pasos de aquí abajo!</p>
             <button id="btnInv">Means Inversores</button>
         </div>
+    </div>
+
+        <!-- REGISTRO INVERSORES -->
+    <div id="div-form-inversores">
+        <div class="formulario" id="formularioLogin">
+            <div class="formularioContent">
+                <div class="navBar">
+                    <button id="registroFormInversores"> Registro de Inversores</button>
+                </div>
+                <img src="../Imagenes/Logos/MeansLogoInversor.png" alt="Logo" id="imgLogoInver">
+
+                
+
+         <!-- Formulario Registro Inversores -->
+         <form class="form-registro-inversores" id="form-registro-inversores">
+            <div class="form-campo">
+                <img src="https://api.iconify.design/wpf/name.svg?color=%23f8f8f8">
+                <input id="campoNameRI" type="text" placeholder="Nombre de la empresa " autocomplete required>
+            </div>
+            <div class="form-campo">
+                <img src="https://api.iconify.design/fluent/mail-16-filled.svg?color=%23f8f8f8">
+                <input id="campoEmailRI" type="email" placeholder="Correo electronico empresarial" autocomplete required>
+            </div>
+            <div class="form-campo">
+                <img src="https://api.iconify.design/ant-design/phone-filled.svg?color=%23f8f8f8">
+                <input id="campoPhoneRI" type="txt" placeholder="Teléfono de la empresa" autocomplete required>
+            </div>
+            <div class="form-campo">
+                <img src="https://api.iconify.design/bxs/lock-alt.svg?color=%23f8f8f8">
+                <input id="campoPasswordRI" type="password" placeholder="Contraseña" autocomplete required>
+            </div>
+            <button class="buttons" id="btnRegistroInversores">Registrar</button>
+        </form>
+    </div>
+</div>
+
+        <!-- Info Inversores -->
+        <div class="infoInversores">
+            <img  id="tituloInv" src="../Imagenes/Logos/logoInv.png" alt="Logo Inversors">
+            <p id="txtInv">¿Tienes una idea pero no tienes suficiente dinero para llevarla a cabo? Créate un perfil, publica tu idea y busca inversores.</p>
+            <button id="btnUsuarios">Means Usuarios</button>
+        </div>
+</div>
 
         <!-- SCRIPT -->
         <script src="../JS/users.js" type="module"></script>

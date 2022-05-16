@@ -55,6 +55,12 @@
   display: block;
   margin: 5% auto 0 auto;
 }
+
+#imgLogoInver{
+  width: 35%;
+  display: block;
+  margin: 5% auto 0 auto;
+}
 .form-login{
   margin: 0 0 0 0;
   padding: 20px 30px;
@@ -145,4 +151,28 @@
   border: none;
   border-radius: 10px;
   background-color: white;
+  cursor: pointer;
+}
+
+#btnUsuarios{
+  width: 60%;
+  height: 5vh;
+  color: black;
+  margin: 0 auto 15% auto;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  cursor: pointer;
+}
+
+#registroFormInversores{
+  background-color: #1641EA;
+  color: white;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+}
+#div-form-inversores{
+  display: none;
 }

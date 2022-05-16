@@ -27,6 +27,7 @@ btnRegistroForm.addEventListener("click", e => {
     registroForm()
 })
 
+
 // FUNCTIONS
 let localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
 if (localUser) window.open("/HTML/app.html", "_self")
@@ -61,7 +62,8 @@ async function registro() {
         name: name.value,
         email: email.value,
         phone: phone.value,
-        password: password.value
+        password: password.value,
+        profile: 0,
     }
 
     const registUser = await RequestHandler.postDefault("http://localhost:8085/users/register", data)
@@ -103,4 +105,53 @@ function registroForm(){
 
 }
 
+//SUPERPONER EL REGISTRO INVERSORES
+const btnInv = document.getElementById("btnInv");
+const btnUsuarios = document.getElementById("btnUsuarios");
+const divFormInversores = document.getElementById("div-form-inversores");
+const divformUser = document.getElementById("div-form-user");
+
+btnInv.addEventListener("click", e=>{
+    e.preventDefault;
+    divFormInversores.style.display="block";
+    divformUser.style.display="none";
+
+})
+
+btnUsuarios.addEventListener("click", e=>{
+    e.preventDefault();
+    divFormInversores.style.display="none";
+    divformUser.style.display="block";
+})
+
+async function registroInversores() {
+    const name = document.getElementById("campoNameRI")
+    const email = document.getElementById("campoEmailRI")
+    const phone = document.getElementById("campoPhoneRI")
+    const password = document.getElementById("campoPasswordRI")
+
+    const data = {
+        name: name.value,
+        email: email.value,
+        phone: phone.value,
+        password: password.value,
+        profile: 1,
+    }
+
+    const registUser = await RequestHandler.postDefault("http://localhost:8085/users/register", data)
+
+    name.value = ""
+    email.value = ""
+    phone.value = ""
+    password.value = ""
+
+    if (registUser == true) {
+        divFormInversores.style.display="none";
+        divformUser.style.display="block";
+    }
+}
+document.getElementById("btnRegistroInversores").addEventListener("click", e=>{
+    e.preventDefault()
+    registroInversores()
+})
 // EXPORTS
