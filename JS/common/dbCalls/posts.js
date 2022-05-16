@@ -51,7 +51,7 @@ async function postCall(post, postContainer) {
     let totalPeople = 0
     if (post.people) post.people.forEach(e => { totalPeople += e.count });
     
-    const userPost = await RequestHandler.getDefault("http://localhost:8085/users/id/" + post.idUser)
+    const userPost = await RequestHandler.getDefault("http://localhost:8085/users/" + post.idUser)
 
     let postCard = `
     <div class="cardPost">
