@@ -1,0 +1,52 @@
+/***RESPONSIVE***/
+@media (max-width: 750px) {
+    #returnHome {
+        width: 12vw !important;
+        margin-top: 4vw !important;
+        margin-left: 4vw !important;
+    }
+
+    .formularioContent {
+
+        width: 90vw !important;
+    }
+
+    .infoInversores {
+        display: none !important;
+    }
+
+    .navBar button {
+
+        font-size: 5vw !important;
+        height: 14vw !important;
+    }
+
+    .form-campo {
+
+        width: 76vw !important;
+        height: 12vw !important;
+    }
+
+    .form-campo input {
+
+        font-size: 4vw !important;
+    }
+
+    #txtHOC {
+        font-size: 3vw !important;
+        width: 93%;
+        margin-top: 0.5vw !important;
+    }
+
+    .buttons {
+
+        width: 48vw !important;
+        font-size: 3vw !important;
+        height: 8vw !important;
+    }
+
+    .form-login {
+        padding: 0 !important;
+    }
+
+}
