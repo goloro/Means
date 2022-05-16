@@ -57,7 +57,7 @@ body {
         width: 80%;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 40px;
-        background-color: lightgrey;
+        background-color: #E8E7E7;
         border-radius: 10px;
         padding: 15px;
     }
