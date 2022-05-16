@@ -36,11 +36,11 @@ export async function getPosts(callOption, postsContainer, options) {
             break
         }
         case 1: {
-            if (ids.idUser) posts = await RequestHandler.getDefault("http://localhost:8085/post/user/" + options.idUser, "getPosts")
+            if (options.idUser) posts = await RequestHandler.getDefault("http://localhost:8085/post/user/" + options.idUser)
             break
         }
         case 2: {
-            if (ids.idPost) posts = await RequestHandler.getDefault("http://localhost:8085/post/" + options.idPost)
+            if (options.idPost) posts = await RequestHandler.getDefault("http://localhost:8085/post/" + options.idPost)
             break
         }
         case 3: {
