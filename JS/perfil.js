@@ -179,7 +179,7 @@ function changeView(item) {
 async function viewPosts() {
     deleteInfo() 
 
-    getPosts(1, divInfo, { idUser: localUser._id })
+    getPosts(1, divInfo, { idUser: localUser.email })
 }
 async function viewReviews() {
     deleteInfo()
