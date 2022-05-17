@@ -1,0 +1,136 @@
+/***RESPONSIVE***/
+@media (max-width: 1000px) {
+    nav {
+        display: none;
+    }
+
+    .createPost {
+        display: flex;
+        /* margin-left: 5vw; */
+        width: 85%;
+    }
+
+    .subForm {
+        width: 100%;
+    }
+
+    .formCP {
+        display: inline-block;
+    }
+
+    .formCPFieldInput {
+
+        width: 61.5vw;
+        font-size: 3vw;
+    }
+
+    .formCPFieldTitle {
+
+        font-size: 4vw;
+    }
+
+    .titleCP h1 {
+
+        font-size: 7vw;
+    }
+
+    .leftItemPeopleTable {
+        font-size: 2.8vw
+    }
+
+
+
+    .imgCatCP {
+
+        width: 76vw;
+        grid-gap: 5vw;
+    }
+
+    #imgEv1,
+    #imgEv2,
+    #imgEv3,
+    #imgEv4,
+    #imgEv5,
+    #imgEv6,
+    #imgEv7,
+    #imgEv8 {
+
+        width: 14vw;
+    }
+
+    #btnCP {
+
+        width: 41vw;
+        margin-left: 27%;
+        font-size: 4.5vw;
+        height: 9vw;
+        margin-top: 6vw;
+    }
+
+    #imagenTitle {
+        font-size: 5.5vw;
+    }
+}
+
+@media (min-width:600px) and (max-width : 1000px) {
+    nav {
+        display: flex;
+    }
+
+    .createPost {
+        width: 551px;
+        ;
+    }
+
+    .titleCP h1 {
+
+        font-size: 42px;
+    }
+
+    .formCPFieldTitle {
+
+        font-size: 23px;
+    }
+
+    .formCPFieldInput {
+
+        width: 395px;
+        font-size: 17px;
+    }
+
+    .imgCatCP {
+
+        width: 501px;
+        grid-gap: 24px;
+    }
+
+    #imgEv1,
+    #imgEv2,
+    #imgEv3,
+    #imgEv4,
+    #imgEv5,
+    #imgEv6,
+    #imgEv7,
+    #imgEv8 {
+
+        width: 100px;
+    }
+
+    #imagenTitle {
+        font-size: 33px;
+    }
+
+    #btnCP {
+
+        width: 263px;
+
+        font-size: 24px;
+        height: 53px;
+        margin-top: 30px;
+    }
+
+    .leftItemPeopleTable {
+        font-size: 20px;
+    }
+
+}
