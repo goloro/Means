@@ -229,6 +229,7 @@ td
 }
 
 /***RESPONSIVE ***/ 
+/*
 @media (max-width: 800px)
 {
     .subDiv1, .subDiv1Derc
@@ -344,7 +345,7 @@ td
     }
 
 }
-
+*/
 .tarjetaPerfil:hover img{
 opacity: 0%;
 }

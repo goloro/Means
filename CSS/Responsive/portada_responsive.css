@@ -1,43 +1,59 @@
-/***RESPONSIVE ***/ 
-@media (max-width: 1000px)
-{
-    .subDiv1, .subDiv1Derc
-    {
+/***RESPONSIVE ***/
+@media (max-width: 1000px) {
+
+    html,
+    body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    .subDiv1,
+    .subDiv1Derc {
         display: inline-block;
 
     }
-    #imgPort1
-    {
+
+    #imgPort1 {
         width: 80%;
         margin-left: 10%;
         margin-right: 10%;
     }
-    .subDiv2Txt, .subDiv2TxtDerc
-    {
+
+    .subDiv2Txt {
         width: 80%;
+        position: relative;
+        top: -39vw;
     }
-    .subtitulosP
-    {
+
+    .subDiv2TxtDerc {
+        width: 80%;
+        position: relative;
+        top: -4vw;
+    }
+
+    .subtitulosP {
         font-size: 8vw;
     }
-    .parrafosP
-    {
+
+    .parrafosP {
         font-size: 3vw;
-    margin-top: 1em;text-align: center;}
-    .subParrafo
-    {
+        margin-top: 1em;
+        text-align: center;
+    }
+
+    .subParrafo {
         font-size: 3vw;
     }
-    #imgPort2
-    {
-        width: 55%;
-        /* height: 39%; */
-        margin-left: 21%;
+
+    #imgPort2 {
+        width: 48vw;
+        height: 48vw;
+        margin-left: 25%;
         margin-top: 36px;
-        margin-right: 30%;
+        margin-right: 25%;
     }
-    #imgPort3
-    {
+
+    #imgPort3 {
         width: 75%;
         height: 58%;
         margin-left: 12%;
@@ -46,172 +62,247 @@
         position: relative;
         bottom: -59vw;
     }
-    .insigniasInfo
-    {
+
+    .insigniasInfo {
         display: inline-block;
     }
-    #parrafoInsignia
-    {
+
+    #parrafoInsignia {
         width: 100%;
         text-align: center;
         font-size: 3.4vw;
     }
-    #insigniasImg
-     {
-         width: 50%;
-         margin-left: 4%;
-         
+
+    #insigniasImg {
+        width: 50%;
+        margin-left: 4%;
+
     }
-    #insigniasTxt
-    {
+
+    #insigniasTxt {
         width: 77%;
         margin-top: 8%;
         margin-left: 12%;
     }
-    .navBarPortada
-    {
+
+    .navBarPortada {
         display: inline-block;
     }
-    #redesNavPortada
-    {
-        margin:auto;
+
+    #redesNavPortada {
+        margin: auto;
         max-width: 100%;
         width: 50%;
         position: relative;
         top: 13vw;
-        
+
     }
-    #btnNavPortada
-    {
+
+    #btnNavPortada {
         margin: auto;
         position: relative;
         margin-top: -6%;
     }
-    #btnNavPortada
-    {
+
+    #btnNavPortada {
         width: 100%;
     }
+
     .logoPortada h1 {
         text-align: center;
         margin-bottom: 5%;
         font-size: 7vw;
         width: 80%;
     }
-    .perfilesPortada
-    {
+
+    .perfilesPortada {
         display: inline-block;
         width: 100%;
     }
-    .tarjetaPerfil
-    {
+
+    .tarjetaPerfil {
         height: 30vw !important;
         max-height: 30vw !important;
         width: 74vw !important;
-        margin-bottom : 40px !important;
+        margin-bottom: 40px !important;
     }
+
     .tarjetaPerfil img {
         width: 36vw;
-    margin-left: 25%;
+        margin-left: 25%;
     }
-    .logoPortada img 
-    {
+
+    .logoPortada img {
         width: 80%;
     }
-    #insigniasLogo td 
-    {
-        margin:auto;
+
+    #insigniasLogo td {
+        margin: auto;
     }
-    
-    #in1, #in2, #in3, #in4,#in5
-    {
+
+    #in1,
+    #in2,
+    #in3,
+    #in4,
+    #in5 {
         width: 100%;
         height: 100%;
     }
-    #td1
-    {
+
+    #td1 {
         width: 30%;
         height: 30%;
     }
-    #td2
-    {
+
+    #td2 {
         width: 25%;
         height: 25%;
     }
-    #td3
-    {
+
+    #td3 {
         width: 20%;
         height: 20%;
     }
-    #td4
-    {
+
+    #td4 {
         width: 15%;
         height: 15%;
     }
-    #td5
-    {
+
+    #td5 {
         width: 10%;
         height: 10%;
     }
-    
-    
-    #filaCat td
-    {
+
+
+    #filaCat td {
         font-size: 3vw;
     }
-    #filaEstrellas td
-    {
+
+    #filaEstrellas td {
         font-size: 2.5vw;
     }
-    #filaEstrellas img
-    {
+
+    #filaEstrellas img {
         width: 16px;
         height: 17px;
         top: 3px;
         position: relative;
     }
-    #meansLogo
-    {
-        width: 30%;
+
+    #meansLogo {
+
+        width: 32vw;
     }
-    #emailfooter
-    {
+
+    #emailfooter {
         font-size: 3.5vw;
         width: 70%;
         text-align: center;
     }
-    #redesfooter
-    {
+
+    #redesfooter {
         max-width: 100%;
         width: 20%;
         display: none;
     }
-    #divTxt1
-    {
+
+    #divTxt1 {
 
         position: relative;
-        top: -39vw;}
-    
-    #imgPort1
-    {
-        position: relative;
-        bottom: -38vw;
+        top: -39vw;
     }
-    #divTxt3
-    {
+
+    #imgPort1 {
+        position: relative;
+        bottom: -37vw;
+    }
+
+    #divTxt3 {
         position: relative;
         top: -58vw;
     }
 
-    #btnNavPortada a 
-    {
-        
+    #btnNavPortada a {
+
         font-size: 4.5vw;
     }
-    .logoPortada 
-    {
+
+    .logoPortada {
         margin-top: 17vw;
     }
 
+    #txt3 {
+        position: relative;
+        top: -58vw !important;
+    }
+
+    .insigniasTabla {}
+
+    #insg1 {
+        width: 26vw;
+        height: 26vw;
+    }
+
+    #insg2 {
+        width: 22vw;
+        height: 21vw;
+    }
+
+    #insg3 {
+        width: 18vw;
+        height: 18vw;
+    }
+
+    #insg4 {
+        width: 14vw;
+        height: 14vw;
+    }
+
+    #insg5 {
+        width: 10vw;
+        height: 10vw;
+    }
+
+
+    #insigniasLogos td {
+        width: 100%;
+        height: 20px !important;
+    }
+
+    #rangos td {
+        font-size: 3vw;
+    }
+
+    #estrellas td {
+
+        font-size: 2.5vw;
+    }
+
+    #insigniasEst img {
+
+        position: relative;
+        top: 0.5vw;
+        width: 4vw;
+        height: 4vw;
+    }
+
+    meansLogo {}
+
+    #pOculto1 {
+
+        font-size: 3vw;
+        position: relative;
+        top: -11vw;
+        width: 89%;
+    }
+
+    #pOculto {
+
+        position: relative;
+        top: -20vw;
+        width: 89%;
+        font-size: 3.5vw;
+        left: -3vw;
+    }
 }
-
-
