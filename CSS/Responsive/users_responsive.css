@@ -50,3 +50,54 @@
     }
 
 }
+
+@media (min-width : 400px) and (max-width : 750px) {
+    #returnHome {
+        width: 48px !important;
+        margin-top: 20px !important;
+        margin-left: 20px !important;
+    }
+
+    .formularioContent {
+
+        width: 365px !important;
+    }
+
+    .infoInversores {
+        display: none !important;
+    }
+
+    .navBar button {
+
+        font-size: 21px !important;
+        height: 55px !important;
+    }
+
+    .form-campo {
+
+        width: 310px !important;
+        height: 51px !important;
+    }
+
+    .form-campo input {
+
+        font-size: 17px !important;
+    }
+
+    #txtHOC {
+        font-size: 14px !important;
+        width: 93%;
+        margin-top: 5px !important;
+    }
+
+    .buttons {
+
+        width: 190px !important;
+        font-size: 14px !important;
+        height: 42px !important;
+    }
+
+    .form-login {
+        padding: 0 !important;
+    }
+}
