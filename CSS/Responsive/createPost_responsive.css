@@ -70,6 +70,13 @@
     #imagenTitle {
         font-size: 5.5vw;
     }
+
+    #peopleNo,
+    #peopleYes,
+    #moneyYes,
+    #moneyNo {
+        font-size: 4vw;
+    }
 }
 
 @media (min-width:600px) and (max-width : 1000px) {
@@ -131,6 +138,13 @@
 
     .leftItemPeopleTable {
         font-size: 20px;
+    }
+
+    #peopleNo,
+    #peopleYes,
+    #moneyYes,
+    #moneyNo {
+        font-size: 19px;
     }
 
 }
