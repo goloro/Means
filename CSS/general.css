@@ -187,7 +187,10 @@ nav {
         #headerRL p { color: white; font-size: 1.2rem; margin: 2% auto 2% auto; }
         #headerRL img { cursor: pointer; margin: auto 10% auto auto; width: 8%; }
     #bodyRL { height: 45vh; background-image:  linear-gradient(#254dec89 , #8926ec89); display: none; }
-        #leftBody { height: 100%; width: 30%; }
+        #leftBody { height: 100%; width: 30%; display: flex; flex-direction: column; padding-top: 10%;}
+            .userChat { border-radius: 10px; background-color: white; height: 5vh; width: 80%; margin: 5% auto 5% auto; display: flex; }
+            .userChat img { width: 30%; height: 80%; border-radius: 100%; margin: auto 0 auto 5%; }
+            .userChat p { font-size: 0.75rem; margin: auto; }
         #rightBody { height: 100%; width: 70%; display: flex; flex-direction: column; }
             #rightBodyMenu { width: 100%; height: 15%; margin: auto 0 0 0; display: flex; }
                 .menuDivRL { width: 35%; height: 65%; border-radius: 5px; margin: auto; background-color: white; display: flex; cursor: pointer; }
@@ -195,7 +198,19 @@ nav {
                 .menuDivRL img { width: 18%; margin: auto; }
                 .menuDivRateRL img { width: 70%; margin: auto; }
                 .menuDivRL p { width: 60%; font-size: 0.65rem; margin: auto; }
-            #rightBodyChat { background-color: white; width: 100%; height: 70%; margin: auto 0 0 0; }
+            #rightBodyChat { 
+                background-color: white; 
+                width: 100%; 
+                height: 70%; 
+                margin: auto 0 0 0; 
+                font-family: 'Gowun Dodum', sans-serif; 
+                font-size: 0.75rem; 
+                display: flex;
+                flex-direction: column;
+            }
+            #rightBodyChat div { width: 100%; display: flex; margin: 2% 0 2% 0; }
+                .leftChat { width: 45%; margin: 0 auto 0 0; text-align: center; }
+                .rightChat { width: 45%; margin: 0 0 0 auto; text-align: center; }
             #rightBodySend { background-color: white; width: 100%; height: 15%; margin: auto 0 0 0; display: flex; }
                 #rightBodySend div { width: 90%; background-color: #E3E3E3; margin: auto; border-radius: 10px; display: flex; }
                 #rightBodySend div input { border: none; background-color: transparent; width: 75%; margin: 2% auto 2% 5%; }
