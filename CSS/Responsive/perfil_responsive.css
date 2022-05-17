@@ -3,6 +3,12 @@
         display: none;
     }
 
+    html,
+    body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
     #imagenBackPerfil {
         max-height: 40vw;
         width: 100%;
@@ -18,6 +24,12 @@
 
     #nameUser {
         font-size: 5vw;
+        width: 100%;
+        margin-left: -17vw;
+    }
+
+    .informationPerfil h2 {
+        width: 100%;
     }
 
     .insigniasDiv h3 {
@@ -85,7 +97,8 @@
     .insigniasDiv {
 
         position: relative;
-        right: -7vw;
+        right: 4vw;
+        top: 2vw;
     }
 
     #insignias img {
@@ -94,3 +107,34 @@
         margin-top: 0.6vw;
     }
 }
+
+@media (min-width:600px) and (max-width : 1000px) {
+    .bottomNav {
+
+        font-size: 16px;
+        margin-left: 10px;
+    }
+}
+
+/*
+
+    #nameUser {
+        font-size: 30px;
+    }
+
+    .insigniasDiv h3 {
+
+        font-size: 15px;
+    }
+
+    #lineaDivisoria {
+
+        width: 544px;
+    }
+
+    #iconoPerfil {
+        width: 120px;
+        height: 120px;
+        margin-left: 50px;
+    }
+*/
