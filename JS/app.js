@@ -24,3 +24,15 @@ function loadUser() {
     // Image Create Post Profile
     imgProfileCreatePost.src = localUser.icono ? localUser.icono : "../Imagenes/Pics/hombre.png"
 }
+
+//AÑADIR A FAVORITOS
+divPost.addEventListener("click", e=>{
+    if(e.target.id=="btnFavs"){
+        e.target.src="https://upload.wikimedia.org/wikipedia/commons/1/18/Estrella_amarilla.png";
+        e.target.style.width="40px";
+        e.target.style.heigth="40px";
+
+        //
+    }
+    
+})
