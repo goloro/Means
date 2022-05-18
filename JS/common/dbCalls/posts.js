@@ -4,17 +4,22 @@ import { RequestHandlerClass } from './requestHandler.js'
 // CONSTS
 const RequestHandler = new RequestHandlerClass();
 
+const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
+
 const divBackTransparent = document.getElementById("divBackTransparent");
 const divMasInfoPost = document.getElementById("divMasInfoPost");
 
 //EVENT LISTENER
 const divPosts = document.getElementById("divPost") ? document.getElementById("divPost") : document.getElementById("divInfo")
-divPosts.addEventListener("click", e=>{
-    e.preventDefault();
-    if (e.target.id == "moreInfoPost") masInfoPost(e.target.className);
+if (divPosts)
+    divPosts.addEventListener("click", e=>{
+        e.preventDefault();
+        if (e.target.id == "moreInfoPost") masInfoPost(e.target.className);
 
-    if(e.target.id=="btnFavs") e.target.src="https://api.iconify.design/uim/favorite.svg?color=%23ffd600";
-})
+        if(e.target.id == "btnFavs") e.target.src="https://api.iconify.design/uim/favorite.svg?color=%23ffd600";
+
+        if (e.target.id == "btnChat") createRelation(e.target.className)
+    })
 
 //FUNCTIONS
 export async function getPosts(callOption, postsContainer, options) {
@@ -163,5 +168,14 @@ async function masInfoPost(idPost) {
         divMasInfoPost.style.display="none";
         divBackTransparent ? divBackTransparent.style.display = "none" : console.log("divBackTransparent NO EXISTE")
     })
+}
 
+function createRelation(idOtherUser) {
+    const todayDate = new Date()
+    const relation = {
+        creationDate: `${todayDate.getFullYear()}-${todayDate.getMonth()}-${todayDate.getDate()}`,
+        userEmail: localUser.email,
+        inversorEmail: idOtherUser,
+    }
+    console.log(relation)
 }
