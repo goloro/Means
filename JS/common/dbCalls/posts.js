@@ -1,4 +1,5 @@
 // IMPORTS
+import { createAlert } from '../alert.js';
 import { RequestHandlerClass } from './requestHandler.js'
 
 // CONSTS
@@ -11,8 +12,7 @@ const divMasInfoPost = document.getElementById("divMasInfoPost");
 
 //EVENT LISTENER
 const divPosts = document.getElementById("divPost") ? document.getElementById("divPost") : document.getElementById("divInfo")
-if (divPosts)
-    divPosts.addEventListener("click", e=>{
+if (divPosts) divPosts.addEventListener("click", e=>{
         e.preventDefault();
         if (e.target.id == "moreInfoPost") masInfoPost(e.target.className);
 
@@ -170,12 +170,23 @@ async function masInfoPost(idPost) {
     })
 }
 
-function createRelation(idOtherUser) {
-    const todayDate = new Date()
-    const relation = {
-        creationDate: `${todayDate.getFullYear()}-${todayDate.getMonth()}-${todayDate.getDate()}`,
-        userEmail: localUser.email,
-        inversorEmail: idOtherUser,
+async function createRelation(idOtherUser) {
+    if (idOtherUser != localUser.email) {
+        const find = await RequestHandler.getDefault("http://localhost:8085/relations/find/" + localUser.email + "/" + idOtherUser)
+        if (!find) {
+            const todayDate = new Date()
+            const relation = {
+                creationDate: `${todayDate.getFullYear()}-${todayDate.getMonth()}-${todayDate.getDate()}`,
+                userEmail: localUser.email,
+                inversorEmail: idOtherUser,
+                userAccepted: false,
+                inversorAccepted: false,
+            }
+    
+            const otherUseer = await RequestHandler.getDefault("http://localhost:8085/users/" + idOtherUser)
+            
+            const create = await RequestHandler.postDefault("http://localhost:8085/relations/create", relation)
+            if (create) createAlert("https://api.iconify.design/bx/message-alt-add.svg?color=white", "Relation creada con " + otherUseer.name)
+        }
     }
-    console.log(relation)
 }
