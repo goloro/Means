@@ -100,9 +100,9 @@ async function postCall(post, postContainer) {
     postContainer.innerHTML += postCard
 
     //NO FUNCIONA SIEMPRE. 
-    document.querySelector(".moreInfoPost").addEventListener("click", e=>{
+    postContainer.addEventListener("click", e=>{
         e.preventDefault();
-        masInfoPost(e.target.id);
+        if (e.target.className == "moreInfoPost") masInfoPost(e.target.id);
     })
 }
 
