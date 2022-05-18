@@ -10,12 +10,12 @@ viewRelations.addEventListener("click", e => {
     if (e.target.src === "https://api.iconify.design/charm/chevron-up.svg?color=%23f8f8f8") {
         viewRelations.src = "https://api.iconify.design/charm/chevron-down.svg?color=%23f8f8f8"
         bodyRL.style.display = "flex"
-        divBackTransparent.style.display = "flex"
+        divBackTransparent ? divBackTransparent.style.display = "flex" : console.log("divBackTransparent NO EXISTE")
     }
     else if (e.target.src === "https://api.iconify.design/charm/chevron-down.svg?color=%23f8f8f8") {
         viewRelations.src = "https://api.iconify.design/charm/chevron-up.svg?color=%23f8f8f8"
         bodyRL.style.display = "none"
-        divBackTransparent.style.display = "none"
+        divBackTransparent ? divBackTransparent.style.display = "none" : console.log("divBackTransparent NO EXISTE")
     }
 })
 

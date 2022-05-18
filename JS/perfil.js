@@ -163,8 +163,7 @@ function closeProblem() {
 }
 
 async function updateUser(user) {
-    console.log(user)
-    const editUser = await RequestHandler.putDefault("http://localhost:8085/users/edit/" + localUser.email)
+    const editUser = await RequestHandler.putDefault("http://localhost:8085/users/edit/" + localUser.email, user)
     if (editUser === true) localStorage.setItem('Means_userLogued', JSON.stringify(localUser))
     return editUser
 }
