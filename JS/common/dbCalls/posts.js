@@ -4,7 +4,7 @@ import { RequestHandlerClass } from './requestHandler.js'
 // CONSTS
 const RequestHandler = new RequestHandlerClass();
 
-const div = document.getElementById("divPost");
+const divBackTransparent = document.getElementById("divBackTransparent");
 const divMasInfoPost = document.getElementById("divMasInfoPost");
 
 //EVENT LISTENER
@@ -41,7 +41,7 @@ export async function getPosts(callOption, postsContainer, options) {
         }
         case 2: {
             if (options.idPost) posts = await RequestHandler.getDefault("http://localhost:8085/post/" + options.idPost)
-            break
+            return posts
         }
         case 3: {
             posts = await RequestHandler.getDefault("http://localhost:8085/post/home/" + options.quantity + "?nextPage=" + false)
@@ -74,7 +74,7 @@ async function postCall(post, postContainer) {
                     <p id="titlePost">${ post.name }</p>
                 </div> 
                 <p id="textPost">${ post.smallDescription }</p>
-                <button id="moreInfoPost">Más Información</button>
+                <button class="moreInfoPost" id="${ post._id }">Más Información</button>
             </div>
             <div class="postBodyRight">
                 <div class="postBodyRightTop">
@@ -100,9 +100,9 @@ async function postCall(post, postContainer) {
     postContainer.innerHTML += postCard
 
     //NO FUNCIONA SIEMPRE. 
-    document.getElementById("moreInfoPost").addEventListener("click", e=>{
+    document.querySelector(".moreInfoPost").addEventListener("click", e=>{
         e.preventDefault();
-        masInfoPost();
+        masInfoPost(e.target.id);
     })
 }
 
@@ -112,41 +112,68 @@ export async function createPostCall(post) {
 
 async function masInfoPost(idPost) {
     const post = getPosts(2, undefined, {idPost: idPost})
+    console.log(idPost)
+    console.log(post)
 
     let infoPost = `
-    <div class="divFlotante2">
-    <div id="divResenia">
-        <img src="../Imagenes/Logos/MeansHexagonoSinFondo.png" width="110px" id="imgLogo">
-        <div id="contenido1">
-            <h1>Más información</h1><hr>
-            <div id="contenido2">
-                <h2>Fecha inicio:</h2><br>
-                <br><h2>Fecha fin:</h2>
+    <div class="subDivMInfo">
+        <div id="divReseniaMI">
+            <div id="tituloMI">
+                <img src="../Imagenes/Logos/MeansHexagonoSinFondo.png" id="imgLogo">
+                <h1>Más información</h1>
             </div>
-            <div id="personal">
-                <img src="../Imagenes/Logos/logoUsuarios.png" width="60px">
-                <h4>PERSONAL NECESARIO</h4>
-
+            <hr>
+            <div id="contenidoMI">
+                <div id="contenidoFechas">
+                    <p>Fecha Inicio: ${ post.startDate }</p>
+                    <p>Fecha Fin: ${ post.finishDate }</p>
+                </div>
+                <div id="contenidoInfo">
+                    <div id="recursos">
+                        <div id="moneyMI">
+                            <img src="https://api.iconify.design/healthicons/money-bag.svg?color=%23e4a951">
+                            <p>${ post.money ? post.money : 0 }</p>
+                        </div>
+                        <div id="peopleMI">
+                            <img src="https://api.iconify.design/fluent/people-48-filled.svg?color=%23699bf7">
+                            <div id="peopleDivMI">
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div id="desc">
+                        <p>${ post.largeDescription }</p>
+                    </div>
+                </div>
             </div>
-            <div id="detalles">
-                <h4>DETALLES DEL EVENTO</h4>
-                <p></p>
-
+            <div id="divBTNSMI">
+                <button id="contactarMI">Contactar</button>
+                <button id="closeMI">Cerrar</button>
             </div>
-            <button id="btnPublicar2">Contactar</button>
-            <button id="closeFlotante">Cerrar</button>
-    </div>
-</div>`
+        </div>
+    </div>`
 
-    divMasInfoPost.innerHTML += infoPost
-    div.style.opacity="10%";
+    if(post.people)
+        post.people.forEach(e => {
+            let peopleDiv = `
+                <div>
+                    <p id="tipoMI">${ e.tipo }</p>
+                    <p id="countMI">${ e.count }</p>
+                </div>
+            `
+
+            document.getElementById("peopleMI").innerHTML = peopleDiv
+        });
+
+    divMasInfoPost.style.display = "flex"
+    divMasInfoPost.innerHTML = infoPost
 
     //CERRAR LA VENTANA FLOTANTE
-    document.getElementById("closeFlotante").addEventListener("click", e=>{
+    document.getElementById("closeMI").addEventListener("click", e=>{
         e.preventDefault();
         
-        div.style.opacity="100%";
-        divMasInfoPost.style.opacity="0%";
+        // div.style.opacity="100%";
+        divMasInfoPost.style.display="none";
     })
 
 }

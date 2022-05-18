@@ -3,16 +3,19 @@
 // CONSTS
 const viewRelations = document.getElementById("viewRelations")
 const bodyRL = document.getElementById("bodyRL")
+const divBackTransparent = document.getElementById("divBackTransparent")
 
 // EVENT LISTENER
 viewRelations.addEventListener("click", e => {
     if (e.target.src === "https://api.iconify.design/charm/chevron-up.svg?color=%23f8f8f8") {
         viewRelations.src = "https://api.iconify.design/charm/chevron-down.svg?color=%23f8f8f8"
         bodyRL.style.display = "flex"
+        divBackTransparent.style.display = "flex"
     }
     else if (e.target.src === "https://api.iconify.design/charm/chevron-down.svg?color=%23f8f8f8") {
         viewRelations.src = "https://api.iconify.design/charm/chevron-up.svg?color=%23f8f8f8"
         bodyRL.style.display = "none"
+        divBackTransparent.style.display = "none"
     }
 })
 
