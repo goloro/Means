@@ -8,19 +8,13 @@ const divBackTransparent = document.getElementById("divBackTransparent");
 const divMasInfoPost = document.getElementById("divMasInfoPost");
 
 //EVENT LISTENER
-// const btnPublicar2 = document.querySelector("#btnPublicar2");
-// btnPublicar2.addEventListener("click", e => {
-//     e.preventDefault();
-//     createPost();
-// })
-// let img;
-// const imgCat = document.querySelector(".imgCat");
-// imgCat.addEventListener("click", e => {
-//     e.preventDefault();
-//     img = e.target;
-//     alert("img elegida");
-//     alert(img.src)
-// })
+const divPosts = document.getElementById("divPost") ? document.getElementById("divPost") : document.getElementById("divInfo")
+divPosts.addEventListener("click", e=>{
+    e.preventDefault();
+    if (e.target.id == "moreInfoPost") masInfoPost(e.target.className);
+
+    if(e.target.id=="btnFavs") e.target.src="https://api.iconify.design/uim/favorite.svg?color=%23ffd600";
+})
 
 //FUNCTIONS
 export async function getPosts(callOption, postsContainer, options) {
@@ -48,7 +42,7 @@ export async function getPosts(callOption, postsContainer, options) {
             break
         }
     }
-    if (posts) await posts.forEach(e => { postCall(e, postsContainer) });
+    if (posts && (callOption === 0 || callOption === 1 || callOption === 3)) await posts.forEach(e => { postCall(e, postsContainer) });
 }
 
 async function postCall(post, postContainer) {
@@ -74,19 +68,19 @@ async function postCall(post, postContainer) {
                     <p id="titlePost">${ post.name }</p>
                 </div> 
                 <p id="textPost">${ post.smallDescription }</p>
-                <button class="moreInfoPost" id="${ post._id }">Más Información</button>
+                <button id="moreInfoPost" class="${ post._id }">Más Información</button>
             </div>
             <div class="postBodyRight">
                 <div class="postBodyRightTop">
                     <div>
                         <img id="btnFavs" src="https://api.iconify.design/uil/favorite.svg?color=%23ffd600">
-                        <img id="btnChat" src="https://api.iconify.design/bi/chat-square-dots-fill.svg?color=%23514f4f" width="30px">
+                        <img id="btnChat" src="https://api.iconify.design/bi/chat-square-dots-fill.svg?color=%23514f4f">
                     </div>
                 </div>
                 <div class="postBodyRightBot">
                     <div class="postBodyRightBotDiv">
                         <img src="https://api.iconify.design/healthicons/money-bag.svg?color=%23514f4f">
-                        <p>${ totalMoney }</p>
+                        <p>${ totalMoney + " €" }</p>
                     </div>
                     <div class="postBodyRightBotDiv">
                         <img src="https://api.iconify.design/fluent/people-20-filled.svg?color=%23514f4f" >
@@ -98,12 +92,6 @@ async function postCall(post, postContainer) {
     </div>`
 
     postContainer.innerHTML += postCard
-
-    //NO FUNCIONA SIEMPRE. 
-    postContainer.addEventListener("click", e=>{
-        e.preventDefault();
-        if (e.target.className == "moreInfoPost") masInfoPost(e.target.id);
-    })
 }
 
 export async function createPostCall(post) {
@@ -111,9 +99,7 @@ export async function createPostCall(post) {
 }
 
 async function masInfoPost(idPost) {
-    const post = getPosts(2, undefined, {idPost: idPost})
-    console.log(idPost)
-    console.log(post)
+    const post = await RequestHandler.getDefault("http://localhost:8085/post/" + idPost)
 
     let infoPost = `
     <div class="subDivMInfo">
@@ -132,7 +118,7 @@ async function masInfoPost(idPost) {
                     <div id="recursos">
                         <div id="moneyMI">
                             <img src="https://api.iconify.design/healthicons/money-bag.svg?color=%23e4a951">
-                            <p>${ post.money ? post.money : 0 }</p>
+                            <p>${ post.money ? post.money + " €" : "No solicita" }</p>
                         </div>
                         <div id="peopleMI">
                             <img src="https://api.iconify.design/fluent/people-48-filled.svg?color=%23699bf7">
@@ -153,27 +139,29 @@ async function masInfoPost(idPost) {
         </div>
     </div>`
 
+    divMasInfoPost.style.display = "flex"
+    divMasInfoPost.innerHTML = infoPost
+    divBackTransparent ? divBackTransparent.style.display = "flex" : console.log("divBackTransparent NO EXISTE")
+
     if(post.people)
         post.people.forEach(e => {
             let peopleDiv = `
                 <div>
-                    <p id="tipoMI">${ e.tipo }</p>
+                    <p id="tipoMI">${ e.type }</p>
                     <p id="countMI">${ e.count }</p>
                 </div>
             `
 
-            document.getElementById("peopleMI").innerHTML = peopleDiv
-        });
+            document.getElementById("peopleDivMI").innerHTML += peopleDiv
+        })
+    else document.getElementById("peopleDivMI").innerHTML += `<p id="noPeople">No solicita</p>`
 
-    divMasInfoPost.style.display = "flex"
-    divMasInfoPost.innerHTML = infoPost
-
-    //CERRAR LA VENTANA FLOTANTE
+    // CLOSE MORE INFO
     document.getElementById("closeMI").addEventListener("click", e=>{
         e.preventDefault();
         
-        // div.style.opacity="100%";
         divMasInfoPost.style.display="none";
+        divBackTransparent ? divBackTransparent.style.display = "none" : console.log("divBackTransparent NO EXISTE")
     })
 
 }
