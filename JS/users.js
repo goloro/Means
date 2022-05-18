@@ -58,6 +58,26 @@ async function registro() {
     const phone = document.getElementById("campoPhoneR")
     const password = document.getElementById("campoPasswordR")
 
+    if(!name.value || name.value.length > 40){
+        createProblem("El nombre de usuario no es válido")
+        return
+    }
+
+    if(!email.value || email.RegExp("/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$")){
+        createProblem("El email de usuario no es válido")
+        return
+    }
+    if(!phone.value || phone.value.length > 9 ){
+        createProblem("El teléfono no es válido")
+        return
+    }
+    if(!password.value){
+        createProblem("No has introducido una contraseña")
+        return
+    }
+
+    problemCard.style.visibility = "hidden"
+
     const data = {
         name: name.value,
         email: email.value,
@@ -130,6 +150,26 @@ async function registroInversores() {
     const phone = document.getElementById("campoPhoneRI")
     const password = document.getElementById("campoPasswordRI")
 
+    if(!name.value || name.value.length > 40){
+        createProblemIn("El nombre de empresa no es válido")
+        return
+    }
+
+    if(!email.value || email.RegExp("/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$")){
+        createProblemIn("El email empresarial no es válido")
+        return
+    }
+    if(!phone.value || phone.value.length > 9 ){
+        createProblemIn("El teléfono no es válido")
+        return
+    }
+    if(!password.value){
+        createProblemIn("No has introducido una contraseña")
+        return
+    }
+
+    problemCardIn.style.visibility = "hidden"
+
     const data = {
         name: name.value,
         email: email.value,
@@ -154,4 +194,23 @@ document.getElementById("btnRegistroInversores").addEventListener("click", e=>{
     e.preventDefault()
     registroInversores()
 })
+
+const problemCard = document.querySelector(".problemCard")
+const msgProblem = document.getElementById("problemMsg")
+
+const problemCardIn = document.querySelector(".problemCardIn")
+const msgProblemIn = document.getElementById("problemMsgIn")
+
+function createProblem(msg) {
+    msgProblem.innerHTML = msg
+    problemCard.style.visibility = "visible"
+}
+
+
+function createProblemIn(msg) {
+    msgProblemIn.innerHTML = msg
+    problemCardIn.style.visibility = "visible"
+}
+
+
 // EXPORTS
