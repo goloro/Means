@@ -73,8 +73,8 @@ async function postCall(post, postContainer) {
             <div class="postBodyRight">
                 <div class="postBodyRightTop">
                     <div>
-                        <img id="btnFavs" src="https://api.iconify.design/uil/favorite.svg?color=%23ffd600">
-                        <img id="btnChat" src="https://api.iconify.design/bi/chat-square-dots-fill.svg?color=%23514f4f">
+                        <img id="btnFavs" class="${ post._id }" src="https://api.iconify.design/uil/favorite.svg?color=%23ffd600">
+                        <img id="btnChat" class="${ post.idUser }" src="https://api.iconify.design/bi/chat-square-dots-fill.svg?color=%23514f4f">
                     </div>
                 </div>
                 <div class="postBodyRightBot">

@@ -263,7 +263,7 @@ nav {
         #recursos { width: 50%; display: flex; flex-direction: column; }
             #moneyMI { width: 90%; margin: auto; display: flex; background-color: #E8E7E7; border-radius: 5px; }
                 #moneyMI img { width: 18%; margin: 2% auto 2% auto;}
-                #moneyMI p { width: 80%; text-align: center; margin: auto; }
+                #moneyMI p { width: 70%; text-align: center; margin: auto; }
             #peopleMI { width: 90%; margin: auto; display: flex; flex-direction: column; background-color: #E8E7E7; border-radius: 5px; }
                 #peopleMI img { width: 20%; margin: 5% auto 5% auto; }
                 #peopleDivMI { width: 100%; margin: auto; display: flex; flex-direction: column; }
@@ -272,7 +272,7 @@ nav {
                         #countMI { width: 20%; text-align: center; }
                         #noPeople { width: 100%; text-align: center; }
         #desc { width: 50%; display: flex; background-color: #E8E7E7; border-radius: 5px; }
-            #desc p { width: 80%; margin: auto; text-align: justify; }
+            #desc p { width: 80%; margin: auto; text-align: justify; font-size: small; }
 #divBTNSMI { width: 90%; height: 10%; display: flex; }
     #divBTNSMI button { 
         margin: auto; 
