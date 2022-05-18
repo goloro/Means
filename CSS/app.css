@@ -15,7 +15,7 @@
     width: 90%;
     margin: 3% auto 5% auto;
 }
-#divPost { width: 80%; }
+#divPost { width: 80%; display: flex; flex-direction: column;}
 .divCards { width: 20%; height: 80vh; display: flex; flex-direction: column; }
 .subDivCards { 
     display: flex;
