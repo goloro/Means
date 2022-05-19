@@ -4,12 +4,16 @@
     font-family: 'Baloo 2';
 }
 
+
 /* body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 } */
-
+#barraNavResponsive
+{
+    display: none;
+}
 .divContent {
     display: flex;
     width: 90%;

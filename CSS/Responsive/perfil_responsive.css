@@ -3,6 +3,9 @@
         display: none;
     }
 
+    
+
+
     html,
     body {
         max-width: 100% !important;
@@ -109,6 +112,9 @@
 }
 
 @media (min-width:600px) and (max-width : 1000px) {
+
+    
+
     .bottomNav {
 
         font-size: 16px;
