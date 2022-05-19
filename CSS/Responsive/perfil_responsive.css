@@ -3,8 +3,10 @@
         display: none;
     }
 
-    
 
+    #botonGuardar input[type="submit"] {
+        font-size: 2.5vw;
+    }
 
     html,
     body {
@@ -43,17 +45,19 @@
         display: none;
     }
 
+
     .boxDiv {
         width: 100%;
         background-color: rgb(247, 247, 247);
         border: none;
         box-shadow: none;
         min-height: auto;
+        align-items: center;
     }
 
     .bottomNav {
-        font-size: 2.8vw;
-        margin-left: 7vw;
+        font-size: 2.7vw;
+        margin-left: 1vw;
         width: 100%;
     }
 
@@ -64,6 +68,7 @@
     #lineaDivisoria {
         height: 1px;
     }
+
 
     .cardPost {
         width: 91vw;
@@ -101,26 +106,83 @@
 
         position: relative;
         right: 4vw;
-        top: 2vw;
+        top: 5vw;
+        margin: auto;
     }
 
     #insignias img {
 
         width: 3vw;
-        margin-top: 0.6vw;
+        /* margin-top: 5.6vw; */
+        height: 3vw;
     }
+
+    #pantalla {
+
+        width: 94vw;
+        height: 68vw;
+    }
+
+
 }
 
 @media (min-width:600px) and (max-width : 1000px) {
 
-    
+
+    #pantalla {
+
+        width: 94vw;
+        height: 68vw;
+    }
 
     .bottomNav {
 
         font-size: 16px;
         margin-left: 10px;
     }
+
+    .cardPost {
+
+        width: 558px;
+        max-width: 558px;
+        height: 153px !important;
+        max-height: 153px !important;
+
+
+
+        margin: 0;
+        margin-bottom: 18px;
+    }
+
+    #textPost {
+        font-size: 15px;
+        width: 98%;
+    }
+
+    #moreInfoPost {
+        width: 156px;
+        height: 30px;
+        font-size: 14px;
+        margin-left: 27%;
+    }
+
+    .postBodyRightTop div img {
+
+        width: 31px;
+    }
+
+    .postBodyRightBot div p {
+
+        font-size: 15px;
+    }
+
+    #titlePost {
+
+        font-size: 20px;
+    }
+
 }
+
 
 /*
 
