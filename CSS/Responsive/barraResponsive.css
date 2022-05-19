@@ -19,12 +19,24 @@
         width: 100%;
     }
 
-    #iconosNavResponsive img {
+    .iconoNavResponsive {
         width: 7vw;
         height: 7vw;
         right: 0;
         left: 0;
         margin: auto;
+    }
+    .refNav
+    {
+        width: 7vw;
+        height: 7vw;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+    #meansNavResponsive
+    {
+
     }
 }
 @media (min-width:600px) and (max-width : 1000px) {
@@ -50,12 +62,25 @@
         max-width: 600px;
     }
 
-    #iconosNavResponsive img {
+    .iconoNavResponsive {
         width: 42px;
         height: 42px;
 
         right: 0;
         left: 0;
         margin: auto;
+    }
+    .refNav
+    {
+        width: 42px;
+        height: 42px;
+
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+    #meansNavResponsive
+    {
+        
     }
 }
