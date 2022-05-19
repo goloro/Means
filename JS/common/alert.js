@@ -1,13 +1,19 @@
-export function createAlert(icon, text) {
-    document.getElementById("alert").style.display = "flex"
-    document.getElementById("alertIcon").src = icon
-    document.getElementById("alertText").innerHTML = text
-
-    // setTimeout(deleteAlert(), 5000)
-}
+// CONST
+const alert = document.getElementById("alert")
+const alertIcon = document.getElementById("alertIcon")
+const alertText = document.getElementById("alertText")
 
 function deleteAlert() {
-    document.getElementById("alert").style.display = "none"
-    document.getElementById("alertIcon").src = "https://api.iconify.design/fluent/alert-12-regular.svg?color=white"
-    document.getElementById("alertText").innerHTML = "Alerta"
+    alert.style.display = "none"
+    alertIcon.src = "https://api.iconify.design/fluent/alert-12-regular.svg?color=white"
+    alertText.innerHTML = "Alerta"
+}
+
+export function createAlert(icon, text, color) {
+    alert.style.display = "flex"
+    document.getElementById("alertBox").style.backgroundColor = color
+    alertIcon.src = icon
+    alertText.innerHTML = text
+
+    setTimeout(deleteAlert, 2000)
 }

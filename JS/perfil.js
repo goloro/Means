@@ -189,8 +189,13 @@ async function viewReviews() {
 function viewFavs() {
     deleteInfo()
 
-    const post = localUser.favs
-    post.forEach(e => { loadPost(e) });
+    const posts = []
+    localUser.favs.forEach(async e => {
+        let post = await RequestHandler.getDefault("http://localhost:8085/post/" + e)
+        posts.push(post)
+    })
+
+    setTimeout(getPosts, 500, 4, divInfo, { posts: posts })
 }
 function viewEdit() {
     deleteInfo()
