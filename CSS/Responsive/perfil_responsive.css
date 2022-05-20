@@ -3,6 +3,15 @@
         display: none;
     }
 
+    #headerRL p {
+
+        font-size: 4vw;
+    }
+
+    .relations {
+
+        width: 50vw;
+    }
 
     #botonGuardar input[type="submit"] {
         font-size: 2.5vw;
@@ -134,6 +143,8 @@
         width: 94vw;
         height: 68vw;
     }
+
+    #headerRL p {}
 
     .bottomNav {
 
