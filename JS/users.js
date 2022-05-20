@@ -63,7 +63,7 @@ async function registro() {
         return
     }
 
-    if(!email.value || email.RegExp("/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$")){
+    if(!email.value){
         createProblem("El email de usuario no es válido")
         return
     }
