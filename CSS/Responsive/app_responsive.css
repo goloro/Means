@@ -1,0 +1,193 @@
+/***RESPONSIVE***/
+@media (max-width: 1000px) {
+
+    html,
+    body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    #divPost {
+
+        margin-top: 39vw;
+        width: 800px;
+    }
+
+    #headerRL p {
+
+        font-size: 3vw;
+    }
+
+    #createPost {
+        width: 65VW;
+        height: 30vw;
+        margin-left: -1vw;
+    }
+
+    #hazteInv {
+        display: NONE;
+    }
+
+    .divCards {
+        width: 70vw;
+
+        position: relative;
+        left: -78vw;
+
+        top: -76vw;
+        height: 32vw;
+        MARGIN: auto;
+    }
+
+    .cardPost {
+        width: 91vw;
+        margin-left: -1vw;
+        height: 26vw !important;
+        max-height: 26vw !important;
+    }
+
+    #botCreate img {
+
+        width: 9VW;
+    }
+
+    #botCreate p {
+
+        font-size: 3.5VW;
+    }
+
+    #topCreate {
+
+        height: 25vw;
+    }
+
+    #titlePost {
+        font-size: 3.5vw;
+    }
+
+    #textPost {
+        font-size: 2.5vw;
+        width: 98%;
+    }
+
+    #moreInfoPost {
+        width: 23vw;
+        height: 5vw;
+        font-size: 2.5vw;
+        margin-left: 16.5vw;
+    }
+
+    .postBodyRightBot div p {
+        font-size: 2.5vw;
+    }
+
+}
+
+@media (min-width:600px) and (max-width : 1000px) {
+
+    html,
+    body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    .bottomNav {
+
+        font-size: 16px;
+        margin-left: 10px;
+    }
+
+    .cardPost {
+        width: 533px;
+        max-width: 533px;
+        margin-left: -3vw;
+        height: 156px !important;
+        max-height: 156px !important;
+    }
+
+    #textPost {
+        font-size: 15px;
+        width: 98%;
+    }
+
+    #moreInfoPost {
+        width: 156px;
+        height: 30px;
+        font-size: 14px;
+        margin-left: 27%;
+    }
+
+    .divContent {
+
+        width: 540px;
+    }
+
+    #headerRL p {
+        font-size: 18px;
+    }
+
+    #createPost {
+
+        width: 400px;
+        max-width: 400px;
+        height: 186px;
+        max-height: 186px;
+    }
+
+    #botCreate p {
+        font-size: 21px;
+    }
+
+    #botCreate img {
+        width: 54px;
+        height: 54px;
+    }
+
+    #topCreate {
+        height: 98px;
+    }
+
+    #textPost {
+        font-size: 15px;
+        width: 98%;
+    }
+
+    #moreInfoPost {
+        width: 156px;
+        height: 30px;
+        font-size: 14px;
+        margin-left: 27%;
+    }
+
+    .postBodyRightTop div img {
+
+        width: 31px;
+    }
+
+    .postBodyRightBot div p {
+
+        font-size: 15px;
+    }
+
+    #titlePost {
+
+        font-size: 20px;
+    }
+
+    #divPost {
+
+        width: 533px;
+        max-width: 533px;
+        margin-left: 3%;
+        margin-top: 227px;
+    }
+
+    .divCards {
+
+        width: 393px;
+        max-width: 393px;
+        left: -85%;
+        top: -456px;
+    }
+
+}
