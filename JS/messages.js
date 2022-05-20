@@ -1,6 +1,11 @@
 // IMPORTS
+import { RequestHandlerClass } from '../JS/common/dbCalls/requestHandler.js'
 
 // CONSTS
+const RequestHandler = new RequestHandlerClass();
+
+const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
+
 const viewRelations = document.getElementById("viewRelations")
 const bodyRL = document.getElementById("bodyRL")
 const divBackTransparent = document.getElementById("divBackTransparent")
@@ -11,16 +16,14 @@ viewRelations.addEventListener("click", e => {
         viewRelations.src = "https://api.iconify.design/charm/chevron-down.svg?color=%23f8f8f8"
         bodyRL.style.display = "flex"
         divBackTransparent ? divBackTransparent.style.display = "flex" : console.log("divBackTransparent NO EXISTE")
+
+        loadChats(localUser.email)
     }
     else if (e.target.src === "https://api.iconify.design/charm/chevron-down.svg?color=%23f8f8f8") {
         viewRelations.src = "https://api.iconify.design/charm/chevron-up.svg?color=%23f8f8f8"
         bodyRL.style.display = "none"
         divBackTransparent ? divBackTransparent.style.display = "none" : console.log("divBackTransparent NO EXISTE")
     }
-})
-
-document.getElementById("rightBodySend").addEventListener("submit", e => {
-    alert(document.getElementById("sendMSGInput").value)
 })
 
 document.getElementById("sendMSGIMG").addEventListener("click", e => {
@@ -38,4 +41,21 @@ function addMSG(text) {
     document.getElementById("rightBodyChat").innerHTML += msg
 
     document.getElementById("sendMSGInput").value = ""
+}
+
+async function loadChats(userEmail) {
+    const chats = await RequestHandler.getDefault("http://localhost:8085/relations/user/" + userEmail)
+
+    chats.forEach(async e => {
+        const userChat = await RequestHandler.getDefault("http://localhost:8085/users/" + userEmail)
+
+        const chatDiv = `
+            <div class="userChat" id="${e._id}">
+                <img src="${userChat.image}">
+                <p>${userChat.name}</p>
+            </div>
+        `
+
+        document.getElementById("leftBody").innerHTML += chatDiv
+    });
 }
