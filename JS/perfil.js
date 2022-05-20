@@ -91,7 +91,12 @@ divInfo.addEventListener("click", e => {
 // FUNCTIONS
 viewPosts()
 
-if (localUser) loadUser()
+if (localUser) {
+    const userDoc = await RequestHandler.getDefault("http://localhost:8085/users/" + localUser.email)
+    localStorage.setItem('Means_userLogued', JSON.stringify(userDoc))
+
+    loadUser()
+}
 
 function loadUser() {
     // Name
