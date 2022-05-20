@@ -1,7 +1,10 @@
 // IMPORTS
 import { getPosts } from './common/dbCalls/posts.js'
+import { RequestHandlerClass } from './common/dbCalls/requestHandler.js'
 
 // CONSTS
+const RequestHandler = new RequestHandlerClass();
+
 const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
 
 const backgroundProfileCreatePost = document.getElementById("topCreate")
@@ -15,7 +18,12 @@ const divPost = document.getElementById("divPost");
 // FUNCTIONS
 getPosts(3, divPost, {quantity: 10})
 
-if (localUser) loadUser()
+if (localUser) {
+    const userDoc = await RequestHandler.getDefault("http://localhost:8085/users/" + localUser.email)
+    localStorage.setItem('Means_userLogued', JSON.stringify(userDoc))
+
+    loadUser()
+}
 
 function loadUser() {
     // Background Create Post Profile
