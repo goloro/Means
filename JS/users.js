@@ -155,7 +155,7 @@ async function registroInversores() {
         return
     }
 
-    if(!email.value || email.RegExp("/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$")){
+    if(!email.value){
         createProblemIn("El email empresarial no es válido")
         return
     }
