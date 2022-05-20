@@ -195,7 +195,7 @@ function viewFavs() {
         posts.push(post)
     })
 
-    setTimeout(getPosts, 500, 4, divInfo, { posts: posts })
+    setTimeout(getPosts, 1000, 4, divInfo, { posts: posts })
 }
 function viewEdit() {
     deleteInfo()
