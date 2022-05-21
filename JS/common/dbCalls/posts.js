@@ -1,6 +1,7 @@
 // IMPORTS
-import { createAlert } from '../alert.js';
 import { RequestHandlerClass } from './requestHandler.js'
+import { createAlert } from '../alert.js';
+import { loadChats } from '../../messages.js';
 
 // CONSTS
 const RequestHandler = new RequestHandlerClass();
@@ -198,6 +199,7 @@ async function createRelation(idOtherUser) {
                 inversorEmail: idOtherUser,
                 userAccepted: false,
                 inversorAccepted: false,
+                messagesList: []
             }
             
             const create = await RequestHandler.postDefault("http://localhost:8085/relations/create", relation)
@@ -206,6 +208,8 @@ async function createRelation(idOtherUser) {
             viewRelations.src = "https://api.iconify.design/charm/chevron-down.svg?color=%23f8f8f8"
             bodyRL.style.display = "flex"
             divBackTransparent ? divBackTransparent.style.display = "flex" : console.log("divBackTransparent NO EXISTE")
+
+            loadChats(localUser.email)
         } else createAlert("https://api.iconify.design/bxs/error.svg?color=white", "Ya hay una relation creada con " + otherUser.name, "#e65353")
     }
 }

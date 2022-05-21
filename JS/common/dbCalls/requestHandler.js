@@ -15,7 +15,7 @@ class RequestHandlerClass {
             body: JSON.stringify(data),
             headers: {'Content-Type': 'application/json'}
         })
-        if (res.status === 200) return true
+        if (res.status === 200) return res.json()
         return false
     }
 

@@ -202,8 +202,12 @@ border: 1px solid #ccc!important;}
         #headerRL p { color: white; font-size: 1.2rem; margin: 2% auto 2% auto; }
         #headerRL img { cursor: pointer; margin: auto 10% auto auto; width: 8%; }
     #bodyRL { height: 45vh; background-image:  linear-gradient(#254dec89 , #8926ec89); display: none; }
-        #leftBody { height: 100%; width: 30%; display: flex; flex-direction: column; padding-top: 10%;}
-            .userChat { border-radius: 10px; background-color: white; height: 5vh; width: 80%; margin: 5% auto 5% auto; display: flex; }
+        #leftBody { height: 100%; width: 30%; display: flex; flex-direction: column; padding-top: 10%; overflow-y: scroll; }
+        .leftBody::-webkit-scrollbar { width: 1vh; }
+        .leftBody::-webkit-scrollbar-thumb { background: whitesmoke;  border-radius: 10px; }
+        .leftBody::-webkit-scrollbar-thumb:hover { background: white; }
+        #leftBody div { cursor: pointer; }
+            .userChat { border-radius: 10px; background-color: white; height: 5.5vh; width: 80%; margin: 5% auto 5% auto; display: flex; border: 1px solid white; }
             .userChat img { width: 30%; height: 80%; border-radius: 100%; margin: auto 0 auto 5%; }
             .userChat p { font-size: 0.75rem; margin: auto; }
         #rightBody { height: 100%; width: 70%; display: flex; flex-direction: column; }
@@ -222,7 +226,11 @@ border: 1px solid #ccc!important;}
                 font-size: 0.75rem; 
                 display: flex;
                 flex-direction: column;
+                overflow-y: scroll; 
             }
+            .rightBodyChat::-webkit-scrollbar { width: 1vh; }
+            .rightBodyChat::-webkit-scrollbar-thumb { background: #254dec89;  border-radius: 10px; }
+            .rightBodyChat::-webkit-scrollbar-thumb:hover { background: #8926ec89; }
             #rightBodyChat div { width: 100%; display: flex; margin: 2% 0 2% 0; }
                 .leftChat { width: 45%; margin: 0 auto 0 0; text-align: center; }
                 .rightChat { width: 45%; margin: 0 0 0 auto; text-align: center; }
