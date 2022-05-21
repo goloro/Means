@@ -241,8 +241,8 @@ border: 1px solid #ccc!important;}
                 #rightBodySend div img { width: 10%; margin: auto; cursor: pointer; }
 
 
-/* MORE INFO */
-#divMasInfoPost {
+/* MORE INFO & CREATE RATE */
+#divMasInfoPost, #divCreateRate {
     position: fixed;
     top: 0;
     z-index: 9;
@@ -250,7 +250,8 @@ border: 1px solid #ccc!important;}
     height: 100VH;
     display: none;
 }
-.subDivMInfo {
+#divCreateRate { z-index: 15; }
+.subDivMInfo, .subDivCR {
     width: 40%;
     height: 80%;
     background-color: white;
@@ -282,7 +283,7 @@ border: 1px solid #ccc!important;}
                         #noPeople { width: 100%; text-align: center; }
         #desc { width: 50%; display: flex; background-color: #E8E7E7; border-radius: 5px; }
             #desc p { width: 80%; margin: auto; text-align: justify; font-size: small; font-family: 'Baloo 2'; }
-#divBTNSMI { width: 90%; height: 10%; display: flex; }
+#divBTNSMI { width: 90%; height: 10%; display: flex; margin: auto; }
     #divBTNSMI button { 
         margin: auto; 
         padding: 1% 2% 1% 2%; 
@@ -291,8 +292,15 @@ border: 1px solid #ccc!important;}
         color: white;
         cursor: pointer;
     }
-        #contactarMI { background-color: #65CE76; }
-        #closeMI { background-color: #F44545; }
+        #contactarMI, #enviarRate { background-color: #65CE76; }
+        #closeMI, #closeCR { background-color: #F44545; }
+#contenidoValoracion { width: 90%; display: flex; margin: 2% auto 4% auto; }
+    #contenidoValoracion p { margin: auto auto auto 5%; }
+    #starsContainer { margin: auto 10% auto auto; }
+#contenidoText { width: 90%; display: flex; flex-direction: column; margin: auto auto 2% auto; }
+    #contenidoText p { margin: auto auto auto 5%; }
+    #contenidoText textarea { width: 80%; margin:  4% auto auto auto; }
+    #contenidoText textarea:focus { outline: none; }
 
 
 /* ALERT */

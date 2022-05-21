@@ -8,10 +8,13 @@ const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
 
 const viewRelations = document.getElementById("viewRelations")
 const bodyRL = document.getElementById("bodyRL")
-const divBackTransparent = document.getElementById("divBackTransparent")
 const msgContainer = document.getElementById("rightBodyChat")
 
+const divCreateRate = document.getElementById("divCreateRate")
+const divBackTransparent = document.getElementById("divBackTransparent");
+
 let chatId = ""
+let rate
 
 // EVENT LISTENER
 viewRelations.addEventListener("click", e => {
@@ -33,6 +36,13 @@ document.getElementById("leftBody").addEventListener("click", e => {
     if (e.target.className === "userChat") {
         loadMSGS(e.target.id)
         chatId = e.target.id
+    }
+})
+
+document.getElementById("bodyRL").addEventListener("click", e => {
+    if (e.target.className == "menuDivRL" || e.target.className == "menuDivRLOE") {
+        if (e.target.id == "closeChat") closeChat()
+        if (e.target.id == "rateChat") rateUser()
     }
 })
 
@@ -81,8 +91,8 @@ export async function loadChats(userEmail) {
 
         const chatDiv = `
             <div class="userChat" id="${e.id}">
-                <img src="${userChat.icono}">
-                <p>${(userChat.name).split(' ')[0]}</p>
+                <img class="userChat" id="${e.id}" src="${userChat.icono}">
+                <p class="userChat" id="${e.id}">${(userChat.name).split(' ')[0]}</p>
             </div>
         `
 
@@ -97,6 +107,7 @@ export async function loadChats(userEmail) {
 
 async function loadMSGS(idChat) {
     const chat = await RequestHandler.getDefault("http://localhost:8085/relations/" + idChat)
+    chat.messagesList.reverse()
 
     msgContainer.innerHTML = ""
     if (chat.messagesList) {
@@ -117,4 +128,87 @@ function viewMSG(msg) {
             <p class="${msgClass}" id="${msg._id}">${msg.text}</p>
         </div>
     `
+}
+
+async function closeChat() {
+    await RequestHandler.deleteDefault("http://localhost:8085/relations/delete/" + chatId)
+
+    loadChats(localUser.email)
+}
+
+async function rateUser() {
+    const chat = await RequestHandler.getDefault("http://localhost:8085/relations/" + chatId)
+    let otherUserEmail
+    if (chat.userEmail == localUser.email) otherUserEmail = localUser.email
+    else if(chat.inversorEmail == localUser.email) otherUserEmail = localUser.email
+    const otherUser = await RequestHandler.getDefault("http://localhost:8085/users/" + otherUserEmail)
+
+    let rateDiv = `
+    <div class="subDivCR">
+        <div id="divReseniaMI">
+            <div id="tituloMI">
+                <img src="../Imagenes/Logos/MeansHexagonoSinFondo.png">
+                <h1>Valorar a ${otherUser.name}</h1>
+            </div>
+            <hr>
+            <div id="contenidoMI">
+                <div id="contenidoValoracion">
+                    <p>Valoración:</p>
+                    <div id="starsContainer">
+                        <img id="star1" class="1" src="https://api.iconify.design/uim/favorite.svg?color=%23ffd600">
+                        <img id="star2" class="2" src="https://api.iconify.design/uim/favorite.svg?color=%23ffd600">
+                        <img id="star3" class="3" src="https://api.iconify.design/uim/favorite.svg?color=%23ffd600">
+                        <img id="star4" class="4" src="https://api.iconify.design/uim/favorite.svg?color=%23ffd600">
+                        <img id="star5" class="5" src="https://api.iconify.design/uim/favorite.svg?color=%23ffd600">
+                    </div>
+                </div>
+                <div id="contenidoText">
+                    <p>Tu opinión sobre este usuario:</p>
+                    <textarea id="rateText" rows="9" maxlength="500" placeholder="Escriba su opinió sobre el usuario a valorar"></textarea>
+                </div>
+            </div>
+            <div id="divBTNSMI">
+                <button id="enviarRate">Enviar</button>
+                <button id="closeCR">Cerrar</button>
+            </div>
+        </div>
+    </div>`
+    
+    divCreateRate.style.display = "flex"
+    divCreateRate.innerHTML = rateDiv
+    divBackTransparent ? divBackTransparent.style.display = "flex" : console.log("divBackTransparent NO EXISTE")
+
+    // VALORAR USUARIO
+    document.getElementById("starsContainer").addEventListener("click", e => {
+        let idRate = (e.target.id).charAt(0)
+        // if (idRate != 0)
+        rate = e.target.className
+    })
+
+    // ENVIAR RATE
+    document.getElementById("enviarRate").addEventListener("click", e =>{
+        e.preventDefault();
+
+        const text = document.getElementById("rateText").value
+
+        let rateDoc = {
+            user: localUser._id,
+            valoratedUser: otherUser._id,
+            rating: rate,
+            text: text
+        }
+
+        RequestHandler.postDefault("http://localhost:8085/review/create", rateDoc)
+        
+        divCreateRate.style.display="none";
+        divBackTransparent ? divBackTransparent.style.display = "none" : console.log("divBackTransparent NO EXISTE")
+    })
+
+    // CLOSE CREATE RATE
+    document.getElementById("closeCR").addEventListener("click", e=>{
+        e.preventDefault();
+        
+        divCreateRate.style.display="none";
+        divBackTransparent ? divBackTransparent.style.display = "none" : console.log("divBackTransparent NO EXISTE")
+    })
 }

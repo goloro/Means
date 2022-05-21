@@ -29,6 +29,16 @@ class RequestHandlerClass {
         if (res.status === 200) return true
         return false
     }
+
+    // Delete Default
+    async deleteDefault(url, data) {
+        const res = await fetch(url, {
+            method: 'DELETE',
+            headers:{'Content-Type': 'application/json'}
+        })
+        if (res.status === 200) return true
+        return false
+    }
 }
 
 export {RequestHandlerClass}
