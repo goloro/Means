@@ -155,11 +155,11 @@ async function rateUser() {
                 <div id="contenidoValoracion">
                     <p>Valoración:</p>
                     <div id="starsContainer">
-                        <img id="star1" class="1" src="https://api.iconify.design/uim/favorite.svg?color=%23ffd600">
-                        <img id="star2" class="2" src="https://api.iconify.design/uim/favorite.svg?color=%23ffd600">
-                        <img id="star3" class="3" src="https://api.iconify.design/uim/favorite.svg?color=%23ffd600">
-                        <img id="star4" class="4" src="https://api.iconify.design/uim/favorite.svg?color=%23ffd600">
-                        <img id="star5" class="5" src="https://api.iconify.design/uim/favorite.svg?color=%23ffd600">
+                        <img id="star1" class="star" src="https://api.iconify.design/uil/favorite.svg?color=%23ffd600">
+                        <img id="star2" class="star" src="https://api.iconify.design/uil/favorite.svg?color=%23ffd600">
+                        <img id="star3" class="star" src="https://api.iconify.design/uil/favorite.svg?color=%23ffd600">
+                        <img id="star4" class="star" src="https://api.iconify.design/uil/favorite.svg?color=%23ffd600">
+                        <img id="star5" class="star" src="https://api.iconify.design/uil/favorite.svg?color=%23ffd600">
                     </div>
                 </div>
                 <div id="contenidoText">
@@ -180,8 +180,16 @@ async function rateUser() {
 
     // VALORAR USUARIO
     document.getElementById("starsContainer").addEventListener("click", e => {
-        let idRate = (e.target.id).charAt(0)
-        // if (idRate != 0)
+        let id = e.target.id
+        let idRate = id.charAt((id.length)-1)
+        if (idRate != 1) for (let i=1; i<=5; i++) document.getElementById("star" + i).src = "https://api.iconify.design/uil/favorite.svg?color=%23ffd600"
+        
+        for (let i=1; i<=idRate; i++) {
+            let star = document.getElementById("star" + i)
+            if (star.src == "https://api.iconify.design/uim/favorite.svg?color=%23ffd600") star.src = "https://api.iconify.design/uil/favorite.svg?color=%23ffd600"
+            else star.src = "https://api.iconify.design/uim/favorite.svg?color=%23ffd600"
+        }
+
         rate = e.target.className
     })
 
