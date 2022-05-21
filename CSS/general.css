@@ -106,7 +106,8 @@ nav {
     .postBodyRightTop { display: flex; height: 20%; width: 90%; margin: auto; }
         .postBodyRightTop div { width: 100%; display: flex;}
         .postBodyRightTop div img { height: 100%; margin: auto; cursor: pointer;}
-        .postBodyRightTop div img#btnChat {margin-top: 2.8px; }
+        .postBodyRightTop div img#btnChat {margin-top: 2.8px; height: 33px;
+            margin-top: 6px;}
     .postBodyRightBot { 
         display: flex; 
         flex-direction: column;
@@ -120,7 +121,7 @@ nav {
         .postBodyRightBot div img { height: 70%; margin: auto auto auto 0; }
         .postBodyRightBot div p { margin: auto 0 auto auto; text-align: center; width: 80%; font-size: 1rem; }
 .postUser {
-    width: 16%;
+    width: 20%;
     height: 100%;
     display: flex;
     margin: 0 2% 0 2%;
@@ -253,8 +254,8 @@ nav {
 }
 #divReseniaMI { width: 90%; height: 90%; margin: auto; }
 #tituloMI { width: 100%; display: flex; }
-    #tituloMI img { width: 20%; margin: auto; }
-    #tituloMI h1 { margin: auto; text-align: center; }
+    #tituloMI img { width: 20%; margin: auto;}
+    #tituloMI h1 { margin: auto; text-align: center; margin-left: -50px; }
 #divReseniaMI hr { width: 90%; height: 2px; background-color: black; margin: 2% auto 2% auto; }
 #contenidoMI { width: 90%; height: 70%; margin: auto; }
     #contenidoFechas { width: 100%; display: flex; flex-direction: column; height: 20%; }
@@ -272,7 +273,7 @@ nav {
                         #countMI { width: 20%; text-align: center; }
                         #noPeople { width: 100%; text-align: center; }
         #desc { width: 50%; display: flex; background-color: #E8E7E7; border-radius: 5px; }
-            #desc p { width: 80%; margin: auto; text-align: justify; font-size: small; }
+            #desc p { width: 80%; margin: auto; text-align: justify; font-size: small; font-family: 'Baloo 2'; }
 #divBTNSMI { width: 90%; height: 10%; display: flex; }
     #divBTNSMI button { 
         margin: auto; 
