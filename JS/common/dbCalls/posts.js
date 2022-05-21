@@ -235,5 +235,17 @@ async function deleteFav(idPost) {
         await RequestHandler.putDefault("http://localhost:8085/users/edit/" + localUser.email, localUser)
 
         createAlert("https://api.iconify.design/uil/favorite.svg?color=white", "Eliminado de Favoritos!", "#e65353")
+
+        if (document.getElementById("vNavFavs")) {
+            const posts = []
+            localUser.favs.forEach(async e => {
+                let post = await RequestHandler.getDefault("http://localhost:8085/post/" + e)
+                posts.push(post)
+            })
+        
+            document.getElementById("divInfo").innerHTML = ""
+
+            setTimeout(getPosts, 500, 4, document.getElementById("divInfo"), { posts: posts })
+        }
     }
 }

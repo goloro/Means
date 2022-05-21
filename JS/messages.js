@@ -44,8 +44,19 @@ function addMSG(text) {
 }
 
 async function loadChats(userEmail) {
-    const chats = await RequestHandler.getDefault("http://localhost:8085/relations/user/" + userEmail)
-
+    let url
+    alert(localUser.profile)
+    switch (localUser.profile) {
+        case 0: {
+            url = "http://localhost:8085/relations/user/"
+            break
+        }
+        case 1: {
+            url = "http://localhost:8085/relations/inversor/"
+            break
+        }
+    }
+    const chats = await RequestHandler.getDefault(url + userEmail)
     chats.forEach(async e => {
         const userChat = await RequestHandler.getDefault("http://localhost:8085/users/" + userEmail)
 
