@@ -41,15 +41,21 @@ async function login() {
     const password = document.getElementById("campoPasswordL")
 
     const existUser = await RequestHandler.getDefault("http://localhost:8085/users/" + email.value + "/" + password.value)
+   
+    if(!password.value){
+        createProblem("La contraseña es incorrecta")
+        return
+    }
 
-    email.value = ""
-    password.value = ""
 
     if (existUser) {
         localStorage.setItem('Means_userLogued', JSON.stringify(existUser))
         localUser = existUser
         window.open("/HTML/app.html", "_self")
     }
+
+    email.value = ""
+    password.value = ""
 }
 
 async function registro() {
@@ -83,7 +89,7 @@ async function registro() {
         email: email.value,
         phone: phone.value,
         password: password.value,
-        profile: 0,
+        profile: 0
     }
 
     const registUser = await RequestHandler.postDefault("http://localhost:8085/users/register", data)
@@ -175,7 +181,7 @@ async function registroInversores() {
         email: email.value,
         phone: phone.value,
         password: password.value,
-        profile: 1,
+        profile: 1
     }
 
     const registUser = await RequestHandler.postDefault("http://localhost:8085/users/register", data)
