@@ -7,6 +7,49 @@
         overflow-x: hidden !important;
     }
 
+    /***MAS INFORMACION***/
+    .subDivMInfo {
+
+        width: 90vw;
+        max-width: 90vw;
+        height: 100vw;
+        max-height: 100vw;
+    }
+
+    #tituloMI h1 {
+
+        font-size: 6vw;
+    }
+
+    #divBTNSMI button {
+
+        width: 13vw;
+        height: 5vw;
+        font-size: 2.5vw;
+    }
+
+    #desc p {
+
+        font-size: 2.5vw;
+        height: 94%;
+    }
+
+    #moneyMI p {
+
+        font-size: 3vw;
+    }
+
+    #contenidoFechas p {
+
+        font-size: 3vw;
+    }
+
+    #noPeople {
+        font-size: 4vw;
+    }
+
+    /*******************/
+
     #divPost {
 
         margin-top: 39vw;
@@ -103,6 +146,49 @@
         max-width: 100% !important;
         overflow-x: hidden !important;
     }
+
+    /***MAS INFORMACION***/
+    .subDivMInfo {
+
+        width: 545px;
+        max-width: 545px;
+        height: 606px;
+        max-height: 600px;
+    }
+
+    #tituloMI h1 {
+
+        font-size: 36px;
+    }
+
+    #divBTNSMI button {
+
+        width: 78px;
+        height: 30px;
+        font-size: 15px;
+    }
+
+    #desc p {
+
+        font-size: 15px;
+        height: 94%;
+    }
+
+    #moneyMI p {
+
+        font-size: 18px;
+    }
+
+    #contenidoFechas p {
+
+        font-size: 18px;
+    }
+
+    #noPeople {
+        font-size: 24px;
+    }
+
+    /*******************/
 
     .bottomNav {
 
