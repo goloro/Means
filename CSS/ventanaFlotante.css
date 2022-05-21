@@ -104,9 +104,11 @@ h3{
 }
 #textareaRese{
     margin-left: -12%;
+    margin-top: 10px;
+    text-align: center;
 }
 #btnPublicar{
-    margin-top: 5%;
+    margin-top: 10%;
     margin-left: 16%;
     background-image: linear-gradient(#254EEC , #8A26EC);
     color: white;

@@ -88,7 +88,7 @@ nav {
 .postBody { display: flex; width: 70%; height: 100%; }
     .postBodyLeft { display: flex; flex-direction: column; width: 80%; height: 100%; }
     #postBodyLeftTop { margin: auto; display: flex; }
-    #titlePost { font-family: 'Roboto', sans-serif; font-size: 1.3rem; width: 70%; text-align: center; }
+    #titlePost { font-family: 'Roboto', sans-serif; font-size: 1.3rem; width: 70%; text-align: center; margin-top: 6px; }
     #textPost { font-family: 'Red Hat Text', sans-serif; font-size: 1rem; width: 90%; margin: auto; text-align: center; }
     #moreInfoPost { 
         font-family: 'Roboto', sans-serif;
