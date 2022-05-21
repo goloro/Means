@@ -19,12 +19,12 @@ nav {
 .filtrosNav { margin: 0 auto 0 auto; display: flex; width: 70%; }
 .divFiltros {
     display: flex;
-    border-radius: 5px;
+    border-radius: 30px;
     height: 65%;
     width: 40%;
     margin: auto;
-    background-color: #a49e9e85;
-}
+    background-color: #ffffff;
+border: 1px solid #ccc!important;}
 .divFiltros img { width: 10%; height: 60%; margin: auto; }
 .divFiltrosDiv { width: 90%; height: 100%; }
 #buscador { font-size: 1.1rem; background-color: transparent; border: none; }
