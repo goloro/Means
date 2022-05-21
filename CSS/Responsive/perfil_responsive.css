@@ -37,9 +37,9 @@
     }
 
     #nameUser {
-        font-size: 5vw;
+        font-size: 6vw;
         width: 100%;
-        margin-left: -17vw;
+        margin-left: -25vw;
     }
 
     .informationPerfil h2 {
@@ -102,13 +102,19 @@
         margin-left: 16.5vw;
     }
 
+    #editarPerfilImages {
+
+        width: 7vw;
+        height: 7vw;
+    }
+
     .postBodyRightBot div p {
         font-size: 2.5vw;
     }
 
     .insigniasDiv h3 {
 
-        font-size: 2.2vw;
+        font-size: 3.2vw;
     }
 
     .insigniasDiv {
@@ -121,9 +127,9 @@
 
     #insignias img {
 
-        width: 3vw;
+        width: 5vw;
         /* margin-top: 5.6vw; */
-        height: 3vw;
+        height: 5vw;
     }
 
     #pantalla {
@@ -192,6 +198,26 @@
         font-size: 20px;
     }
 
+    #editarPerfilImages {
+
+        width: 42px !important;
+        height: 42px !important;
+    }
+
+    #nameUser {
+
+        font-size: 36px;
+    }
+
+    .insigniasDiv h3 {
+        font-size: 19px !important;
+    }
+
+    #insignias img {
+
+        width: 26px;
+        height: 26px;
+    }
 }
 
 
