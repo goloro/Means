@@ -3,6 +3,33 @@
         display: none;
     }
 
+    /****EDITAR PERFIL******/
+    .cardEdit {
+
+        height: 55vw;
+        width: 86vw;
+    }
+
+    .form-campo div p {
+
+        font-size: 3.5vw;
+    }
+
+    .editCampo {
+
+        font-size: 3.5vw;
+    }
+
+    #btnEdit {
+
+        width: 24vw;
+        font-size: 4vw;
+    }
+
+
+
+    /**************/
+
     #headerRL p {
 
         font-size: 4vw;
@@ -143,6 +170,33 @@
 
 @media (min-width:600px) and (max-width : 1000px) {
 
+    /****EDITAR PERFIL******/
+    .cardEdit {
+
+        height: 323px;
+        width: 515px;
+    }
+
+    .form-campo div p {
+
+        font-size: 21px;
+    }
+
+    .editCampo {
+
+        font-size: 21px;
+    }
+
+    #btnEdit {
+
+        width: 144px;
+        font-size: 24px;
+    }
+
+
+
+    /**************/
+
 
     #pantalla {
 
@@ -150,7 +204,7 @@
         height: 68vw;
     }
 
-    #headerRL p {}
+    
 
     .bottomNav {
 

@@ -39,6 +39,16 @@
         font-size: 3vw;
     }
 
+    #tipoMI {
+
+        font-size: 3.5vw;
+    }
+
+    #countMI {
+
+        font-size: 3vw;
+    }
+
     #contenidoFechas p {
 
         font-size: 3vw;
@@ -159,6 +169,16 @@
     #tituloMI h1 {
 
         font-size: 36px;
+    }
+
+    #tipoMI {
+
+        font-size: 21px;
+    }
+
+    #countMI {
+
+        font-size: 18px;
     }
 
     #divBTNSMI button {
