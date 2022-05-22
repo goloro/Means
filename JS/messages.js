@@ -1,5 +1,6 @@
 // IMPORTS
 import { RequestHandlerClass } from '../JS/common/dbCalls/requestHandler.js'
+import { createAlert } from '../JS/common/alert.js';
 
 // CONSTS
 const RequestHandler = new RequestHandlerClass();
@@ -139,8 +140,19 @@ async function closeChat() {
 async function rateUser() {
     const chat = await RequestHandler.getDefault("http://localhost:8085/relations/" + chatId)
     let otherUserEmail
-    if (chat.userEmail == localUser.email) otherUserEmail = localUser.email
-    else if(chat.inversorEmail == localUser.email) otherUserEmail = localUser.email
+    let rateURL
+    let userFlag = false
+    let inversorFlag = false
+    if (chat.userEmail == localUser.email) {
+        otherUserEmail = chat.inversorEmail
+        rateURL = "http://localhost:8085/relations/user/rate/" + chatId + "/"
+        userFlag = true
+    }
+    else if(chat.inversorEmail == localUser.email) {
+        otherUserEmail = chat.userEmail
+        rateURL = "http://localhost:8085/relations/inversor/rate/" + chatId + "/"
+        inversorFlag = true
+    }
     const otherUser = await RequestHandler.getDefault("http://localhost:8085/users/" + otherUserEmail)
 
     let rateDiv = `
@@ -190,12 +202,27 @@ async function rateUser() {
             else star.src = "https://api.iconify.design/uim/favorite.svg?color=%23ffd600"
         }
 
-        rate = e.target.className
+        rate = idRate
     })
 
     // ENVIAR RATE
     document.getElementById("enviarRate").addEventListener("click", e =>{
         e.preventDefault();
+
+        if (userFlag && chat.userRate != 0) {
+            divCreateRate.style.display="none";
+            divBackTransparent ? divBackTransparent.style.display = "none" : console.log("divBackTransparent NO EXISTE")
+            createAlert("https://api.iconify.design/bxs/error.svg?color=white", "Relation con " + otherUser.name + " ya valorada!", "#e65353")
+            return
+        }
+        if (inversorFlag && chat.inversorRate != 0) {
+            divCreateRate.style.display="none";
+            divBackTransparent ? divBackTransparent.style.display = "none" : console.log("divBackTransparent NO EXISTE")
+            createAlert("https://api.iconify.design/bxs/error.svg?color=white", "Relation con " + otherUser.name + " ya valorada!", "#e65353")
+            return
+        }
+
+        alert("si")
 
         const text = document.getElementById("rateText").value
 
@@ -205,8 +232,8 @@ async function rateUser() {
             rating: rate,
             text: text
         }
-
-        RequestHandler.postDefault("http://localhost:8085/review/create", rateDoc)
+        const review = RequestHandler.postDefault("http://localhost:8085/review/create", rateDoc)
+        RequestHandler.putDefault(rateURL + rate)
         
         divCreateRate.style.display="none";
         divBackTransparent ? divBackTransparent.style.display = "none" : console.log("divBackTransparent NO EXISTE")

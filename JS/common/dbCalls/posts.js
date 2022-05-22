@@ -28,6 +28,10 @@ if (divPosts) divPosts.addEventListener("click", e=>{
         }
 
         if (e.target.id == "btnChat") createRelation(e.target.className)
+
+        if (e.target.id == "btnDeletePost") deletePost()
+
+        if (e.target.id == "btnEditPost") editPost()
     })
 
 //FUNCTIONS
@@ -61,10 +65,10 @@ export async function getPosts(callOption, postsContainer, options) {
             break
         }
     }
-    if (posts && (callOption === 0 || callOption === 1 || callOption === 3 || callOption === 4)) await posts.forEach(e => { postCall(e, postsContainer) });
+    if (posts && (callOption === 0 || callOption === 1 || callOption === 3 || callOption === 4)) await posts.forEach(e => { postCall(e, postsContainer, options) });
 }
 
-async function postCall(post, postContainer) {
+async function postCall(post, postContainer, options) {
     let totalPeople = 0
     if (post.people) post.people.forEach(e => { totalPeople += e.count });
 
@@ -73,7 +77,16 @@ async function postCall(post, postContainer) {
     const userPost = await RequestHandler.getDefault("http://localhost:8085/users/" + post.idUser, "getUserPost")
 
     let fav = localUser.favs ? localUser.favs.find((fav) => fav == post._id) : undefined
-    const favIcon = fav ? "https://api.iconify.design/uim/favorite.svg?color=%23ffd600" : "https://api.iconify.design/uil/favorite.svg?color=%23ffd600"
+    let favIcon = fav ? "https://api.iconify.design/uim/favorite.svg?color=%23ffd600" : "https://api.iconify.design/uil/favorite.svg?color=%23ffd600"
+    let msgIcon = "https://api.iconify.design/bi/chat-square-dots-fill.svg?color=%23514f4f"
+    let favId = "btnFavs"
+    let msgId = "btnChat"
+    if (options?.profile) {
+        favId = "btnEditPost"
+        msgId = "btnDeletePost"
+        favIcon = "https://api.iconify.design/eva/edit-fill.svg?color=%23514f4f"
+        msgIcon = "https://api.iconify.design/fluent/delete-dismiss-24-filled.svg?color=%23f24e1e"
+    }
 
     let postCard = `
     <div class="cardPost">
@@ -95,8 +108,8 @@ async function postCall(post, postContainer) {
             <div class="postBodyRight">
                 <div class="postBodyRightTop">
                     <div>
-                        <img id="btnFavs" class="${ post._id }" src="${favIcon}">
-                        <img id="btnChat" class="${ post.idUser }" src="https://api.iconify.design/bi/chat-square-dots-fill.svg?color=%23514f4f">
+                        <img id="${favId}" class="${ post._id }" src="${favIcon}">
+                        <img id="${msgId}" class="${ post.idUser }" src="${msgIcon}">
                     </div>
                 </div>
                 <div class="postBodyRightBot">
@@ -252,4 +265,12 @@ async function deleteFav(idPost) {
             setTimeout(getPosts, 500, 4, document.getElementById("divInfo"), { posts: posts })
         }
     }
+}
+
+function deletePost() {
+
+}
+
+function editPost() {
+    
 }
