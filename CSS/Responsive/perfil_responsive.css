@@ -103,7 +103,7 @@
     #revTxt {
 
         font-size: 4vw;
-        
+
     }
 
     /**************/
@@ -153,13 +153,15 @@
     }
 
     #nameUser {
-        font-size: 6vw;
+        font-size: 4vw;
         width: 100%;
-        margin-left: -25vw;
+
     }
 
     .informationPerfil h2 {
         width: 100%;
+        text-align: left;
+        margin-left: -5px;
     }
 
     .insigniasDiv h3 {
@@ -255,7 +257,8 @@
         width: 94vw;
         height: 68vw;
     }
-     #barraNavResponsive {
+
+    #barraNavResponsive {
         display: flex;
         width: 100%;
         background-color: white;
@@ -449,7 +452,7 @@
 
     #nameUser {
 
-        font-size: 36px;
+        font-size: 24px;
     }
 
     .insigniasDiv h3 {
@@ -464,25 +467,3 @@
 }
 
 
-/*
-
-    #nameUser {
-        font-size: 30px;
-    }
-
-    .insigniasDiv h3 {
-
-        font-size: 15px;
-    }
-
-    #lineaDivisoria {
-
-        width: 544px;
-    }
-
-    #iconoPerfil {
-        width: 120px;
-        height: 120px;
-        margin-left: 50px;
-    }
-*/
