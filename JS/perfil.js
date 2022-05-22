@@ -204,7 +204,7 @@ async function viewReviews() {
     deleteInfo()
 
     const review = await RequestHandler.getDefault("http://localhost:8085/review/user/" + user._id )
-    alert(user._id)
+
     if (review) await review.forEach(e => { loadReviews(e) })
 }
 function viewFavs() {
