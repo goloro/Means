@@ -229,22 +229,30 @@ function deleteInfo() {
 }
 
 async function loadReviews(review) {
-    const userVSender = await RequestHandler.getDefault("http://localhost:8085/review/user/" + review.user)
+    const userVSender = await RequestHandler.getDefault("http://localhost:8085/users/id/" + review.user)
 
+    let divStars = document.createElement("div")
+
+    for (let i = 1; i < 6; i++) {
+        if (review.rating <= i) 
+            divStars.innerHTML +=  `
+                <img src="https://api.iconify.design/uim/favorite.svg?color=%23ffd233">
+            `
+        else 
+            divStars.innerHTML +=  `
+                <img src="https://api.iconify.design/uim/favorite.svg?color=%23ffd600">
+            `
+    }
 
     let reviewCard = `
     <div class="cardReview">
         <div class="revTop">
             <div class="revUser">
-                <img id="iconUser" src="http://127.0.0.1:5501/Imagenes/Pics/3474952.jpg">
-                <img id="insUser" src="../Imagenes/Logos/MeansWhiteBronce.png">
+                <img id="iconUser" src="${userVSender.icono}">
+                <img id="insUser" src="${userVSender.insignias[0]}">
             </div>
-            <div class="revStars">
-                <img src="https://api.iconify.design/uim/favorite.svg?color=%23ffd600">
-                <img src="https://api.iconify.design/uim/favorite.svg?color=%23ffd600">
-                <img src="https://api.iconify.design/uim/favorite.svg?color=%23ffd600">
-                <img src="https://api.iconify.design/uim/favorite.svg?color=%23ffd600">
-                <img src="https://api.iconify.design/uim/favorite.svg?color=%23ffd600">
+            <div class="revStars" id="revStars">
+                ${divStars.innerHTML}
             </div>
         </div>
         <div class="revBot">
@@ -253,6 +261,9 @@ async function loadReviews(review) {
     </div>`
 
     divInfo.innerHTML += reviewCard
+}
+function loadStars(review) {
+
 }
 
 async function loadEdit() {
