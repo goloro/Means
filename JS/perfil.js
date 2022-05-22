@@ -93,23 +93,24 @@ divInfo.addEventListener("click", e => {
 
 // FUNCTIONS
 const otherProfile = localStorage.getItem("Means_ViewProfile")
-if (localUser && otherProfile == localUser.email) {
+if (otherProfile && otherProfile != localUser.email) {
+    const otherUser = await RequestHandler.getDefault("http://localhost:8085/users/" + otherProfile)
+    user = otherUser
+    loadUser()
+    document.getElementById("vNavFavs").style.display = "none"
+    document.getElementById("vNavEdit").style.display = "none"
+} else {
     const userDoc = await RequestHandler.getDefault("http://localhost:8085/users/" + localUser.email)
     localStorage.setItem('Means_userLogued', JSON.stringify(userDoc))
 
     user = localUser
     loadUser()
 }
-if (otherProfile && otherProfile != localUser.email) {
-    const otherUser = RequestHandler.getDefault("http://localhost:8085/users/" + otherProfile)
-
-    user = otherUser
-    loadUser()
-}
 
 viewPosts()
 
 function loadUser() {
+    console.log(user)
     // Name
     nameUser.innerHTML = user.name.toUpperCase()
 
@@ -194,8 +195,8 @@ function changeView(item) {
 async function viewPosts() {
     deleteInfo() 
 
-    if (otherProfile == localUser.email) getPosts(1, divInfo, { idUser: localUser.email, profile: true })
-    else getPosts(1, divInfo, { idUser: user.email })
+    if (otherProfile != localUser.email) getPosts(1, divInfo, { idUser: user?.email })
+    else getPosts(1, divInfo, { idUser: localUser.email, profile: true })
 }
 async function viewReviews() {
     deleteInfo()

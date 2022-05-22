@@ -34,7 +34,8 @@ if (divPosts) divPosts.addEventListener("click", e=>{
 
         if (e.target.id == "btnEditPost") editPost(e.target.className)
 
-        if (e.target.class == "postUser") viewProfile(e.target.id)
+        if (e.target.className == "postUser") viewProfile(e.target.id)
+        else if(e.target.id == "iconUser" || e.target.id == "insUser") viewProfile(e.target.className)
     })
 
 //FUNCTIONS
@@ -274,7 +275,7 @@ async function deleteFav(idPost) {
 }
 
 function viewProfile(UserEmail) {
-    localUser.setItem("Means_ViewProfile", UserEmail)
+    localStorage.setItem("Means_ViewProfile", UserEmail)
     window.open("../../HTML/perfil.html", "_self")
 }
 

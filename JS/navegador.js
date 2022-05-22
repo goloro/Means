@@ -1,5 +1,8 @@
 // IMPORTS
 
+// CONST
+const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
+
 // Filtros navegador
 document.getElementById("divFiltrosDiv").addEventListener("input", e => {
     document.getElementById(e.target.className).innerHTML = e.target.value
@@ -25,4 +28,8 @@ SignUp.addEventListener('click', e=>{
     window.open("../HTML/portada.html", "_self");
     //****************************************/
     //CUANDO TENGAMOS LOCAL, ELIMINAR LA SESIÓN AQUI
+})
+
+document.getElementById("user").addEventListener("click", e => {
+    localStorage.setItem("Means_ViewProfile", localUser.email)
 })
