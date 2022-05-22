@@ -74,7 +74,10 @@
         margin: auto;
     }
 
-    #meansNavResponsive {}
+    #meansNavResponsive {
+        width: 13vw !important;
+        height: 10vw !important;
+    position: relative;top: -1.5vw;left: -2vw;}
 
     .filtrosNav {
         visibility: hidden;
@@ -140,5 +143,8 @@
         margin: auto;
     }
 
-    #meansNavResponsive {}
+    #meansNavResponsive {
+        width: 77px !important;
+        position: relative;height: 60px !important;
+    top: -9px;}
 }
