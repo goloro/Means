@@ -124,14 +124,14 @@
         max-height: 186px;
         position: relative;
         left: -13vw;
-        top: 3vw;
+        top: -15vw;
     }
 
     #hazteInv {
         display: flex;
         margin-bottom: -7vw;
         position: relative;
-        top: -29.5vw;
+        top: -47vw;
         height: 32vw;
         width: 31vw;
         right: -34vw;
@@ -320,8 +320,8 @@
         height: 187px;
         max-height: 186px;
         position: relative;
-        left: -56px;
-        top: 19px;
+        left: -58px;
+        top: -83px;
     }
 
     #botCreate p {
@@ -400,7 +400,7 @@
     #hazteInv {
         display: flex;
         position: relative;
-        top: -167px;
+        top: -268px;
         height: 187px;
         width: 171px;
         right: -216px;
