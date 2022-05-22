@@ -10,6 +10,7 @@ const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
 
 const divBackTransparent = document.getElementById("divBackTransparent");
 const divMasInfoPost = document.getElementById("divMasInfoPost");
+const divInfo = document.getElementById("divInfo");
 
 
 //EVENT LISTENER
@@ -281,13 +282,14 @@ function viewProfile(UserEmail) {
     window.open("../../HTML/perfil.html", "_self")
 }
 
-const divInfo = document.getElementById("divInfo");
-
-
 async function deletePost(idPost) {
     await RequestHandler.deleteDefault("http://localhost:8085/post/delete/" + idPost)
     createAlert("https://api.iconify.design/fluent/delete-dismiss-24-filled.svg?color=white", "Post borrado correctamente!", "#e65353")
     divInfo.innerHTML=""
     getPosts(1, divInfo, { idUser: localUser.email, profile: true })
+}
 
+async function editPost(idPost) {
+    localStorage.setItem("Means_editPost", idPost)
+    window.open("../HTML/createPost.html", "_self")
 }

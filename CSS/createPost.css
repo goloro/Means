@@ -191,7 +191,8 @@ body {
     border: 1px solid transparent;
 }
 
-#btnCP {
+#btnCP, #btnEPEdit {
+    display: flex;
     margin: 0 auto 2% auto;
     background-image: linear-gradient(#254EEC, #8A26EC);
     color: white;
@@ -203,9 +204,11 @@ body {
     cursor: pointer;
 }
 
-#btnCP:hover {
+#btnCP:hover, #btnEPEdit:hover {
     background-image: linear-gradient(#1c3ab1, #7220c4);
 }
+
+#btnEPEdit { display: none; }
 
 .problemCard {
     width: 100%;

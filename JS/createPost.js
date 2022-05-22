@@ -1,14 +1,25 @@
 // IMPORTS
+import { RequestHandlerClass } from './common/dbCalls/requestHandler.js'
 import { createPostCall } from './common/dbCalls/posts.js'
 import { createAlert } from '/JS/common/alert.js';
 
 // CONSTS
+const RequestHandler = new RequestHandlerClass();
+
 const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
+const editPost = localStorage.getItem('Means_editPost')
+
+let previousIMGCat
+let selectedIMGCat
 
 // EVENT LISTENERS
 document.getElementById("btnCP").addEventListener("click", e => {
     e.preventDefault()
     createPost()
+})
+document.getElementById("btnEPEdit").addEventListener("click", e => {
+    e.preventDefault()
+    createPost(editPost)
 })
 document.getElementById("peopleField").addEventListener("click", e => {
     e.preventDefault()
@@ -58,8 +69,6 @@ document.getElementById("moneyButtons").addEventListener("click", e => {
         changeColorNo(document.getElementById("moneyYes"), document.getElementById("moneyNo"))
     }
 })
-let previousIMGCat
-let selectedIMGCat
 document.getElementById("imgCatCP").addEventListener("click", e => {
     let target = e.target
     if (target.tagName === "IMG") {
@@ -87,12 +96,58 @@ document.getElementById("imgCatCP").addEventListener("click", e => {
     }
 })
 
-
-
-
-
-
 // FUNCTIONS
+if (editPost) {
+    const post = await RequestHandler.getDefault("http://localhost:8085/post/" + editPost)
+
+    document.getElementById("namePost").value = post.name
+    document.getElementById("descShortPost").value = post.smallDescription
+    document.getElementById("descLargePost").value = post.largeDescription
+    document.getElementById("startDatePost").value = post.startDate
+    document.getElementById("finishDatePost").value = post.finishDate
+
+    const childIMGs = document.getElementById("imgCatCP").childNodes
+    childIMGs.forEach(e => {
+        if (e.src == post.image) {
+            e.style.border = "1px solid black"
+            e.style.boxShadow = "2px 2px 10px 1px rgba(0, 0, 0, 0.2)"
+
+            previousIMGCat = e
+        }
+    });
+    selectedIMGCat = post.image
+
+    if (post.money) {
+        document.getElementById("moneyPost").style.display = "flex"
+        changeColorYes(document.getElementById("moneyYes"), document.getElementById("moneyNo"))
+        document.getElementById("moneyPost").value = post.money
+    }
+
+    if (post.people) {
+        document.getElementById("peopleTable").style.display = "flex"
+        changeColorYes(document.getElementById("peopleYes"), document.getElementById("peopleNo"))
+
+        post.people.forEach(e => {
+            const divPeopleLines = document.getElementById("divPeopleLines")
+            divPeopleLines.innerHTML = ""
+            const peopleLine = document.createElement("div")
+            let lines = divPeopleLines.childElementCount
+            peopleLine.id = lines
+            peopleLine.innerHTML += `
+                <img id="delete${lines}" class="${lines}" src="https://api.iconify.design/akar-icons/trash-can.svg?color=%23fb5050">
+                <input id="tipo${lines}" class="leftItemPeopleTable" type="text" value="${e.type}">
+                <input id="number${lines}" class="rigthItemPeopleTable" type="number" value="${e.count}">
+            `
+            divPeopleLines.appendChild(peopleLine)
+        });
+    }
+
+    document.getElementById("titleCPh1").innerHTML = "Edit Post"
+
+    document.getElementById("btnCP").style.display = "none"
+    document.getElementById("btnEPEdit").style.display = "flex"
+}
+
 function changeColorYes(btnYes, btnNo) {
     btnYes.style.backgroundColor = "rgb(88, 216, 52)"
     btnNo.style.backgroundColor = "rgb(244, 98, 98)"
@@ -102,7 +157,7 @@ function changeColorNo(btnYes, btnNo) {
     btnNo.style.backgroundColor = "rgb(245, 41, 41)"
 }
 
-function createPost() {
+async function createPost(edit) {
     const name = document.getElementById("namePost")
     const descShort = document.getElementById("descShortPost")
     const descLarge = document.getElementById("descLargePost")
@@ -185,7 +240,10 @@ function createPost() {
         return
     }
 
-    createPostCall(postDoc)
+    if (!edit) createPostCall(postDoc)
+    else await RequestHandler.putDefault("http://localhost:8085/post/edit/" + edit, postDoc)
+
+    localStorage.removeItem("Means_editPost")
 
     name.value = ""
     descShort.value = ""
