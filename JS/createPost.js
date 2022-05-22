@@ -5,12 +5,6 @@ import { createAlert } from '/JS/common/alert.js';
 // CONSTS
 const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
 
-<<<<<<< Updated upstream
-const problemCard = document.querySelector(".problemCard")
-const msgProblem = document.getElementById("problemMsg")
-
-=======
->>>>>>> Stashed changes
 // EVENT LISTENERS
 document.getElementById("btnCP").addEventListener("click", e => {
     e.preventDefault()
