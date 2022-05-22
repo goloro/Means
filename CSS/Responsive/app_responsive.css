@@ -123,30 +123,46 @@
         height: 32vw;
         max-height: 186px;
         position: relative;
-        left: -13vw;
+        left: -18vw;
         top: -15vw;
+    }
+    .subPeopleDiv
+    {
+        
+    width: 20vw;height: 25vw;display: inline-block;align-items: center;font-size: 3.5vw;}
+    .subPeopleDiv img
+    {
+        margin:auto;
+    }
+    .subPeopleDiv img
+    {
+        
+    width: 10vw;height: 10vw;margin-left: 23%;}
+    .searchingPeople
+    {
+        
     }
 
     #hazteInv {
         display: flex;
         margin-bottom: -7vw;
         position: relative;
-        top: -47vw;
-        height: 32vw;
+        top: -48vw;
+        height: 33vw;
         width: 31vw;
-        right: -34vw;
+        right: -29vw;
     }
 
     .divCards {
-        width: 70vw;
+        width: 100%;
 
-        position: relative;
-        left: -78vw;
+        
+        
 
-        top: -60vw;
-        height: 32vw;
+        
+        height: 100%;
         MARGIN: auto;
-    }
+    margin-top: 78px;margin-left: -770px;}
 
     .cardPost {
         width: 91vw;
@@ -202,6 +218,10 @@
         position: relative;
         left: -3vw;
     }
+    .searchingPeople
+    {
+        
+    height: 38vw;}
 
 
 }

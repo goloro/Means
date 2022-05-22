@@ -113,3 +113,23 @@ async function filtradorMoney(money) {
         postCall(e, container)
     });
 }
+//OCULTAR / MOSTRAR BARRA BUSQUEDA RESPONSIVE
+const lupa = document.getElementById("lupa");
+lupa.addEventListener("click", barraResponsive);
+
+
+ function barraResponsive()
+ {
+    var nav = document.getElementsByClassName("filtrosNav");
+    
+     
+     if (nav[0].style.visibility == "hidden")
+     {
+        nav[0].style.visibility = "visible";
+     }
+     else
+     {
+        nav[0].style.visibility = "hidden";
+     }
+    
+ }

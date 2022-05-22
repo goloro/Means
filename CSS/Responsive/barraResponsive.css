@@ -1,8 +1,45 @@
 @media (max-width: 1000px) {
-    nav 
-    {
+    nav {
+
+        position: relative;
+
+        width: 101vw;
+        background-color: whitesmoke;
+        top: 11vw;
+        height: 11vw;
+        font-size: 5vw;
+    }
+
+    #filtroBuscador {
+        display: flex;
+    }
+
+    #filtroBuscador {
+
+        width: 100%;
+    }
+
+    #buscador {
+
+        font-size: 4vw;
+    }
+
+    .buttonsNav {
         display: none;
     }
+
+    #logoNav {
+        display: none;
+    }
+
+    #filtroMoney {
+        display: none;
+    }
+
+    .buttonsNav img {
+        display: none;
+    }
+
     #barraNavResponsive {
         display: flex;
         width: 100%;
@@ -10,6 +47,8 @@
         height: 10vw;
         margin-bottom: 1.5vw;
         box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+        position: relative;
+        top: -11vw;
     }
 
     #iconosNavResponsive {
@@ -26,23 +65,42 @@
         left: 0;
         margin: auto;
     }
-    .refNav
-    {
+
+    .refNav {
         width: 7vw;
         height: 7vw;
         right: 0;
         left: 0;
         margin: auto;
     }
-    #meansNavResponsive
-    {
 
+    #meansNavResponsive {}
+    .filtrosNav
+    {
+        visibility: hidden;
     }
 }
+
 @media (min-width:600px) and (max-width : 1000px) {
-    nav 
-    {
-        display: none;
+    nav {
+
+        position: relative;
+
+        width: 101vw;
+        background-color: whitesmoke;
+        top: 11vw;
+        height: 11vw;
+        font-size: 5vw;
+    }
+
+    #filtroBuscador {
+
+        width: 424px;
+        height: 42px;
+    }
+
+    #buscador {
+        font-size: 21px;
     }
 
     #barraNavResponsive {
@@ -52,6 +110,8 @@
         height: 10vw;
         margin-bottom: 1.5vw;
         box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+        position: relative;
+        top: -11vw;
     }
 
     #iconosNavResponsive {
@@ -70,8 +130,8 @@
         left: 0;
         margin: auto;
     }
-    .refNav
-    {
+
+    .refNav {
         width: 42px;
         height: 42px;
 
@@ -79,8 +139,6 @@
         left: 0;
         margin: auto;
     }
-    #meansNavResponsive
-    {
-        
-    }
+
+    #meansNavResponsive {}
 }
