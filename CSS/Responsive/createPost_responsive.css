@@ -24,6 +24,13 @@
         font-size: 3vw;
     }
 
+    #btnCP,
+    #btnEPEdit {
+
+        width: 28vw;
+        font-size: 5vw;
+    }
+
     .formCPFieldTitle {
 
         font-size: 4vw;
@@ -77,8 +84,9 @@
     #moneyNo {
         font-size: 4vw;
     }
+
     #barraNavResponsive {
-        
+
         top: 1vw !important;
     }
 }
@@ -87,9 +95,17 @@
     nav {
         display: flex;
     }
+
     #barraNavResponsive {
-        
+
         top: -11vw !important;
+    }
+
+    #btnCP,
+    #btnEPEdit {
+
+        width: 172px;
+        font-size: 30px;
     }
 
     .createPost {
