@@ -11,6 +11,7 @@ const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
 const divBackTransparent = document.getElementById("divBackTransparent");
 const divMasInfoPost = document.getElementById("divMasInfoPost");
 
+
 //EVENT LISTENER
 const divPosts = document.getElementById("divPost") ? document.getElementById("divPost") : document.getElementById("divInfo")
 if (divPosts) divPosts.addEventListener("click", e=>{
@@ -238,6 +239,7 @@ async function addFav(idPost) {
         await RequestHandler.putDefault("http://localhost:8085/users/edit/" + localUser.email, localUser)
 
         createAlert("https://api.iconify.design/uim/favorite.svg?color=white", "Añadido a Favoritos!", "#ffc700")
+        alert(idPost)
     }
 }
 
@@ -267,10 +269,38 @@ async function deleteFav(idPost) {
     }
 }
 
-function deletePost() {
+
+const local_EditPostId = JSON.parse(localStorage.getItem('Means_EditPostId'));
+const btnEditPost = document.getElementById("btnEditPost");
+const btnDeletePost = document.getElementById("btnDeletePost");
+const divInfo = document.getElementById("divInfo");
+const cardPost = document.getElementById("cardPost");
+
+
+
+
+async function deletePost(idPost) {
+    await RequestHandler.deleteDefault("http://localhost:8085/post/delete/" + idPost)
+    alert("post borrado")
+    alert(localUser.idPost)
 
 }
 
 function editPost() {
+    alert("editar post")
+   
     
 }
+// divInfo.addEventListener("click", e=>{
+//     if(e.target.id=="btnEditPost"){
+//         e.preventDefault;
+//         // editPost()
+//         alert("hola");
+//     }
+//     if(e.target.id=="btnDeletePost"){
+//         e.preventDefault;
+//         // deletePost()
+//         alert("adios");
+//     }
+
+// })
