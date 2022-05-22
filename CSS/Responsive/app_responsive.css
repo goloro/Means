@@ -59,6 +59,17 @@
     }
 
     /*******************/
+    /****ALERTA******/
+
+
+    #alert {
+
+        width: 50vw;
+        font-size: 3.6vw;
+        height: 15vw;
+    }
+
+    /***********/
 
     #divPost {
 
@@ -87,7 +98,7 @@
         position: relative;
         left: -78vw;
 
-        top: -88vw;
+        top: -60vw;
         height: 32vw;
         MARGIN: auto;
     }
@@ -209,6 +220,17 @@
     }
 
     /*******************/
+    /****ALERTA******/
+
+
+    #alert {
+
+        width: 300px;
+        font-size: 21px;
+        height: 88px;
+    }
+
+    /***********/
 
     .bottomNav {
 
@@ -306,7 +328,7 @@
         width: 393px;
         max-width: 393px;
         left: -86%;
-        top: -534px;
+        top: -359px;
     }
 
     .postBodyRightTop div img#btnChat {
