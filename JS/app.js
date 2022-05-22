@@ -24,6 +24,8 @@ document.getElementById("profileRes").addEventListener("click", e => {
 
 //BOTON PARA LLEVARTE A REGISTRO DE INVERSORES !!!!!!!!!!!!! NO FUNCIONA !!!!
 document.getElementById("btnInv").addEventListener("click", e=>{
+    localStorage.removeItem("Means_userLogued")
+    localStorage.setItem('Means_userOption', "registroINV")
     window.open("/HTML/users.html", "_self")
 })
 

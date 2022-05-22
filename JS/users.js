@@ -11,6 +11,11 @@ const gridRegistro = document.querySelector(".form-registro")
 const btnInicioSesionForm = document.getElementById("inicioSesionForm")
 const btnRegistroForm = document.getElementById("registroForm")
 
+const btnInv = document.getElementById("btnInv");
+const btnUsuarios = document.getElementById("btnUsuarios");
+const divFormInversores = document.getElementById("div-form-inversores");
+const divformUser = document.getElementById("div-form-user");
+
 
 // EVENT LISTENERS
 document.getElementById("btnLogin").addEventListener("click", e => {
@@ -37,6 +42,11 @@ if (localUser) window.open("/HTML/app.html", "_self")
 
 const localOption = localStorage.getItem('Means_userOption')
 if (localOption == "registro") registroForm()
+else if (localOption == "registroINV") {
+    divFormInversores.style.display="block";
+    divformUser.style.display="none";
+
+}
 localStorage.removeItem("Means_userOption")
 
 async function login() {
@@ -161,11 +171,6 @@ function registroForm(){
 }
 
 //SUPERPONER EL REGISTRO INVERSORES
-const btnInv = document.getElementById("btnInv");
-const btnUsuarios = document.getElementById("btnUsuarios");
-const divFormInversores = document.getElementById("div-form-inversores");
-const divformUser = document.getElementById("div-form-user");
-
 btnInv.addEventListener("click", e=>{
     e.preventDefault;
     divFormInversores.style.display="block";
