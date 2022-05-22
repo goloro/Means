@@ -11,6 +11,7 @@ const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
 const divBackTransparent = document.getElementById("divBackTransparent");
 const divMasInfoPost = document.getElementById("divMasInfoPost");
 
+
 //EVENT LISTENER
 const divPosts = document.getElementById("divPost") ? document.getElementById("divPost") : document.getElementById("divInfo")
 if (divPosts) divPosts.addEventListener("click", e=>{
@@ -29,7 +30,7 @@ if (divPosts) divPosts.addEventListener("click", e=>{
 
         if (e.target.id == "btnChat") createRelation(e.target.className)
 
-        if (e.target.id == "btnDeletePost") deletePost()
+        if (e.target.id == "btnDeletePost") deletePost(e.target.className)
 
         if (e.target.id == "btnEditPost") editPost()
     })
@@ -81,11 +82,13 @@ async function postCall(post, postContainer, options) {
     let msgIcon = "https://api.iconify.design/bi/chat-square-dots-fill.svg?color=%23514f4f"
     let favId = "btnFavs"
     let msgId = "btnChat"
+    let msgClass = post.idUser
     if (options?.profile) {
         favId = "btnEditPost"
         msgId = "btnDeletePost"
         favIcon = "https://api.iconify.design/eva/edit-fill.svg?color=%23514f4f"
         msgIcon = "https://api.iconify.design/fluent/delete-dismiss-24-filled.svg?color=%23f24e1e"
+        msgClass= post._id
     }
 
     let postCard = `
@@ -109,7 +112,7 @@ async function postCall(post, postContainer, options) {
                 <div class="postBodyRightTop">
                     <div>
                         <img id="${favId}" class="${ post._id }" src="${favIcon}">
-                        <img id="${msgId}" class="${ post.idUser }" src="${msgIcon}">
+                        <img id="${msgId}" class="${ msgClass }" src="${msgIcon}">
                     </div>
                 </div>
                 <div class="postBodyRightBot">
@@ -238,6 +241,7 @@ async function addFav(idPost) {
         await RequestHandler.putDefault("http://localhost:8085/users/edit/" + localUser.email, localUser)
 
         createAlert("https://api.iconify.design/uim/favorite.svg?color=white", "Añadido a Favoritos!", "#ffc700")
+        
     }
 }
 
@@ -267,10 +271,24 @@ async function deleteFav(idPost) {
     }
 }
 
-function deletePost() {
+
+const local_EditPostId = JSON.parse(localStorage.getItem('Means_EditPostId'));
+const btnEditPost = document.getElementById("btnEditPost");
+const btnDeletePost = document.getElementById("btnDeletePost");
+const divInfo = document.getElementById("divInfo");
+const cardPost = document.getElementById("cardPost");
+
+
+
+
+async function deletePost(idPost) {
+    await RequestHandler.deleteDefault("http://localhost:8085/post/delete/" + idPost)
+    createAlert("https://api.iconify.design/fluent/delete-dismiss-24-filled.svg?color=white", "Post borrado correctamente!", "#e65353")
 
 }
 
 function editPost() {
+    window.open("/HTML/createPost.html", "_self")
+   
     
 }
