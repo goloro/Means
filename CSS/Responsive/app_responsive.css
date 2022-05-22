@@ -70,6 +70,40 @@
     }
 
     /***********/
+    /**********Div Inversores********/
+    #hazteInv {
+        display: flex;
+        position: relative;
+        top: -167px;
+        height: 187px;
+        width: 171px;
+        right: -216px;
+    }
+
+    #hazteInv button {
+
+        margin-bottom: 13vw;
+        position: relative;
+        bottom: -9vw;
+        width: 26vw;
+        height: 20vw;
+        max-height: 20vw;
+        font-size: 3vw;
+    }
+
+    #hazteInv img {
+
+        margin-top: 6vw;
+        position: relative;
+        bottom: -1vw;
+    }
+
+    #hazteInv p {
+
+        display: none;
+    }
+
+    /***************/
 
     #divPost {
 
@@ -83,13 +117,24 @@
     }
 
     #createPost {
-        width: 65VW;
-        height: 30vw;
-        margin-left: -1vw;
+
+        width: 56vw;
+        max-width: 400px;
+        height: 32vw;
+        max-height: 186px;
+        position: relative;
+        left: -13vw;
+        top: 3vw;
     }
 
     #hazteInv {
-        display: NONE;
+        display: flex;
+        margin-bottom: -7vw;
+        position: relative;
+        top: -29.5vw;
+        height: 32vw;
+        width: 31vw;
+        right: -34vw;
     }
 
     .divCards {
@@ -157,6 +202,7 @@
         position: relative;
         left: -3vw;
     }
+
 
 }
 
@@ -269,10 +315,13 @@
 
     #createPost {
 
-        width: 400px;
+        width: 342px;
         max-width: 400px;
-        height: 186px;
+        height: 187px;
         max-height: 186px;
+        position: relative;
+        left: -56px;
+        top: 19px;
     }
 
     #botCreate p {
@@ -304,6 +353,8 @@
 
         width: 31px;
     }
+
+    subDivCards {}
 
     .postBodyRightBot div p {
 
@@ -343,6 +394,55 @@
         height: 100px;
         position: relative;
         left: -23px;
+    }
+
+    /**********Div Inversores********/
+    #hazteInv {
+        display: flex;
+        position: relative;
+        top: -167px;
+        height: 187px;
+        width: 171px;
+        right: -216px;
+    }
+
+    #hazteInv button {
+
+        margin-bottom: 88px;
+        position: relative;
+        bottom: -56px;
+        width: 128px;
+        height: 81px !important;
+        font-size: 17px;
+        max-height: 200px !important;
+    }
+
+    #hazteInv img {
+
+        margin-top: 42px;
+        position: relative;
+        bottom: -14px;
+    }
+
+    #hazteInv p {
+
+        display: none;
+    }
+
+    /***************/
+
+    .divCards {
+        width: 100%;
+
+        position: relative;
+        left: -97%;
+
+        top: -357px;
+        height: 192px;
+        max-height: 192px;
+        max-width: 1000px;
+        MARGIN: auto;
+        margin-left: 10%;
     }
 
 }
