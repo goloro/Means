@@ -31,6 +31,9 @@
     margin: auto 5% auto auto;
     width: 30%;
 }
+#redesNavPortada a{
+    display: none;
+}
 #btnNavPortada a {
     margin: auto;
     cursor: pointer;

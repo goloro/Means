@@ -23,10 +23,11 @@
         <div class="portada">
             <div class="navBarPortada">
                 <div id="redesNavPortada">
-                    <img src="https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-3-1.png">
-                    <img src="https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-4.png">
-                    <img src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo.png">
-                    <img src="https://logos-marcas.com/wp-content/uploads/2020/12/Discord-Logo.png">
+                    
+                    <img src="https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-3-1.png" onclick="face()">
+                    <img src="https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-4.png" onclick="twitter()">
+                    <img src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo.png" onclick="insta()">
+                    <img src="https://logos-marcas.com/wp-content/uploads/2020/12/Discord-Logo.png" onclick="disc()">
                 </div>
                 <div id="btnNavPortada">
                     <a id="registro" href="/HTML/users.html">Unirse ahora</a>
@@ -143,10 +144,10 @@
             <img src="/Imagenes/Logos/MeansNombreLogoWhite.png" id="meansLogo">
             <p id="emailfooter">Email: meanssteam@gmail.com</p>
             <div id="redesfooter">
-                <img src="https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-3-1.png">
-                    <img src="https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-4.png">
-                    <img src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo.png">
-                    <img src="https://logos-marcas.com/wp-content/uploads/2020/12/Discord-Logo.png">
+                <img src="https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-3-1.png" onclick="face()">
+                    <img src="https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-4.png" onclick="twitter()">
+                    <img src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo.png" onclick="insta()">
+                    <img src="https://logos-marcas.com/wp-content/uploads/2020/12/Discord-Logo.png" onclick="disc()">
             </div>
         </footer>
 
@@ -157,6 +158,20 @@
             document.getElementById("registro").addEventListener("click", e => {
                 localStorage.setItem('Means_userOption', "registro")
             })
+
+            function face(){
+               window.open("https://www.facebook.com/Means-Team-114488121265974/?ref=pages_you_manage")
+            }
+            function insta(){
+                window.open("https://www.instagram.com/meanssteam/");
+            }
+            function twitter(){
+                window.open("https://twitter.com/meanssteam")
+            }
+            function disc(){
+                window.open("https://discord.gg/85PefJkV")
+            }
+
         </script>
     </body>
 </html>
