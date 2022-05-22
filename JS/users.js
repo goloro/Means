@@ -1,8 +1,7 @@
 // IMPORTS
 import { RequestHandlerClass } from '../JS/common/dbCalls/requestHandler.js'
 import { calculateINS } from '../JS/common/insignias.js'
-import { createAlert } from '/JS/common/alert.js';
-import { createAlert2 } from '/JS/common/alert.js';
+import { createAlert, createAlert2 } from '../JS/common/alert.js';
 
 // CONSTS
 const RequestHandler = new RequestHandlerClass()
@@ -41,74 +40,94 @@ if (localOption == "registro") registroForm()
 localStorage.removeItem("Means_userOption")
 
 async function login() {
-    const email = document.getElementById("campoEmailL")
-    const password = document.getElementById("campoPasswordL")
+    const email = document.getElementById("campoEmailL").value
+    const password = document.getElementById("campoPasswordL").value
 
-    const existUser = await RequestHandler.getDefault("http://localhost:8085/users/" + email.value + "/" + password.value)
-   
-    if(!password.value){
+    if (!email) {
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "Email ya registrado!", "#e65353")
+        return
+    }
+    if(!password){
         createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "La contraseña es incorrecta!", "#e65353")
         return
     }
 
+    const existUser = await RequestHandler.getDefault("http://localhost:8085/users/" + email)
 
-    if (existUser) {
+    if (existUser && existUser.password == password) {
         localStorage.setItem('Means_userLogued', JSON.stringify(existUser))
         localUser = existUser
+        await calculateINS(email)
         window.open("/HTML/app.html", "_self")
+    } else {
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "La contraseña es incorrecta!", "#e65353")
+        return
+    }
+    
+    if (!existUser) {
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "Email no registrado!", "#e65353")
+        return
+    }
+    if(!password){
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "La contraseña es incorrecta!", "#e65353")
+        return
     }
 
-    email.value = ""
-    password.value = ""
-
-    await calculateINS(email)
+    document.getElementById("campoEmailL").value = ""
+    document.getElementById("campoPasswordL").value = ""
 }
 
 async function registro() {
-    const name = document.getElementById("campoNameR")
-    const email = document.getElementById("campoEmailR")
-    const phone = document.getElementById("campoPhoneR")
-    const password = document.getElementById("campoPasswordR")
+    const name = document.getElementById("campoNameR").value
+    const email = document.getElementById("campoEmailR").value
+    const phone = document.getElementById("campoPhoneR").value
+    const password = document.getElementById("campoPasswordR").value
 
-    if(!name.value || name.value.length > 40){
+    if(!name || name.length > 40){
         createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "El nombre de usuario no es válido!", "#e65353")
         return
     }
 
-    if(!email.value){
+    if(!email){
         createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "El email de usuario no es válido!", "#e65353")
         return
     }
-    if(!phone.value || phone.value.length > 9 ){
+    if(!phone || phone.length > 9 ){
         createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "El teléfono no es válido!", "#e65353")
         return
     }
-    if(!password.value){
+    if(!password){
         createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "No has introducido una contraseña", "#e65353")
         return
     }
 
-
     const data = {
-        name: name.value,
-        email: email.value,
-        phone: phone.value,
-        password: password.value,
+        name: name,
+        email: email,
+        phone: phone,
+        password: password,
         profile: 0,
         insignias: ["../Imagenes/Logos/MeansWhiteBronce.png"],
         icono:"http://127.0.0.1:5501/Imagenes/Pics/3474952.jpg",
-        backgroundProfile: ["#254EEC", "#8A26EC"]
+        backgroundProfile: ["#254EEC", "#8A26EC"],
+        reviews: [],
+        favs: []
     }
 
-    const registUser = await RequestHandler.postDefault("http://localhost:8085/users/register", data)
+    let registUser = await RequestHandler.postDefault("http://localhost:8085/users/register", data, true)
 
-    name.value = ""
-    email.value = ""
-    phone.value = ""
-    password.value = ""
+    document.getElementById("campoNameR").value = ""
+    document.getElementById("campoEmailR").value = ""
+    document.getElementById("campoPhoneR").value = ""
+    document.getElementById("campoPasswordR").value = ""
 
-    if (registUser == true) {
-        inicioSesionForm()
+    if (registUser) {
+        localStorage.setItem('Means_userLogued', JSON.stringify(data))
+        localUser = data
+        window.open("/HTML/app.html", "_self")
+    } else {
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "Email ya registrado!", "#e65353")
+        return
     }
 }
 
@@ -190,7 +209,9 @@ async function registroInversores() {
         profile: 1, 
         insignias: ["../Imagenes/Logos/MeansLogoInversor.png", "../Imagenes/Logos/MeansWhiteBronce.png"],
         icono:"http://127.0.0.1:5501/Imagenes/Pics/3474952.jpg",
-        backgroundProfile: ["#254EEC", "#8A26EC"]
+        backgroundProfile: ["#254EEC", "#8A26EC"],
+        reviews: [],
+        favs: []
     }
 
     const registUser = await RequestHandler.postDefault("http://localhost:8085/users/register", data)

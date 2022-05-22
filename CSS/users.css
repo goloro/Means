@@ -181,26 +181,6 @@
 .problemCardIn { width: 100%; text-align: center; margin: 1% 0 1% 0; color: red; font-family: 'Manuale', serif; font-size: 1.4rem; visibility: hidden; font-family: 'Baloo 2'; }
 
 /* ALERT */
-#alert {
-  display: none;
-  position: fixed;
-  width: 20%;
-  height: 15vh;
-  top: 10vh;
-  color: white;
-}
-#alert div {
-  background-color: #e65353;
-  width: 100%;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  display: flex;
-  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
-}
-#alert div img { width: 12.5%; margin: auto 5% auto 5%; }
-#alert div p { max-width: 67.5%; margin: auto 5% auto 5%; text-align: center; }
-
-/* ALERT */
 #alert2 {
   display: none;
   position: fixed;
@@ -218,4 +198,4 @@
   box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
 }
 #alert2 div img { width: 12.5%; margin: auto 5% auto 5%; }
-#alert2 div p { max-width: 67.5%; margin: auto 5% auto 5%; text-align: center; }
+#alert2 div p { max-width: 67.5%; margin: auto 5% auto 5%; text-align: center; font-family: 'Baloo 2'; }

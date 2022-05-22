@@ -3,20 +3,34 @@ class RequestHandlerClass {
 
     // Get Default
     async getDefault(url) {
-        const res = await fetch(url)
-        const data = res.json()
+        const res = await fetch(url, {
+            method: 'GET', 
+            headers: {'Content-Type': 'application/json'}
+        })
+        let data = null
+        try {
+            data = res.json()
+        } catch (error) {
+            console.log(error)
+        }
         return data
     }
 
     // Post Default
-    async postDefault(url, data) {
+    async postDefault(url, data, registerCall) {
         const res = await fetch(url, {
             method: 'POST', 
             body: JSON.stringify(data),
             headers: {'Content-Type': 'application/json'}
         })
-        if (res.status === 200) return res.json()
-        return false
+        if (res.status == 200 && registerCall) return true
+        let resData = null
+        try {
+            data = res.json()
+        } catch (error) {
+            console.log(error)
+        }
+        return resData
     }
 
     // Put Default
@@ -31,7 +45,7 @@ class RequestHandlerClass {
     }
 
     // Delete Default
-    async deleteDefault(url, data) {
+    async deleteDefault(url) {
         const res = await fetch(url, {
             method: 'DELETE',
             headers:{'Content-Type': 'application/json'}

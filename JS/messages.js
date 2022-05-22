@@ -32,6 +32,13 @@ viewRelations.addEventListener("click", e => {
         divBackTransparent ? divBackTransparent.style.display = "none" : console.log("divBackTransparent NO EXISTE")
     }
 })
+document.getElementById("navChat").addEventListener("click", e => {
+    viewRelations.src = "https://api.iconify.design/charm/chevron-down.svg?color=%23f8f8f8"
+    bodyRL.style.display = "flex"
+    divBackTransparent ? divBackTransparent.style.display = "flex" : console.log("divBackTransparent NO EXISTE")
+
+    loadChats(localUser.email)
+})
 
 document.getElementById("leftBody").addEventListener("click", e => {
     if (e.target.className === "userChat" || e.target.className === "userChatDiv") {

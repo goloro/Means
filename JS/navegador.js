@@ -49,11 +49,14 @@ document.getElementById("buscador").addEventListener("input", e => {
     let cadena = e.target.value
     if (cadena != "" && cadena != " ") {
         buscador(cadena)
-    } else {
-        document.getElementById("searchingPeople").style.display = "none"
-        getPosts(3, divPost, {quantity: 10})
-    }
+    } else postHomeDefault()
 })
+
+async function postHomeDefault() {
+    document.getElementById("searchingPeople").style.display = "none"
+    getPosts(3, divPost, {quantity: 10})
+    result = await RequestHandler.getDefault("http://localhost:8085/post/")
+}
 
 async function buscador(cadena) {
     let resultPL
