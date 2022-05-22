@@ -11,7 +11,7 @@ export async function calculateINS(userEmail) {
     let rateQuantity = 0
     let totalRate = 0
 
-    user.reviews.forEach(e => {
+    user.reviews.forEach(async e => {
         const review = await RequestHandler.getDefault("http://localhost:8085/review/" + e)
         rates.push(review.rating)
     });

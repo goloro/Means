@@ -107,7 +107,7 @@ if (otherProfile && otherProfile != localUser.email) {
     loadUser()
 }
 
-calculateINS(user.email)
+await calculateINS(user.email)
 
 viewPosts()
 

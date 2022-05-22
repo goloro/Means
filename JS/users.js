@@ -61,7 +61,7 @@ async function login() {
     email.value = ""
     password.value = ""
 
-    calculateINS(email)
+    await calculateINS(email)
 }
 
 async function registro() {
