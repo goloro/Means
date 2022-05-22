@@ -34,7 +34,7 @@ viewRelations.addEventListener("click", e => {
 })
 
 document.getElementById("leftBody").addEventListener("click", e => {
-    if (e.target.className === "userChat") {
+    if (e.target.className === "userChat" || e.target.className === "userChatDiv") {
         loadMSGS(e.target.id)
         chatId = e.target.id
     }
@@ -92,8 +92,8 @@ export async function loadChats(userEmail) {
 
         const chatDiv = `
             <div class="userChat" id="${e.id}">
-                <img class="userChat" id="${e.id}" src="${userChat.icono}">
-                <p class="userChat" id="${e.id}">${(userChat.name).split(' ')[0]}</p>
+                <img class="userChatDiv" id="${e.id}" src="${userChat.icono}">
+                <p class="userChatDiv" id="${e.id}">${(userChat.name).split(' ')[0]}</p>
             </div>
         `
 
