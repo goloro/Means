@@ -1,5 +1,7 @@
 // IMPORTS
-import { RequestHandlerClass } from '../JS/common/dbCalls/requestHandler.js'
+import { RequestHandlerClass } from '../JS/common/dbCalls/requestHandler.js';
+import { createAlert } from '/JS/common/alert.js';
+import { createAlert2 } from '/JS/common/alert.js';
 
 // CONSTS
 const RequestHandler = new RequestHandlerClass()
@@ -8,6 +10,7 @@ const gridLogin = document.querySelector(".form-login")
 const gridRegistro = document.querySelector(".form-registro")
 const btnInicioSesionForm = document.getElementById("inicioSesionForm")
 const btnRegistroForm = document.getElementById("registroForm")
+
 
 // EVENT LISTENERS
 document.getElementById("btnLogin").addEventListener("click", e => {
@@ -43,7 +46,7 @@ async function login() {
     const existUser = await RequestHandler.getDefault("http://localhost:8085/users/" + email.value + "/" + password.value)
    
     if(!password.value){
-        createProblem("La contraseña es incorrecta")
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "La contraseña es incorrecta!", "#e65353")
         return
     }
 
@@ -65,24 +68,23 @@ async function registro() {
     const password = document.getElementById("campoPasswordR")
 
     if(!name.value || name.value.length > 40){
-        createProblem("El nombre de usuario no es válido")
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "El nombre de usuario no es válido!", "#e65353")
         return
     }
 
     if(!email.value){
-        createProblem("El email de usuario no es válido")
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "El email de usuario no es válido!", "#e65353")
         return
     }
     if(!phone.value || phone.value.length > 9 ){
-        createProblem("El teléfono no es válido")
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "El teléfono no es válido!", "#e65353")
         return
     }
     if(!password.value){
-        createProblem("No has introducido una contraseña")
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "No has introducido una contraseña", "#e65353")
         return
     }
 
-    problemCard.style.visibility = "hidden"
 
     const data = {
         name: name.value,
@@ -160,24 +162,22 @@ async function registroInversores() {
     const password = document.getElementById("campoPasswordRI")
 
     if(!name.value || name.value.length > 40){
-        createProblemIn("El nombre de empresa no es válido")
+        createAlert2("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "El nombre de empresa no es válido!", "#e65353")
         return
     }
 
     if(!email.value){
-        createProblemIn("El email empresarial no es válido")
+        createAlert2("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "El email empresarial no es válido", "#e65353")
         return
     }
     if(!phone.value || phone.value.length > 9 ){
-        createProblemIn("El teléfono no es válido")
+        createAlert2("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "El teléfono no es válido", "#e65353")
         return
     }
     if(!password.value){
-        createProblemIn("No has introducido una contraseña")
+        createAlert2("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "No has introducido una contraseña", "#e65353")
         return
     }
-
-    problemCardIn.style.visibility = "hidden"
 
     const data = {
         name: name.value,
@@ -206,23 +206,3 @@ document.getElementById("btnRegistroInversores").addEventListener("click", e=>{
     e.preventDefault()
     registroInversores()
 })
-
-const problemCard = document.querySelector(".problemCard")
-const msgProblem = document.getElementById("problemMsg")
-
-const problemCardIn = document.querySelector(".problemCardIn")
-const msgProblemIn = document.getElementById("problemMsgIn")
-
-function createProblem(msg) {
-    msgProblem.innerHTML = msg
-    problemCard.style.visibility = "visible"
-}
-
-
-function createProblemIn(msg) {
-    msgProblemIn.innerHTML = msg
-    problemCardIn.style.visibility = "visible"
-}
-
-
-// EXPORTS

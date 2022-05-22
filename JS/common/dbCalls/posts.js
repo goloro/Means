@@ -281,13 +281,7 @@ function viewProfile(UserEmail) {
     window.open("../../HTML/perfil.html", "_self")
 }
 
-// const local_EditPostId = JSON.parse(localStorage.getItem('Means_EditPostId'));
-const btnEditPost = document.getElementById("btnEditPost");
-const btnDeletePost = document.getElementById("btnDeletePost");
 const divInfo = document.getElementById("divInfo");
-const cardPost = document.getElementById("cardPost");
-
-
 
 
 async function deletePost(idPost) {
@@ -296,10 +290,4 @@ async function deletePost(idPost) {
     divInfo.innerHTML=""
     getPosts(1, divInfo, { idUser: localUser.email, profile: true })
 
-}
-
-function editPost(idPost) {
-    const editPostId= localStorage.setItem('Means_EditPostId', idPost)
-
-    window.open("/HTML/createPost.html", "_self")
 }

@@ -91,14 +91,6 @@ document.getElementById("imgCatCP").addEventListener("click", e => {
     }
 })
 
-//
-function comprobarEditPost(){
-    let editPostId = JSON.parse(localStorage.getItem('Means_userLogued'));
-    alert("hola")
-    if(editPostId){
-        alert("existe")
-    }
-}
 
 
 
