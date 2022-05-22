@@ -21,7 +21,7 @@ nav {
     display: flex;
     border-radius: 30px;
     height: 65%;
-    width: 40%;
+    width: 45%;
     margin: auto;
     background-color: #ffffff;
 border: 1px solid #ccc!important;}
@@ -59,6 +59,34 @@ border: 1px solid #ccc!important;}
 .menu a:hover { background-color: #a49e9e81; }
 .menu a img { margin: 0 10% 0 0%; vertical-align: middle; }
 .show { display: block; }
+.searchingPeople { 
+    display: none; 
+    width: 90%; 
+    height: 20vh; 
+    margin: 3% auto 0 auto; 
+    background-color: white; 
+    border-radius: 10px; 
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    grid-template-columns: auto auto auto auto auto;
+}
+.subPeopleDiv {
+    margin: auto;
+    width: 30vh;
+    background-color: white;
+    display: flex;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+.subPeopleDiv img {
+    width: 20%;
+    border-radius: 100%;
+    margin: 2% auto 2% auto;
+}
+.subPeopleDiv p {
+    text-align: center;
+    margin: auto;
+}
 
 
 /* divBackTransparent */

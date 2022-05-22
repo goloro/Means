@@ -1,11 +1,22 @@
 // IMPORTS
+import { RequestHandlerClass } from "./common/dbCalls/requestHandler.js"
+import { postCall, getPosts } from './common/dbCalls/posts.js'
 
 // CONST
+const RequestHandler = new RequestHandlerClass();
+
 const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
+
+const container = document.getElementById("divPost") 
+
+let result = await RequestHandler.getDefault("http://localhost:8085/post/")
 
 // Filtros navegador
 document.getElementById("divFiltrosDiv").addEventListener("input", e => {
     document.getElementById(e.target.className).innerHTML = e.target.value
+
+    if (e.target.id == "maxMoneyIn") filtradorMoney({max: e.target.value})
+    if (e.target.id == "minMoneyIn") filtradorMoney({min: e.target.value})
 })
 
 // Abrir menu pulsando en icono
@@ -16,7 +27,6 @@ document.getElementById("user").addEventListener("click", function() {
 let Login = document.querySelector("#Login");
 
 Login.addEventListener('click', e=>{
-
     window.open("../HTML/perfil.html", "_self")
 })
 
@@ -33,3 +43,73 @@ SignUp.addEventListener('click', e=>{
 document.getElementById("user").addEventListener("click", e => {
     localStorage.setItem("Means_ViewProfile", localUser.email)
 })
+
+// BUSCADOR
+document.getElementById("buscador").addEventListener("input", e => {
+    let cadena = e.target.value
+    if (cadena != "" && cadena != " ") {
+        buscador(cadena)
+    } else {
+        document.getElementById("searchingPeople").style.display = "none"
+        getPosts(3, divPost, {quantity: 10})
+    }
+})
+
+async function buscador(cadena) {
+    let resultPL
+
+    result = result.filter(p => p.name.toUpperCase().includes(cadena.trim().toUpperCase()))
+
+    container.innerHTML = ""
+    result.forEach(e => {
+        postCall(e, container)
+    });
+
+    const resultPeople = await RequestHandler.getDefault("http://localhost:8085/users/")
+    resultPL = resultPeople.filter(p => p.name.toUpperCase().includes(cadena.trim().toUpperCase()))
+
+    if (resultPL.length != 0) {
+        const searchingPeople = document.getElementById("searchingPeople")
+
+        searchingPeople.innerHTML = ""
+        resultPL.forEach(e => {
+            let peopleDiv = `
+                <div class="subPeopleDiv" id="${e.email}">
+                    <img class="${e.email}" id="subPeopleDiv" src="${e.icono}">
+                    <p class="${e.email}" id="subPeopleDiv">${e.name}</p>
+                </div>
+            `
+
+            searchingPeople.innerHTML += peopleDiv
+        });
+
+        searchingPeople.style.display = "grid"
+    } else {
+        searchingPeople.innerHTML = ""
+        searchingPeople.style.display = "none"
+    }
+}
+
+document.getElementById("searchingPeople").addEventListener("click", e => {
+    if (e.target.id == "subPeopleDiv") {
+        localStorage.setItem("Means_ViewProfile", e.target.className)
+        window.open("/HTML/perfil.html", "_self")
+    }
+
+    if (e.target.className == "subPeopleDiv") {
+        localStorage.setItem("Means_ViewProfile", e.target.id)
+        window.open("/HTML/perfil.html", "_self")
+    }
+})
+
+async function filtradorMoney(money) {
+    let max = money.max ? money.max : 10000
+    let min = money.min ? money.min : 500 
+
+    result = result.filter(p => p.money > min && p.money < max)
+
+    container.innerHTML = ""
+    result.forEach(e => {
+        postCall(e, container)
+    });
+}

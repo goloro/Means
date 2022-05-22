@@ -72,7 +72,7 @@ export async function getPosts(callOption, postsContainer, options) {
     if (posts && (callOption === 0 || callOption === 1 || callOption === 3 || callOption === 4)) await posts.forEach(e => { postCall(e, postsContainer, options) });
 }
 
-async function postCall(post, postContainer, options) {
+export async function postCall(post, postContainer, options) {
     let totalPeople = 0
     if (post.people) post.people.forEach(e => { totalPeople += e.count });
 
@@ -183,6 +183,8 @@ async function masInfoPost(idPost) {
     divMasInfoPost.style.display = "flex"
     divMasInfoPost.innerHTML = infoPost
     divBackTransparent ? divBackTransparent.style.display = "flex" : console.log("divBackTransparent NO EXISTE")
+
+    await RequestHandler.putDefault("http://localhost:8085/post/view/" + idPost)
 
     if(post.people)
         post.people.forEach(e => {
