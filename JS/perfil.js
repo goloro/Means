@@ -1,7 +1,7 @@
 // IMPORTS
 import { RequestHandlerClass } from '../JS/common/dbCalls/requestHandler.js'
 import { getPosts } from './common/dbCalls/posts.js'
-
+import { calculateINS } from '../JS/common/insignias.js'
 
 // CONSTS
 const RequestHandler = new RequestHandlerClass()
@@ -106,6 +106,8 @@ if (otherProfile && otherProfile != localUser.email) {
     user = localUser
     loadUser()
 }
+
+calculateINS(user.email)
 
 viewPosts()
 

@@ -15,8 +15,7 @@ let result = await RequestHandler.getDefault("http://localhost:8085/post/")
 document.getElementById("divFiltrosDiv").addEventListener("input", e => {
     document.getElementById(e.target.className).innerHTML = e.target.value
 
-    if (e.target.id == "maxMoneyIn") filtradorMoney({max: e.target.value})
-    if (e.target.id == "minMoneyIn") filtradorMoney({min: e.target.value})
+    filtradorMoney({max: document.getElementById("maxMoneyIn").value, min: document.getElementById("minMoneyIn").value})
 })
 
 // Abrir menu pulsando en icono
@@ -45,6 +44,7 @@ document.getElementById("user").addEventListener("click", e => {
 })
 
 // BUSCADOR
+document.getElementById("buscador").value = ""
 document.getElementById("buscador").addEventListener("input", e => {
     let cadena = e.target.value
     if (cadena != "" && cadena != " ") {
@@ -70,6 +70,8 @@ async function buscador(cadena) {
 
     if (resultPL.length != 0) {
         const searchingPeople = document.getElementById("searchingPeople")
+
+        if (resultPL.length > 5) resultPL.length = 5
 
         searchingPeople.innerHTML = ""
         resultPL.forEach(e => {
@@ -107,6 +109,15 @@ async function filtradorMoney(money) {
     let min = money.min ? money.min : 500 
 
     result = result.filter(p => p.money > min && p.money < max)
+
+    if (max == 500 || max < min) {
+        result = await RequestHandler.getDefault("http://localhost:8085/post/")
+        document.getElementById("maxMoneyIn").value = ""
+        document.getElementById("minMoneyIn").value = ""
+
+        document.getElementById("maxMoney").innerHTML = ""
+        document.getElementById("minMoney").innerHTML = ""
+    }
 
     container.innerHTML = ""
     result.forEach(e => {

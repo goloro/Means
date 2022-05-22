@@ -1,5 +1,6 @@
 // IMPORTS
-import { RequestHandlerClass } from '../JS/common/dbCalls/requestHandler.js';
+import { RequestHandlerClass } from '../JS/common/dbCalls/requestHandler.js'
+import { calculateINS } from '../JS/common/insignias.js'
 import { createAlert } from '/JS/common/alert.js';
 import { createAlert2 } from '/JS/common/alert.js';
 
@@ -59,6 +60,8 @@ async function login() {
 
     email.value = ""
     password.value = ""
+
+    calculateINS(email)
 }
 
 async function registro() {
@@ -185,7 +188,7 @@ async function registroInversores() {
         phone: phone.value,
         password: password.value,
         profile: 1, 
-        insignias: ["../Imagenes/Logos/MeansWhiteBronce.png", "../Imagenes/Logos/MeansLogoInversor.png"],
+        insignias: ["../Imagenes/Logos/MeansLogoInversor.png", "../Imagenes/Logos/MeansWhiteBronce.png"],
         icono:"http://127.0.0.1:5501/Imagenes/Pics/3474952.jpg",
         backgroundProfile: ["#254EEC", "#8A26EC"]
     }
