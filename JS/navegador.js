@@ -95,17 +95,21 @@ async function buscador(cadena) {
     }
 }
 
-document.getElementById("searchingPeople").addEventListener("click", e => {
-    if (e.target.id == "subPeopleDiv") {
-        localStorage.setItem("Means_ViewProfile", e.target.className)
-        window.open("/HTML/perfil.html", "_self")
-    }
-
-    if (e.target.className == "subPeopleDiv") {
-        localStorage.setItem("Means_ViewProfile", e.target.id)
-        window.open("/HTML/perfil.html", "_self")
-    }
-})
+try {
+    document.getElementById("searchingPeople").addEventListener("click", e => {
+        if (e.target.id == "subPeopleDiv") {
+            localStorage.setItem("Means_ViewProfile", e.target.className)
+            window.open("/HTML/perfil.html", "_self")
+        }
+    
+        if (e.target.className == "subPeopleDiv") {
+            localStorage.setItem("Means_ViewProfile", e.target.id)
+            window.open("/HTML/perfil.html", "_self")
+        }
+    })
+} catch (error) {
+    console.log(error)
+}
 
 async function filtradorMoney(money) {
     let max = money.max ? money.max : 10000
@@ -129,33 +133,36 @@ async function filtradorMoney(money) {
 }
 //OCULTAR / MOSTRAR BARRA BUSQUEDA RESPONSIVE
 
-const lupa = document.getElementById("lupa");
-lupa.addEventListener("click", barraResponsive);
+try {
+    const lupa = document.getElementById("lupa");
+    lupa.addEventListener("click", barraResponsive);
 
- function barraResponsive()
- {  
-   
-    var nav = document.getElementsByClassName("filtrosNav");
+    function barraResponsive()
+    {  
     
-     
-     if (nav[0].style.visibility == "hidden")
-     {
-        nav[0].style.visibility = "visible";
-     }
-     else
-     {
-        nav[0].style.visibility = "hidden";
-     }
-    
-    
- }
- function mostrarBarra()
- {
-     
-     {
         var nav = document.getElementsByClassName("filtrosNav");
-        nav.style.visibility = "visible";
-     }
+        
+        
+        if (nav[0].style.visibility == "hidden")
+        {
+            nav[0].style.visibility = "visible";
+        }
+        else
+        {
+            nav[0].style.visibility = "hidden";
+        }
+        
+        
+    }
+    function mostrarBarra()
+    {
+        
+        {
+            var nav = document.getElementsByClassName("filtrosNav");
+            nav.style.visibility = "visible";
+        }
 
- }
- 
+    }
+} catch (error) {
+    console.log(error)
+}

@@ -56,6 +56,7 @@ async function login() {
 
     if (existUser && existUser.password == password) {
         localStorage.setItem('Means_userLogued', JSON.stringify(existUser))
+        localStorage.setItem('Means_profile', existUser.perfil == 0 ? "USER" : "INVERSOR")
         localUser = existUser
         await calculateINS(email)
         window.open("/HTML/app.html", "_self")
@@ -123,6 +124,7 @@ async function registro() {
 
     if (registUser) {
         localStorage.setItem('Means_userLogued', JSON.stringify(data))
+        localStorage.setItem('Means_profile', "USER")
         localUser = data
         window.open("/HTML/app.html", "_self")
     } else {
@@ -221,9 +223,14 @@ async function registroInversores() {
     phone.value = ""
     password.value = ""
 
-    if (registUser == true) {
-        divFormInversores.style.display="none";
-        divformUser.style.display="block";
+    if (registUser) {
+        localStorage.setItem('Means_userLogued', JSON.stringify(data))
+        localStorage.setItem('Means_profile', "INVERSOR")
+        localUser = data
+        window.open("/HTML/app.html", "_self")
+    } else {
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "Email ya registrado!", "#e65353")
+        return
     }
 }
 document.getElementById("btnRegistroInversores").addEventListener("click", e=>{
