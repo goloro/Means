@@ -77,6 +77,16 @@
     #moneyNo {
         font-size: 4vw;
     }
+    #barraNavResponsive {
+        display: flex;
+        width: 100%;
+        background-color: white;
+        height: 10vw;
+        margin-bottom: 1.5vw;
+        box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+        position: relative;
+        top: 1vw !important;
+    }
 }
 
 @media (min-width:600px) and (max-width : 1000px) {
