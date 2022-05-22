@@ -1,12 +1,16 @@
 // IMPORTS
 import { createPostCall } from './common/dbCalls/posts.js'
+import { createAlert } from '/JS/common/alert.js';
 
 // CONSTS
 const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
 
+<<<<<<< Updated upstream
 const problemCard = document.querySelector(".problemCard")
 const msgProblem = document.getElementById("problemMsg")
 
+=======
+>>>>>>> Stashed changes
 // EVENT LISTENERS
 document.getElementById("btnCP").addEventListener("click", e => {
     e.preventDefault()
@@ -114,36 +118,36 @@ function createPost() {
     const people = []
 
     if (!name.value) {
-        createProblem("Falta ponerle un nombre a tu post!")
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "Falta ponerle un nombre a tu post!", "#e65353")
         return
     }
     if (!descShort.value) {
-        createProblem("Falta ponerle una descripción breve a tu post!")
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "Falta ponerle una descripción breve a tu post!", "#e65353")
         return
     }
     if (!descLarge.value) {
-        createProblem("Falta ponerle una descripción extensa a tu post!")
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "Falta ponerle una descripción extensa a tu post!", "#e65353")
         return
     }
     if (!startDate.value) {
-        createProblem("Falta ponerle una fecha de inicio a tu post!")
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "Falta ponerle una fecha de inicio a tu post!", "#e65353")
         return
     }
     if (!finishDate.value) {
-        createProblem("Falta ponerle una fecha de fin a tu post!")
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "Falta ponerle una fecha de fin a tu post!", "#e65353")
         return
     }
     if (!selectedIMGCat) {
-        createProblem("Debes elegir una imagen para tu post!")
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "Debes elegir una imagen para tu post!", "#e65353")
         return
     }
     if (document.getElementById("peopleTable").style.display != "flex" && document.getElementById("moneyPost").style.display != "flex") {
-        createProblem("Debes solicitar dinero o personas para tu post!")
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "Debes solicitar dinero o personas para tu post!", "#e65353")
         return
     }
 
     if(finishDate.value<startDate.value){
-        createProblem("La fecha de fin del evento tiene que ser después de la fecha de inicio!")
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "La fecha de fin del evento tiene que ser después de la fecha de inicio!", "#e65353")
         return;
     }
 
@@ -174,7 +178,7 @@ function createPost() {
         postDoc.people = people
     }
     if (peopleFlag) {
-        createProblem("Rellena el tipo y el número de las personas solicitadas!")
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "Rellena el tipo y el número de las personas solicitadas!", "#e65353")
         return
     }
     let moneyFlag = false
@@ -183,11 +187,10 @@ function createPost() {
         postDoc.money = money.value
     }
     if (moneyFlag) {
-        createProblem("Debes introducir una cantidad mayor a 0 en el dinero solicitado!")
+        createAlert("https://api.iconify.design/bi/exclamation-triangle.svg?color=white", "Debes introducir una cantidad mayor a 0 en el dinero solicitado!", "#e65353")
         return
     }
 
-    problemCard.style.visibility = "hidden"
     createPostCall(postDoc)
 
     name.value = ""
@@ -199,9 +202,4 @@ function createPost() {
     people.value = ""
 
     window.open("/HTML/app.html", "_self")
-}
-
-function createProblem(msg) {
-    msgProblem.innerHTML = msg
-    problemCard.style.visibility = "visible"
 }
