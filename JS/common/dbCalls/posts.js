@@ -33,6 +33,8 @@ if (divPosts) divPosts.addEventListener("click", e=>{
         if (e.target.id == "btnDeletePost") deletePost(e.target.className)
 
         if (e.target.id == "btnEditPost") editPost()
+
+        if (e.target.class == "postUser") viewProfile(e.target.id)
     })
 
 //FUNCTIONS
@@ -99,9 +101,9 @@ async function postCall(post, postContainer, options) {
         <div class="postBody">
             <div class="postBodyLeft">
                 <div id="postBodyLeftTop">
-                    <div class="postUser">
-                        <img id="iconUser" src="${ userPost.icono }">
-                        <img id="insUser" src="${ userPost.insignias[0] }">
+                    <div class="postUser" id="${userPost.email}">
+                        <img id="iconUser" class="${userPost.email}" src="${ userPost.icono }">
+                        <img id="insUser" class="${userPost.email}"  src="${ userPost.insignias[0] }">
                     </div>
                     <p id="titlePost">${ post.name }</p>
                 </div> 
@@ -269,6 +271,11 @@ async function deleteFav(idPost) {
             setTimeout(getPosts, 500, 4, document.getElementById("divInfo"), { posts: posts })
         }
     }
+}
+
+function viewProfile(UserEmail) {
+    localUser.setItem("Means_ViewProfile", UserEmail)
+    window.open("../../HTML/perfil.html", "_self")
 }
 
 

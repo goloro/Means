@@ -23,6 +23,7 @@ const color2CP = document.getElementById("miColor2")
 let iconSelec
 let selecFlag = false
 let previousIconId
+let user
 
 let previousItemView = document.getElementById("vNavPost")
 const divInfo = document.getElementById("divInfo")
@@ -89,31 +90,39 @@ divInfo.addEventListener("click", e => {
 })
 
 // FUNCTIONS
-viewPosts()
-
-if (localUser) {
+const otherProfile = localStorage.getItem("Means_ViewProfile")
+if (localUser && otherProfile == localUser.email) {
     const userDoc = await RequestHandler.getDefault("http://localhost:8085/users/" + localUser.email)
     localStorage.setItem('Means_userLogued', JSON.stringify(userDoc))
 
+    user = localUser
+    loadUser()
+}
+if (otherProfile && otherProfile != localUser.email) {
+    const otherUser = RequestHandler.getDefault("http://localhost:8085/users/" + otherProfile)
+
+    user = otherUser
     loadUser()
 }
 
+viewPosts()
+
 function loadUser() {
     // Name
-    nameUser.innerHTML = localUser.name.toUpperCase()
+    nameUser.innerHTML = user.name.toUpperCase()
 
     // Icon
-    iconProfile.src = localUser.icono ? localUser.icono : "../Imagenes/Pics/hombre.png"
+    iconProfile.src = user.icono ? user.icono : "../Imagenes/Pics/hombre.png"
 
     // Background Profile
-    backgroundProfile.style.backgroundImage = 'linear-gradient(' + localUser.backgroundProfile[0] + ', ' + localUser.backgroundProfile[1] + ')'
+    backgroundProfile.style.backgroundImage = 'linear-gradient(' + user.backgroundProfile[0] + ', ' + user.backgroundProfile[1] + ')'
 
     // Data
-    emailUser.innerHTML = localUser.email
-    phoneUser.innerHTML = localUser.phone
+    emailUser.innerHTML = user.email
+    phoneUser.innerHTML = user.phone
 
     // Insignias
-    localUser.insignias.forEach(e => {addInsignia(e)});
+    user.insignias.forEach(e => {addInsignia(e)});
 }
 
 function addInsignia(url) { insigniasDiv.innerHTML += `<img src=${url}>` }
@@ -133,18 +142,18 @@ function guardarCambios() {
     }
 
     backgroundProfile.style.background = 'linear-gradient(' + color1CP.value + ', ' + color2CP.value + ')';
-    localUser.backgroundProfile = [color1CP.value, color2CP.value]
+    user.backgroundProfile = [color1CP.value, color2CP.value]
 
     ventanaEmergente.style.visibility = "hidden";
 
     if (iconSelec) { 
         iconProfile.src = iconSelec;
-        localUser.icono = iconSelec
+        user.icono = iconSelec
     }
 
     iconSelec = undefined
 
-    const update = updateUser(localUser)
+    const update = updateUser(user)
     if (update === "Usuario editado con éxito") {
         closeProblem()
         cerrarPestaña()
@@ -168,8 +177,8 @@ function closeProblem() {
 }
 
 async function updateUser(user) {
-    const editUser = await RequestHandler.putDefault("http://localhost:8085/users/edit/" + localUser.email, user)
-    if (editUser === true) localStorage.setItem('Means_userLogued', JSON.stringify(localUser))
+    const editUser = await RequestHandler.putDefault("http://localhost:8085/users/edit/" + user.email, user)
+    if (editUser === true) localStorage.setItem('Means_userLogued', JSON.stringify(user))
     return editUser
 }
 
@@ -183,19 +192,20 @@ function changeView(item) {
 async function viewPosts() {
     deleteInfo() 
 
-    getPosts(1, divInfo, { idUser: localUser.email, profile: true })
+    if (otherProfile == localUser.email) getPosts(1, divInfo, { idUser: localUser.email, profile: true })
+    else getPosts(1, divInfo, { idUser: user.email })
 }
 async function viewReviews() {
     deleteInfo()
 
-    const review = await RequestHandler.getDefault("http://localhost:8085/review/user/" + localUser.email)
+    const review = await RequestHandler.getDefault("http://localhost:8085/review/user/" + user.email)
     if (review) await review.forEach(e => { loadReviews(e) })
 }
 function viewFavs() {
     deleteInfo()
 
     const posts = []
-    localUser.favs.forEach(async e => {
+    user.favs.forEach(async e => {
         let post = await RequestHandler.getDefault("http://localhost:8085/post/" + e)
         posts.push(post)
     })

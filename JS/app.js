@@ -13,7 +13,9 @@ const imgProfileCreatePost = document.getElementById("createImg")
 const divPost = document.getElementById("divPost");
 
 // EVENT LISTENERS
-
+document.getElementById("createLinkImg").addEventListener("click", e => {
+    localStorage.setItem("Means_ViewProfile", localUser.email)
+})
 
 // FUNCTIONS
 getPosts(3, divPost, {quantity: 10})
