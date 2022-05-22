@@ -292,3 +292,16 @@ function editPost() {
    
     
 }
+// divInfo.addEventListener("click", e=>{
+//     if(e.target.id=="btnEditPost"){
+//         e.preventDefault;
+//         // editPost()
+//         alert("hola");
+//     }
+//     if(e.target.id=="btnDeletePost"){
+//         e.preventDefault;
+//         // deletePost()
+//         alert("adios");
+//     }
+
+// })
