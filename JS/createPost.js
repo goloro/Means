@@ -7,8 +7,6 @@ const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
 const problemCard = document.querySelector(".problemCard")
 const msgProblem = document.getElementById("problemMsg")
 
-comprobarEditPost();
-
 // EVENT LISTENERS
 document.getElementById("btnCP").addEventListener("click", e => {
     e.preventDefault()
