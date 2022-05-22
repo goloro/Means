@@ -24,13 +24,7 @@ class RequestHandlerClass {
             headers: {'Content-Type': 'application/json'}
         })
         if (res.status == 200 && registerCall) return true
-        let resData = null
-        try {
-            data = res.json()
-        } catch (error) {
-            console.log(error)
-        }
-        return resData
+        return await res.json()
     }
 
     // Put Default
