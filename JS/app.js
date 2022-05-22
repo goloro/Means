@@ -17,6 +17,12 @@ document.getElementById("createLinkImg").addEventListener("click", e => {
     localStorage.setItem("Means_ViewProfile", localUser.email)
 })
 
+
+//BOTON PARA LLEVARTE A REGISTRO DE INVERSORES !!!!!!!!!!!!! NO FUNCIONA !!!!
+document.getElementById("btnInv").addEventListener("click", e=>{
+    window.open("/HTML/users.html", "_self")
+})
+
 // FUNCTIONS
 getPosts(3, divPost, {quantity: 10})
 

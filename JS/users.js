@@ -89,7 +89,10 @@ async function registro() {
         email: email.value,
         phone: phone.value,
         password: password.value,
-        profile: 0
+        profile: 0,
+        insignias: ["../Imagenes/Logos/MeansWhiteBronce.png"],
+        icono:"http://127.0.0.1:5501/Imagenes/Pics/3474952.jpg",
+        backgroundProfile: ["#254EEC", "#8A26EC"]
     }
 
     const registUser = await RequestHandler.postDefault("http://localhost:8085/users/register", data)
@@ -181,7 +184,10 @@ async function registroInversores() {
         email: email.value,
         phone: phone.value,
         password: password.value,
-        profile: 1
+        profile: 1, 
+        insignias: ["../Imagenes/Logos/MeansWhiteBronce.png", "../Imagenes/Logos/MeansLogoInversor.png"],
+        icono:"http://127.0.0.1:5501/Imagenes/Pics/3474952.jpg",
+        backgroundProfile: ["#254EEC", "#8A26EC"]
     }
 
     const registUser = await RequestHandler.postDefault("http://localhost:8085/users/register", data)
