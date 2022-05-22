@@ -134,6 +134,8 @@
         display: inline-block;
         align-items: center;
         font-size: 3.5vw;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
     }
 
     .subPeopleDiv img {
@@ -229,8 +231,9 @@
 
     .searchingPeople {
 
-        height: 38vw;
+        height: 100%;
         width: 90vw;
+        grid-template-columns: auto auto auto;
     }
 
 
@@ -476,8 +479,9 @@
 
     .searchingPeople {
 
-        width: 541px;
-        height: 227px;
+        width: 480px;
+        height: 100%;
+        grid-template-columns: auto auto auto;
     }
 
     .subPeopleDiv {
@@ -485,6 +489,8 @@
         width: 120px;
         font-size: 21px;
         height: 151px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     .subPeopleDiv img {
