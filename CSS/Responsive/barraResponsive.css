@@ -75,8 +75,8 @@
     }
 
     #meansNavResponsive {}
-    .filtrosNav
-    {
+
+    .filtrosNav {
         visibility: hidden;
     }
 }
@@ -111,7 +111,7 @@
         margin-bottom: 1.5vw;
         box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
         position: relative;
-        top: 1vw;
+        top: -11vw;
     }
 
     #iconosNavResponsive {
