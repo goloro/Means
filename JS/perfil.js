@@ -2,10 +2,12 @@
 import { RequestHandlerClass } from '../JS/common/dbCalls/requestHandler.js'
 import { getPosts } from './common/dbCalls/posts.js'
 
+
 // CONSTS
 const RequestHandler = new RequestHandlerClass()
 
 const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
+
 
 const insigniasDiv = document.getElementById("insignias")
 

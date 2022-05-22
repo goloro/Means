@@ -7,6 +7,8 @@ const localUser = JSON.parse(localStorage.getItem('Means_userLogued'))
 const problemCard = document.querySelector(".problemCard")
 const msgProblem = document.getElementById("problemMsg")
 
+comprobarEditPost();
+
 // EVENT LISTENERS
 document.getElementById("btnCP").addEventListener("click", e => {
     e.preventDefault()
@@ -88,6 +90,19 @@ document.getElementById("imgCatCP").addEventListener("click", e => {
         selectedIMGCat = target.src
     }
 })
+
+//
+function comprobarEditPost(){
+    let editPostId = JSON.parse(localStorage.getItem('Means_userLogued'));
+    alert("hola")
+    if(editPostId){
+        alert("existe")
+    }
+}
+
+
+
+
 
 // FUNCTIONS
 function changeColorYes(btnYes, btnNo) {

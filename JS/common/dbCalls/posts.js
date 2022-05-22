@@ -32,7 +32,7 @@ if (divPosts) divPosts.addEventListener("click", e=>{
 
         if (e.target.id == "btnDeletePost") deletePost(e.target.className)
 
-        if (e.target.id == "btnEditPost") editPost()
+        if (e.target.id == "btnEditPost") editPost(e.target.className)
 
         if (e.target.class == "postUser") viewProfile(e.target.id)
     })
@@ -278,8 +278,7 @@ function viewProfile(UserEmail) {
     window.open("../../HTML/perfil.html", "_self")
 }
 
-
-const local_EditPostId = JSON.parse(localStorage.getItem('Means_EditPostId'));
+// const local_EditPostId = JSON.parse(localStorage.getItem('Means_EditPostId'));
 const btnEditPost = document.getElementById("btnEditPost");
 const btnDeletePost = document.getElementById("btnDeletePost");
 const divInfo = document.getElementById("divInfo");
@@ -291,24 +290,13 @@ const cardPost = document.getElementById("cardPost");
 async function deletePost(idPost) {
     await RequestHandler.deleteDefault("http://localhost:8085/post/delete/" + idPost)
     createAlert("https://api.iconify.design/fluent/delete-dismiss-24-filled.svg?color=white", "Post borrado correctamente!", "#e65353")
+    divInfo.innerHTML=""
+    getPosts(1, divInfo, { idUser: localUser.email, profile: true })
 
 }
 
-function editPost() {
+function editPost(idPost) {
+    const editPostId= localStorage.setItem('Means_EditPostId', idPost)
+
     window.open("/HTML/createPost.html", "_self")
-   
-    
 }
-// divInfo.addEventListener("click", e=>{
-//     if(e.target.id=="btnEditPost"){
-//         e.preventDefault;
-//         // editPost()
-//         alert("hola");
-//     }
-//     if(e.target.id=="btnDeletePost"){
-//         e.preventDefault;
-//         // deletePost()
-//         alert("adios");
-//     }
-
-// })
