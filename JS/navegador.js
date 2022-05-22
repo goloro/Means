@@ -127,7 +127,8 @@ async function filtradorMoney(money) {
 //OCULTAR / MOSTRAR BARRA BUSQUEDA RESPONSIVE
 const lupa = document.getElementById("lupa");
 lupa.addEventListener("click", barraResponsive);
-
+var nav = document.getElementsByClassName("filtrosNav");
+nav[0].style.visibility = "hidden";
 
  function barraResponsive()
  {
