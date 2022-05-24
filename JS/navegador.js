@@ -11,6 +11,13 @@ const container = document.getElementById("divPost")
 
 let result = await RequestHandler.getDefault("http://localhost:8085/post/")
 
+const profileUser = localStorage.getItem('Means_profile')
+if (profileUser == "INVERSOR") {
+    document.getElementById("logoNav").src = "../Imagenes/Logos/MeanserInversor.png"
+    document.getElementById("meansNavResponsive").src = "../Imagenes/Logos/MeanserInversor.png"
+    document.getElementById("hazteInv").style.display = "none"
+}
+
 // Filtros navegador
 document.getElementById("divFiltrosDiv").addEventListener("input", e => {
     document.getElementById(e.target.className).innerHTML = e.target.value

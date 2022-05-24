@@ -30,13 +30,6 @@ document.getElementById("btnInv").addEventListener("click", e=>{
 })
 
 // FUNCTIONS
-const profileUser = localStorage.getItem('Means_profile')
-if (profileUser == "INVERSOR") {
-    document.getElementById("logoNav").src = "../Imagenes/Logos/MeanserInversor.png"
-    document.getElementById("meansNavResponsive").src = "../Imagenes/Logos/MeanserInversor.png"
-    document.getElementById("hazteInv").style.display = "none"
-}
-
 getPosts(3, divPost, {quantity: 10})
 
 if (localUser) {

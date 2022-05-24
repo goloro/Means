@@ -147,6 +147,7 @@ if (editPost) {
     document.getElementById("btnCP").style.display = "none"
     document.getElementById("btnEPEdit").style.display = "flex"
 }
+localStorage.removeItem('Means_editPost')
 
 function changeColorYes(btnYes, btnNo) {
     btnYes.style.backgroundColor = "rgb(88, 216, 52)"
